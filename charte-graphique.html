@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0E5A54">
+<title>Manuel de Darija — Charte graphique</title>
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+
+<!-- =====================================================================
+     CHARTE GRAPHIQUE / STYLE-GUIDE — Manuel de Darija
+     Fichier 100 % autonome : tout le CSS de l'app est consolidé ci-dessous
+     (variables + composants de book.css + composants locaux des chapitres
+     + couverture). Seules les Google Fonts restent en @import.
+     À donner à Claude Design ou à copier tel quel dans assets/css/book.css.
+     ===================================================================== -->
+<style>
+/* ---------- Polices (identiques à l'app) ---------- */
+@import url('https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Scheherazade+New:wght@400;700&display=swap');
+
+/* =====================================================================
+   1. VARIABLES DE THÈME
+   ===================================================================== */
+:root {
+  --papier:        #FBF7EF;   /* ivoire chaud, fond de page          */
+  --papier-2:      #F3ECDD;   /* ivoire un peu plus soutenu          */
+  --encre:         #2A2724;   /* anthracite, texte principal         */
+  --encre-douce:   #5A544C;   /* gris chaud, texte secondaire        */
+  --vert:          #0E5A54;   /* vert pétrole / sarcelle profond     */
+  --vert-clair:    #126B62;
+  --vert-voile:    #E4EEEA;   /* fond d'encadré vert très pâle       */
+  --terre:         #B8503A;   /* terracotta / brique                 */
+  --terre-voile:   #F6E6DF;   /* fond d'encadré terracotta pâle      */
+  --or:            #C8A24A;   /* or discret, accents & filets        */
+  --or-clair:      #E7D6A6;
+  --bleu-nuit:     #1C2E3A;   /* pour la couverture                  */
+
+  --serif-titre:   'Cormorant Garamond', 'EB Garamond', Georgia, serif;
+  --serif-corps:   'EB Garamond', Georgia, 'Times New Roman', serif;
+  --arabe:         'Amiri', 'Scheherazade New', 'Traditional Arabic', serif;
+
+  --page-larg:     190mm;
+  --ombre-page:    0 2px 24px rgba(42, 39, 36, .10);
+  --rayon:         10px;
+}
+
+/* =====================================================================
+   2. BASE + CONTENEUR « PAGE/LIVRE »
+   ===================================================================== */
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: radial-gradient(circle at 50% -10%, #fff 0%, var(--papier) 55%) fixed;
+  color: var(--encre);
+  font-family: var(--serif-corps);
+  font-size: 18px;
+  line-height: 1.68;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+.page {
+  max-width: var(--page-larg);
+  margin: 28px auto;
+  padding: 46px 52px 60px;
+  background: var(--papier);
+  box-shadow: var(--ombre-page);
+  border-radius: var(--rayon);
+  position: relative;
+  border: 1px solid #EADFC9;
+}
+.page::before {
+  content: "";
+  position: absolute; inset: 14px;
+  border: 1px solid var(--or-clair);
+  border-radius: 6px;
+  pointer-events: none;
+  opacity: .55;
+}
+
+/* =====================================================================
+   3. NAVIGATION INTER-CHAPITRES
+   ===================================================================== */
+.nav-livre {
+  max-width: var(--page-larg);
+  margin: 22px auto 0;
+  display: flex; flex-wrap: wrap; gap: 8px;
+  align-items: center; justify-content: center;
+  font-family: var(--serif-corps); font-size: 14px;
+}
+.nav-livre a {
+  color: var(--vert); text-decoration: none;
+  padding: 5px 12px;
+  border: 1px solid var(--or-clair); border-radius: 999px;
+  background: #fff8; transition: all .15s ease;
+}
+.nav-livre a:hover { background: var(--vert); color: #fff; border-color: var(--vert); }
+.nav-livre a.actuel { background: var(--vert); color: #fff; border-color: var(--vert); }
+
+/* =====================================================================
+   4. TITRES & TEXTE
+   ===================================================================== */
+h1, h2, h3, h4 { font-family: var(--serif-titre); color: var(--vert); font-weight: 600; line-height: 1.2; }
+.chapitre-num {
+  display: block; font-family: var(--serif-titre); font-size: 15px;
+  letter-spacing: .32em; text-transform: uppercase; color: var(--terre); margin-bottom: 6px;
+}
+h1.titre-chapitre { font-size: 46px; margin: 0 0 6px; color: var(--encre); font-weight: 600; }
+h2 { font-size: 30px; margin: 46px 0 14px; padding-bottom: 8px; position: relative; }
+h2::after {
+  content: ""; position: absolute; left: 0; bottom: 0;
+  width: 64px; height: 3px;
+  background: linear-gradient(90deg, var(--or), transparent); border-radius: 3px;
+}
+h3 { font-size: 23px; margin: 32px 0 10px; color: var(--vert-clair); }
+h4 { font-size: 19px; margin: 22px 0 8px; color: var(--terre); font-weight: 600; }
+p { margin: 0 0 14px; }
+a { color: var(--vert-clair); }
+.chapeau { font-size: 20px; color: var(--encre-douce); font-style: italic; line-height: 1.6; margin: 18px 0 8px; }
+.lettrine::first-letter {
+  font-family: var(--serif-titre); font-size: 4.4em; line-height: .82;
+  float: left; padding: 6px 12px 0 0; color: var(--terre); font-weight: 600;
+}
+
+/* =====================================================================
+   5. ORNEMENTS
+   ===================================================================== */
+.ornement {
+  text-align: center; color: var(--or); font-size: 22px;
+  letter-spacing: .5em; margin: 30px 0; user-select: none;
+}
+.ornement::before { content: "۞  ❁  ۞"; }
+.filet-or { height: 2px; border: 0; background: linear-gradient(90deg, transparent, var(--or), transparent); margin: 34px 0; }
+.medaillon {
+  width: 96px; height: 96px; margin: 0 auto 18px;
+  display: grid; place-items: center; border-radius: 50%;
+  border: 2px solid var(--or); color: var(--vert);
+  font-family: var(--serif-titre); font-size: 40px; font-weight: 600;
+  background: repeating-conic-gradient(from 0deg, var(--papier-2) 0deg 15deg, var(--papier) 15deg 30deg);
+  box-shadow: inset 0 0 0 6px var(--papier), 0 2px 10px rgba(0,0,0,.06);
+}
+.ouverture-chapitre { text-align: center; padding: 8px 0 4px; }
+
+/* =====================================================================
+   6. ÉCRITURE ARABE & TRANSLITTÉRATION INLINE
+   ===================================================================== */
+.ar   { font-family: var(--arabe); font-size: 1.5em; line-height: 1; direction: rtl; unicode-bidi: isolate; }
+.ar-xl{ font-family: var(--arabe); font-size: 2.4em; line-height: 1; direction: rtl; }
+.translit { font-style: italic; color: var(--terre); font-weight: 500; }
+.api  { font-family: 'Charis SIL', 'Doulos SIL', 'Gentium Plus', 'Segoe UI', sans-serif; color: var(--encre-douce); }
+.arabizi { font-weight: 600; color: var(--vert-clair); font-variant-numeric: lining-nums; }
+
+/* =====================================================================
+   7. ENCADRÉS (CALLOUTS)
+   ===================================================================== */
+.callout { position: relative; margin: 26px 0; padding: 18px 22px 18px 54px; border-radius: var(--rayon); font-size: 17px; }
+.callout .callout-titre { display:block; font-family: var(--serif-titre); font-weight:700; font-size:18px; letter-spacing:.02em; margin-bottom:4px; }
+.callout::before { position: absolute; left: 16px; top: 16px; font-size: 24px; line-height: 1; }
+.callout-retenir { background: var(--vert-voile); border-left: 4px solid var(--vert); }
+.callout-retenir .callout-titre { color: var(--vert); }
+.callout-retenir::before { content: "📌"; }
+.astuce { background: #FBF3D9; border-left: 4px solid var(--or); }
+.astuce .callout-titre { color: #9A7B1E; }
+.astuce::before { content: "💡"; }
+.piege { background: var(--terre-voile); border-left: 4px solid var(--terre); }
+.piege .callout-titre { color: var(--terre); }
+.piege::before { content: "⚠️"; }
+.note-regionale { background: #EAF0F4; border-left: 4px solid var(--bleu-nuit); }
+.note-regionale .callout-titre { color: var(--bleu-nuit); }
+.note-regionale::before { content: "📍"; }
+
+/* =====================================================================
+   8. FICHE DE SON (Chapitre 1)
+   ===================================================================== */
+.fiche-son {
+  display: grid; grid-template-columns: 130px 1fr; gap: 0; margin: 24px 0;
+  border: 1px solid #E7DcC4; border-radius: var(--rayon); overflow: hidden;
+  background: #fff; box-shadow: 0 1px 6px rgba(42,39,36,.05); break-inside: avoid;
+}
+.fiche-son .glyphe {
+  background: linear-gradient(160deg, var(--vert), var(--vert-clair)); color: #fff;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  padding: 16px 10px; text-align: center; gap: 6px;
+}
+.fiche-son .glyphe .lettre { font-family: var(--arabe); font-size: 52px; line-height: 1; }
+.fiche-son .glyphe .z { font-size: 22px; font-weight: 700; color: var(--or-clair); font-family: var(--serif-titre); }
+.fiche-son .glyphe .nom { font-size: 12px; letter-spacing:.12em; text-transform: uppercase; opacity: .85; }
+.fiche-son .corps { padding: 14px 20px; }
+.fiche-son .corps dl { display: grid; grid-template-columns: max-content 1fr; gap: 4px 14px; margin: 0; }
+.fiche-son .corps dt { font-family: var(--serif-titre); font-weight: 600; color: var(--terre); font-size: 15px; letter-spacing:.02em; }
+.fiche-son .corps dd { margin: 0; font-size: 16px; }
+.fiche-son .corps dd .api { font-size: 17px; }
+
+/* =====================================================================
+   9. TABLEAUX
+   ===================================================================== */
+table { width: 100%; border-collapse: collapse; margin: 22px 0; font-size: 16px; background: #fff; border-radius: var(--rayon); overflow: hidden; box-shadow: 0 1px 6px rgba(42,39,36,.05); }
+thead th {
+  background: var(--vert); color: #fff; font-family: var(--serif-titre); font-weight: 600;
+  font-size: 15px; letter-spacing: .03em; text-align: left; padding: 11px 14px;
+}
+tbody td { padding: 10px 14px; border-top: 1px solid #EEE6D6; vertical-align: top; }
+tbody tr:nth-child(even) td { background: var(--papier-2); }
+tbody tr:hover td { background: var(--vert-voile); }
+caption { caption-side: top; text-align: left; font-family: var(--serif-titre); font-weight: 600; color: var(--terre); font-size: 17px; margin-bottom: 8px; }
+.vocab-table .ar { font-size: 1.35em; }
+.vocab-table td:first-child { text-align: right; }
+
+/* tableau de conjugaison (Ch.2) */
+.conj th { background: var(--terre); }
+.conj td:first-child { font-family: var(--serif-titre); color: var(--terre); font-weight: 600; white-space: nowrap; }
+
+/* frise chronologique (Ch.4) */
+.timeline th { background: var(--terre); }
+.timeline td:first-child { font-family:var(--serif-titre); font-weight:600; color:var(--terre); white-space:nowrap; }
+
+/* =====================================================================
+   10. EXERCICES & CORRIGÉS
+   ===================================================================== */
+.exo { background: #fff; border: 1px dashed var(--or); border-radius: var(--rayon); padding: 16px 20px; margin: 20px 0; }
+.exo .exo-num { font-family: var(--serif-titre); color: var(--terre); font-weight: 700; }
+.exo ol { margin:8px 0 0; padding-left:22px; }
+.exo ol li { margin:6px 0; }
+.exo .consigne { font-style:italic; color:var(--encre-douce); }
+.corrige { background: var(--vert-voile); border-radius: 6px; padding: 12px 16px; margin-top: 10px; font-size: 15px; }
+.corrige summary { cursor: pointer; font-family: var(--serif-titre); font-weight: 600; color: var(--vert); }
+.corrige ol { margin:8px 0 0; padding-left:22px; }
+.corrige li { margin:5px 0; }
+
+/* =====================================================================
+   11. PASTILLES & BADGES
+   ===================================================================== */
+/* pilule-formule (Ch.2) */
+.pilule { display:inline-block; background:var(--vert-voile); color:var(--vert); border:1px solid #bcd8d0; border-radius:999px; padding:2px 12px; font-family:var(--serif-titre); font-weight:600; font-size:15px; margin:2px; }
+/* badge de série d'exercices (Ch.5) */
+.badge-serie { display:inline-block; background:var(--vert); color:#fff; font-family:var(--serif-titre); font-size:14px; letter-spacing:.06em; border-radius:999px; padding:3px 14px; }
+/* badge de registre (Ch.3) */
+.registre { display:inline-block; font-family:var(--serif-titre); font-size:13px; letter-spacing:.08em; text-transform:uppercase; color:#fff; background:var(--vert); border-radius:999px; padding:3px 12px; margin-left:6px; vertical-align:middle; }
+.registre.fam { background:var(--terre); }
+.registre.pro { background:var(--bleu-nuit); }
+.registre.inc { background:#7A5C99; }
+
+/* =====================================================================
+   12. DIALOGUE (Chapitre 3)
+   ===================================================================== */
+.dialogue { background:#fff; border:1px solid #E7DcC4; border-radius:var(--rayon); padding:10px 22px; margin:18px 0; box-shadow:0 1px 6px rgba(42,39,36,.05); break-inside:avoid; }
+.dialogue .titre-scene { font-family:var(--serif-titre); font-style:italic; color:var(--encre-douce); font-size:15px; margin:8px 0 4px; }
+.dialogue .ligne { display:grid; grid-template-columns:74px 1fr; gap:12px; padding:10px 0; border-bottom:1px dotted var(--or-clair); align-items:start; }
+.dialogue .ligne:last-child { border-bottom:0; }
+.dialogue .qui { font-family:var(--serif-titre); font-weight:600; color:var(--terre); padding-top:2px; }
+.dialogue .ar { display:block; font-size:1.35em; direction:rtl; text-align:right; line-height:1.5; }
+.dialogue .translit { display:block; font-size:.95em; }
+.dialogue .fr { display:block; color:var(--encre-douce); font-style:italic; font-size:.92em; }
+
+/* =====================================================================
+   13. CARTES & GRILLES
+   ===================================================================== */
+/* cartes « ville » (Ch.4) */
+.villes { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:14px; margin:18px 0; }
+.ville { background:#fff; border:1px solid #E7DcC4; border-radius:var(--rayon); padding:14px 16px; box-shadow:0 1px 6px rgba(42,39,36,.05); }
+.ville h4 { margin:0 0 6px; }
+.ville .ar { font-size:1.2em; color:var(--or); }
+.ville p { font-size:14px; color:var(--encre-douce); margin:0; }
+/* grille d'alphabet (Annexe) */
+.alpha-grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(120px,1fr)); gap:10px; margin:20px 0; }
+.alpha-cell { background:#fff; border:1px solid #E7DcC4; border-radius:var(--rayon); text-align:center; padding:12px 6px; box-shadow:0 1px 6px rgba(42,39,36,.05); }
+.alpha-cell .g { font-family:var(--arabe); font-size:40px; color:var(--vert); line-height:1; }
+.alpha-cell .n { font-size:13px; color:var(--encre-douce); margin-top:6px; }
+.alpha-cell .z { font-weight:600; color:var(--terre); }
+
+/* =====================================================================
+   14. LISTES, PIED, MARQUES
+   ===================================================================== */
+ul.puces-orient { list-style: none; padding-left: 0; }
+ul.puces-orient li { position: relative; padding-left: 26px; margin: 6px 0; }
+ul.puces-orient li::before { content: "❖"; position: absolute; left: 0; color: var(--or); }
+.pied-chapitre { margin-top: 50px; padding-top: 18px; border-top: 1px solid var(--or-clair); display: flex; justify-content: space-between; font-size: 14px; color: var(--encre-douce); font-family: var(--serif-titre); }
+.pied-chapitre a { text-decoration: none; }
+.a-completer { border: 1px dashed #C9BEA6; background: repeating-linear-gradient(45deg, transparent, transparent 10px, #F5EEDD 10px, #F5EEDD 20px); border-radius: var(--rayon); padding: 14px 18px; color: var(--encre-douce); font-style: italic; margin: 14px 0; }
+
+/* =====================================================================
+   15. SOMMAIRE (index)
+   ===================================================================== */
+.toc { list-style: none; padding: 0; margin: 10px 0; }
+.toc li { display: flex; align-items: baseline; gap: 10px; padding: 12px 4px; border-bottom: 1px dotted var(--or-clair); }
+.toc .toc-num { font-family: var(--serif-titre); font-size: 22px; color: var(--terre); width: 42px; flex: none; }
+.toc .toc-titre { font-family: var(--serif-titre); font-size: 21px; color: var(--vert); text-decoration: none; }
+.toc .toc-titre:hover { color: var(--terre); }
+.toc .toc-desc { display:block; font-size: 15px; color: var(--encre-douce); font-style: italic; }
+
+/* =====================================================================
+   16. COUVERTURE (index.html)
+   ===================================================================== */
+.couverture {
+  max-width: var(--page-larg); margin: 28px auto 0; border-radius: var(--rayon); overflow: hidden;
+  box-shadow: var(--ombre-page);
+  background: radial-gradient(circle at 50% 18%, #24404f 0%, var(--bleu-nuit) 60%, #0e1a22 100%);
+  color: #F6EFDF; text-align: center; padding: 64px 40px 56px; position: relative;
+}
+.couverture::before { content: ""; position: absolute; inset: 18px; border: 1.5px solid var(--or); border-radius: 8px; opacity: .8; pointer-events: none; }
+.couv-sur { font-family: var(--serif-titre); letter-spacing:.42em; text-transform: uppercase; font-size: 14px; color: var(--or-clair); }
+.couv-ar { font-family: var(--arabe); font-size: 88px; line-height: 1.1; color: var(--or); margin: 10px 0 4px; direction: rtl; text-shadow: 0 2px 18px rgba(200,162,74,.25); }
+.couv-titre { font-family: var(--serif-titre); font-size: 62px; font-weight: 600; margin: 8px 0 2px; color: #fff; }
+.couv-sous { font-family: var(--serif-corps); font-style: italic; font-size: 22px; color: #E7D6A6; margin-bottom: 22px; }
+.couv-etoile { color: var(--or); font-size: 20px; letter-spacing:.6em; margin: 18px 0; }
+.couv-origines { font-size: 15px; color: #cfc4ac; letter-spacing:.06em; }
+.couv-origines span { color: var(--or-clair); }
+.zellige {
+  position:absolute; left:0; right:0; bottom:0; height: 60px;
+  background:
+    repeating-linear-gradient(45deg, transparent 0 14px, rgba(200,162,74,.10) 14px 15px),
+    repeating-linear-gradient(-45deg, transparent 0 14px, rgba(200,162,74,.10) 14px 15px);
+  opacity:.7;
+}
+
+/* =====================================================================
+   17. RESPONSIVE (breakpoints app : 720 px + 480 px)
+   ===================================================================== */
+.table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+
+@media (max-width: 720px) {
+  body { font-size: 16.5px; }
+  .page { margin: 12px; padding: 26px 16px 36px; }
+  .page::before { inset: 6px; }
+  h1.titre-chapitre { font-size: 34px; }
+  h2 { font-size: 25px; }
+  h3 { font-size: 20px; }
+  .couverture { padding: 40px 20px 44px; }
+  .couv-ar { font-size: 52px !important; }
+  .couv-titre { font-size: 36px; }
+  .couv-sous { font-size: 18px; }
+  .nav-livre { flex-wrap: nowrap; overflow-x: auto; -webkit-overflow-scrolling: touch; justify-content: flex-start; padding: 8px 12px; gap: 6px; scrollbar-width: none; }
+  .nav-livre::-webkit-scrollbar { display: none; }
+  .nav-livre a { white-space: nowrap; padding: 8px 14px; font-size: 13px; }
+  .callout { padding: 16px 16px 16px 44px; font-size: 16px; }
+  .callout::before { left: 12px; top: 14px; font-size: 22px; }
+  .fiche-son { grid-template-columns: 1fr; }
+  .fiche-son .glyphe { flex-direction: row; gap: 14px; padding: 12px 16px; }
+  .fiche-son .glyphe .lettre { font-size: 42px; }
+  .fiche-son .corps { padding: 12px 16px; }
+  .fiche-son .corps dl { grid-template-columns: 1fr; gap: 2px 0; }
+  .fiche-son .corps dt { color: var(--terre); margin-top: 6px; }
+  table { font-size: 14px; }
+  thead th { padding: 9px 10px; font-size: 13px; }
+  tbody td { padding: 8px 10px; }
+  .toc li { flex-direction: column; gap: 4px; }
+  .toc .toc-num { width: auto; }
+  .pied-chapitre { flex-direction: column; gap: 6px; text-align: center; }
+  .medaillon { width: 80px; height: 80px; font-size: 34px; }
+  .lettrine::first-letter { font-size: 3.2em; }
+}
+
+@media (max-width: 480px) {
+  body { font-size: 15.5px; }
+  .page { padding: 20px 12px 32px; margin: 8px; }
+  .page::before { display: none; }
+  h1.titre-chapitre { font-size: 28px; }
+  h2 { font-size: 22px; }
+  h3 { font-size: 18px; }
+  .couverture { padding: 32px 16px 36px; }
+  .couv-ar { font-size: 42px !important; }
+  .couv-titre { font-size: 30px; }
+  .couv-sous { font-size: 16px; }
+  .couv-sur { font-size: 11px; letter-spacing: .25em; }
+  .couv-origines { font-size: 13px; }
+  .medaillon { width: 64px; height: 64px; font-size: 28px; }
+  .callout { padding: 14px 14px 14px 40px; font-size: 15px; }
+  .callout::before { left: 10px; font-size: 20px; }
+  .fiche-son .glyphe .lettre { font-size: 36px; }
+  .fiche-son .corps dl { gap: 1px 0; }
+  .fiche-son .corps dd { font-size: 15px; }
+  .chapeau { font-size: 17px; }
+  .lettrine::first-letter { font-size: 2.6em; }
+  .nav-livre a { padding: 7px 11px; font-size: 12px; }
+}
+
+/* =====================================================================
+   STYLES PROPRES À CETTE PAGE DE CHARTE (préfixe sg- — NE PAS copier
+   dans book.css : ils ne servent qu'à la mise en page de la vitrine)
+   ===================================================================== */
+.sg-hero { max-width: var(--page-larg); margin: 28px auto 0; border-radius: var(--rayon); overflow:hidden; box-shadow: var(--ombre-page);
+  background: radial-gradient(circle at 50% 20%, #24404f 0%, var(--bleu-nuit) 62%, #0e1a22 100%); color:#F6EFDF; text-align:center; padding:52px 30px 46px; position:relative; }
+.sg-hero::before { content:""; position:absolute; inset:16px; border:1.5px solid var(--or); border-radius:8px; opacity:.75; pointer-events:none; }
+.sg-hero .k { font-family:var(--serif-titre); letter-spacing:.4em; text-transform:uppercase; font-size:13px; color:var(--or-clair); }
+.sg-hero .ar { font-family:var(--arabe); font-size:60px; color:var(--or); direction:rtl; margin:6px 0 2px; }
+.sg-hero h1 { font-family:var(--serif-titre); font-size:46px; color:#fff; margin:4px 0 2px; }
+.sg-hero .sub { font-style:italic; color:#E7D6A6; font-size:19px; }
+.sg-section { max-width: var(--page-larg); margin: 22px auto; padding: 30px 40px 34px; background: var(--papier); border:1px solid #EADFC9; border-radius: var(--rayon); box-shadow: var(--ombre-page); position:relative; }
+.sg-section > h2:first-child { margin-top: 4px; }
+.sg-kicker { display:block; font-family:var(--serif-titre); font-size:13px; letter-spacing:.28em; text-transform:uppercase; color:var(--terre); margin-bottom:2px; }
+.sg-note { font-size:14px; color:var(--encre-douce); font-style:italic; margin:4px 0 18px; }
+.sg-label { display:inline-block; font-family:'Consolas','SFMono-Regular',ui-monospace,monospace; font-size:12.5px; background:#2A2724; color:#E7D6A6; padding:2px 9px; border-radius:6px; margin:18px 0 6px; }
+.sg-label.first { margin-top:2px; }
+.sg-swatches { display:grid; grid-template-columns:repeat(auto-fill,minmax(150px,1fr)); gap:12px; margin:14px 0; }
+.sg-swatch { border:1px solid #E7DcC4; border-radius:var(--rayon); overflow:hidden; background:#fff; box-shadow:0 1px 6px rgba(42,39,36,.05); }
+.sg-swatch .chip { height:64px; }
+.sg-swatch .meta { padding:8px 10px; font-size:13px; }
+.sg-swatch .meta b { font-family:'Consolas',monospace; color:var(--vert); font-weight:600; display:block; font-size:12.5px; }
+.sg-swatch .meta .hex { font-family:'Consolas',monospace; color:var(--encre-douce); font-size:12px; }
+.sg-swatch .meta .role { color:var(--encre-douce); font-size:12px; display:block; margin-top:2px; }
+.sg-type-row { display:flex; align-items:baseline; gap:16px; padding:9px 0; border-bottom:1px dotted var(--or-clair); flex-wrap:wrap; }
+.sg-type-row:last-child { border-bottom:0; }
+.sg-type-row .tag { font-family:'Consolas',monospace; font-size:12px; color:var(--encre-douce); min-width:120px; }
+.sg-grid-2 { display:grid; grid-template-columns:1fr 1fr; gap:0 26px; }
+@media (max-width:720px){ .sg-hero, .sg-section { max-width:none; } .sg-section { margin:12px; padding:22px 16px 26px; } .sg-grid-2 { grid-template-columns:1fr; } }
+</style>
+</head>
+<body>
+
+<!-- ============ HERO ============ -->
+<header class="sg-hero">
+  <div class="k">Système de design · Édition vivante</div>
+  <div class="ar">الدارجة</div>
+  <h1>Charte graphique</h1>
+  <div class="sub">le langage visuel du Manuel de Darija, en un seul fichier</div>
+</header>
+
+<!-- ============ 0. À PROPOS ============ -->
+<section class="sg-section">
+  <span class="sg-kicker">À propos de ce fichier</span>
+  <h2 style="margin-top:2px">Comment l'utiliser</h2>
+  <p class="lettrine">Ce document est <strong>autonome</strong> : tout le CSS de l'application est
+  réuni dans son en-tête <code>&lt;style&gt;</code>, et son corps affiche chaque composant en
+  situation. Deux usages&nbsp;: le <strong>donner à Claude Design</strong> comme référence visuelle
+  complète, ou <strong>copier le bloc CSS</strong> pour repartir sur une base identique à
+  <code>assets/css/book.css</code>.</p>
+  <div class="callout callout-retenir">
+    <span class="callout-titre">Principe directeur</span>
+    Un design <strong>épuré à touche orientale</strong>, pensé comme un <em>vrai livre</em> :
+    papier ivoire, filets d'or discrets, ornements zellige, et une trame éditoriale régulière.
+    Fil rouge régional&nbsp;: <strong>Agadir</strong>, <strong>Casablanca</strong>,
+    <strong>Amizmiz</strong>.
+  </div>
+  <p>Partout, chaque mot se lit sur quatre plans&nbsp;: l'arabe <span class="ar">كلمة</span>,
+  l'arabizi <span class="arabizi">kelma</span>, la prononciation française <em>kel-ma</em>, et
+  l'API <span class="api">/ˈkɛlma/</span>. Ces styles inline sont définis plus bas.</p>
+</section>
+
+<!-- ============ 1. PALETTE ============ -->
+<section class="sg-section">
+  <span class="sg-kicker">01 · Fondations</span>
+  <h2 style="margin-top:2px">Palette</h2>
+  <p class="sg-note">Chaque couleur est une variable CSS (<code>var(--nom)</code>). Fond ivoire,
+  vert pétrole structurant, terracotta d'accent, or pour les filets, bleu nuit pour la couverture.</p>
+  <div class="sg-swatches">
+    <div class="sg-swatch"><div class="chip" style="background:#FBF7EF"></div><div class="meta"><b>--papier</b><span class="hex">#FBF7EF</span><span class="role">fond de page (ivoire chaud)</span></div></div>
+    <div class="sg-swatch"><div class="chip" style="background:#F3ECDD"></div><div class="meta"><b>--papier-2</b><span class="hex">#F3ECDD</span><span class="role">ivoire soutenu (lignes paires)</span></div></div>
+    <div class="sg-swatch"><div class="chip" style="background:#2A2724"></div><div class="meta"><b>--encre</b><span class="hex">#2A2724</span><span class="role">texte principal</span></div></div>
+    <div class="sg-swatch"><div class="chip" style="background:#5A544C"></div><div class="meta"><b>--encre-douce</b><span class="hex">#5A544C</span><span class="role">texte secondaire</span></div></div>
+    <div class="sg-swatch"><div class="chip" style="background:#0E5A54"></div><div class="meta"><b>--vert</b><span class="hex">#0E5A54</span><span class="role">couleur structurante</span></div></div>
+    <div class="sg-swatch"><div class="chip" style="background:#126B62"></div><div class="meta"><b>--vert-clair</b><span class="hex">#126B62</span><span class="role">sous-titres, liens</span></div></div>
+    <div class="sg-swatch"><div class="chip" style="background:#E4EEEA"></div><div class="meta"><b>--vert-voile</b><span class="hex">#E4EEEA</span><span class="role">fond « À retenir »</span></div></div>
+    <div class="sg-swatch"><div class="chip" style="background:#B8503A"></div><div class="meta"><b>--terre</b><span class="hex">#B8503A</span><span class="role">accent terracotta</span></div></div>
+    <div class="sg-swatch"><div class="chip" style="background:#F6E6DF"></div><div class="meta"><b>--terre-voile</b><span class="hex">#F6E6DF</span><span class="role">fond « Piège »</span></div></div>
+    <div class="sg-swatch"><div class="chip" style="background:#C8A24A"></div><div class="meta"><b>--or</b><span class="hex">#C8A24A</span><span class="role">filets & accents</span></div></div>
+    <div class="sg-swatch"><div class="chip" style="background:#E7D6A6"></div><div class="meta"><b>--or-clair</b><span class="hex">#E7D6A6</span><span class="role">filets pâles, bordures</span></div></div>
+    <div class="sg-swatch"><div class="chip" style="background:#1C2E3A"></div><div class="meta"><b>--bleu-nuit</b><span class="hex">#1C2E3A</span><span class="role">couverture, note régionale</span></div></div>
+  </div>
+</section>
+
+<!-- ============ 2. TYPOGRAPHIES ============ -->
+<section class="sg-section">
+  <span class="sg-kicker">02 · Fondations</span>
+  <h2 style="margin-top:2px">Typographies</h2>
+  <p class="sg-note">Trois familles : titres d'apparat (Cormorant), corps de texte (EB Garamond),
+  arabe naskh (Amiri).</p>
+
+  <div class="sg-type-row"><span class="tag">--serif-titre</span><span style="font-family:var(--serif-titre); font-size:30px; color:var(--vert)">Cormorant Garamond — titres</span></div>
+  <div class="sg-type-row"><span class="tag">--serif-corps</span><span style="font-family:var(--serif-corps); font-size:20px">EB Garamond — corps de texte courant</span></div>
+  <div class="sg-type-row"><span class="tag">--arabe</span><span style="font-family:var(--arabe); font-size:34px; direction:rtl">الخط العربي — Amiri</span></div>
+
+  <span class="sg-label">h1.titre-chapitre · h2 · h3 · h4</span>
+  <h1 class="titre-chapitre">Titre de chapitre</h1>
+  <h2>Titre de section</h2>
+  <h3>Sous-section</h3>
+  <h4>Petit intertitre</h4>
+
+  <span class="sg-label">.chapeau · .lettrine</span>
+  <p class="chapeau">Le chapeau introduit le chapitre en italique adouci&nbsp;: une phrase qui donne
+  le ton avant d'entrer dans le vif.</p>
+  <p class="lettrine">La lettrine ouvre un paragraphe par une capitale ornée qui ancre l'œil et
+  rappelle la facture du livre imprimé.</p>
+
+  <span class="sg-label">.ar · .ar-xl · .translit · .api · .arabizi</span>
+  <p>Arabe <span class="ar">مرحبا</span> · très grand <span class="ar-xl">ب</span> ·
+  translittération <span class="translit">mar7aba</span> · API <span class="api">/marˈħaba/</span> ·
+  arabizi <span class="arabizi">mar7aba</span>.</p>
+</section>
+
+<!-- ============ 3. ORNEMENTS ============ -->
+<section class="sg-section">
+  <span class="sg-kicker">03 · Habillage</span>
+  <h2 style="margin-top:2px">Ornements</h2>
+  <p class="sg-note">Éléments décoratifs sobres qui rythment le livre.</p>
+
+  <span class="sg-label first">.ouverture-chapitre + .medaillon + .chapitre-num</span>
+  <div class="ouverture-chapitre">
+    <div class="medaillon">III</div>
+    <span class="chapitre-num">Chapitre trois</span>
+    <h1 class="titre-chapitre">Dialogues</h1>
+    <div class="ornement"></div>
+  </div>
+
+  <span class="sg-label">.filet-or</span>
+  <hr class="filet-or">
+
+  <span class="sg-label">.ornement</span>
+  <div class="ornement"></div>
+</section>
+
+<!-- ============ 4. ENCADRÉS ============ -->
+<section class="sg-section">
+  <span class="sg-kicker">04 · Composants</span>
+  <h2 style="margin-top:2px">Encadrés (callouts)</h2>
+  <p class="sg-note">Quatre types, chacun avec sa couleur et son pictogramme.</p>
+
+  <span class="sg-label first">.callout.callout-retenir</span>
+  <div class="callout callout-retenir"><span class="callout-titre">À retenir</span>L'essentiel du point, ce qu'il faut mémoriser en priorité.</div>
+
+  <span class="sg-label">.callout.astuce</span>
+  <div class="callout astuce"><span class="callout-titre">Astuce</span>Un moyen mnémotechnique pour retenir plus facilement.</div>
+
+  <span class="sg-label">.callout.piege</span>
+  <div class="callout piege"><span class="callout-titre">Piège fréquent</span>Une erreur classique à éviter — souvent une confusion de sons.</div>
+
+  <span class="sg-label">.callout.note-regionale</span>
+  <div class="callout note-regionale"><span class="callout-titre">Note régionale</span>Ce qui change entre Agadir, Casablanca et Amizmiz.</div>
+</section>
+
+<!-- ============ 5. FICHE DE SON ============ -->
+<section class="sg-section">
+  <span class="sg-kicker">05 · Composants</span>
+  <h2 style="margin-top:2px">Fiche de son</h2>
+  <p class="sg-note">Carte détaillée d'un phonème : glyphe arabe à gauche, description étiquetée à droite.</p>
+  <span class="sg-label first">.fiche-son</span>
+  <div class="fiche-son">
+    <div class="glyphe">
+      <span class="lettre">ع</span>
+      <span class="z">3</span>
+      <span class="nom">3ayn</span>
+    </div>
+    <div class="corps">
+      <dl>
+        <dt>API</dt><dd><span class="api">/ʕ/</span></dd>
+        <dt>Lieu</dt><dd>pharyngal (fond de la gorge)</dd>
+        <dt>Mode</dt><dd>fricative sonore</dd>
+        <dt>Placement</dt><dd>racine de la langue reculée, gorge serrée</dd>
+        <dt>Comparaison</dt><dd>absent en français ; un « a » venu du fond de la gorge</dd>
+        <dt>Exemple</dt><dd><span class="ar">عين</span> · <span class="arabizi">3ayn</span> · œil</dd>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 6. DIALOGUE & REGISTRES ============ -->
+<section class="sg-section">
+  <span class="sg-kicker">06 · Composants</span>
+  <h2 style="margin-top:2px">Dialogue &amp; registres</h2>
+  <p class="sg-note">Réplique en trois lignes (arabe / arabizi / français) et badges de registre.</p>
+
+  <span class="sg-label first">.registre · .registre.fam · .registre.pro · .registre.inc</span>
+  <p>
+    <span class="registre">détendu</span>
+    <span class="registre fam">tendre</span>
+    <span class="registre pro">semi-formel</span>
+    <span class="registre inc">poli</span>
+  </p>
+
+  <span class="sg-label">.dialogue</span>
+  <div class="dialogue">
+    <div class="titre-scene">— On se croise dans la rue —</div>
+    <div class="ligne">
+      <div class="qui">Amine</div>
+      <div>
+        <span class="ar">أهلا صاحبي، كي داير؟</span>
+        <span class="translit">ahlan sa7bi, ki dayer ?</span>
+        <span class="fr">Salut mon pote, comment tu vas ?</span>
+      </div>
+    </div>
+    <div class="ligne">
+      <div class="qui">Karim</div>
+      <div>
+        <span class="ar">لاباس الحمد لله، ونتا؟</span>
+        <span class="translit">labas l7amdoullah, w nta ?</span>
+        <span class="fr">Ça va Dieu merci, et toi ?</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 7. TABLEAUX ============ -->
+<section class="sg-section">
+  <span class="sg-kicker">07 · Composants</span>
+  <h2 style="margin-top:2px">Tableaux</h2>
+  <p class="sg-note">En-tête vert (ou terracotta pour conjugaison/frise). Toujours enveloppés dans
+  <code>.table-scroll</code> pour le défilement mobile.</p>
+
+  <span class="sg-label first">table.vocab-table</span>
+  <div class="table-scroll">
+  <table class="vocab-table">
+    <thead><tr><th>Arabe</th><th>Arabizi</th><th>Pron. FR</th><th>API</th><th>Sens</th></tr></thead>
+    <tbody>
+      <tr><td><span class="ar">سلام</span></td><td><span class="arabizi">salam</span></td><td>sa-lam</td><td><span class="api">/saˈlam/</span></td><td>salut</td></tr>
+      <tr><td><span class="ar">بسلامة</span></td><td><span class="arabizi">bslama</span></td><td>bslama</td><td><span class="api">/bslaˈma/</span></td><td>au revoir</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <span class="sg-label">table.conj</span>
+  <div class="table-scroll">
+  <table class="conj">
+    <thead><tr><th>Personne</th><th>Présent (kteb)</th><th>Sens</th></tr></thead>
+    <tbody>
+      <tr><td>ana</td><td><span class="arabizi">kanekteb</span></td><td>j'écris</td></tr>
+      <tr><td>nta</td><td><span class="arabizi">katekteb</span></td><td>tu écris</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <span class="sg-label">table.timeline</span>
+  <div class="table-scroll">
+  <table class="timeline">
+    <thead><tr><th>Période</th><th>Dynastie</th></tr></thead>
+    <tbody>
+      <tr><td>788–974</td><td>Idrissides</td></tr>
+      <tr><td>1666–…</td><td>Alaouites</td></tr>
+    </tbody>
+  </table>
+  </div>
+</section>
+
+<!-- ============ 8. CARTES & GRILLES ============ -->
+<section class="sg-section">
+  <span class="sg-kicker">08 · Composants</span>
+  <h2 style="margin-top:2px">Cartes &amp; grilles</h2>
+
+  <span class="sg-label first">.villes &gt; .ville</span>
+  <div class="villes">
+    <div class="ville"><h4>Agadir <span class="ar">أݣادير</span></h4><p>Souss, océan et amazighe tachelhit ; berceau familial côté sud.</p></div>
+    <div class="ville"><h4>Casablanca <span class="ar">كازا</span></h4><p>Métropole, darija urbaine rapide, brassage et emprunts.</p></div>
+    <div class="ville"><h4>Amizmiz <span class="ar">أمزميز</span></h4><p>Piémont de l'Atlas, tachelhit de montagne, marché hebdomadaire.</p></div>
+  </div>
+
+  <span class="sg-label">.alpha-grid &gt; .alpha-cell</span>
+  <div class="alpha-grid">
+    <div class="alpha-cell"><div class="g">ب</div><div class="n">bā — <span class="z">b</span></div></div>
+    <div class="alpha-cell"><div class="g">ت</div><div class="n">tā — <span class="z">t</span></div></div>
+    <div class="alpha-cell"><div class="g">ح</div><div class="n">ḥā — <span class="z">7</span></div></div>
+    <div class="alpha-cell"><div class="g">ع</div><div class="n">3ayn — <span class="z">3</span></div></div>
+    <div class="alpha-cell"><div class="g">ق</div><div class="n">qāf — <span class="z">9</span></div></div>
+  </div>
+</section>
+
+<!-- ============ 9. PASTILLES & BADGES ============ -->
+<section class="sg-section">
+  <span class="sg-kicker">09 · Composants</span>
+  <h2 style="margin-top:2px">Pastilles &amp; badges</h2>
+  <span class="sg-label first">.pilule · .badge-serie · .registre</span>
+  <p>
+    <span class="pilule">ka- + préfixe</span>
+    <span class="pilule">ghadi + verbe</span>
+    <span class="pilule">ma … ch</span>
+  </p>
+  <p><span class="badge-serie">Série A · Phonétique</span> &nbsp; <span class="badge-serie">Série B · Bases</span></p>
+</section>
+
+<!-- ============ 10. EXERCICES ============ -->
+<section class="sg-section">
+  <span class="sg-kicker">10 · Composants</span>
+  <h2 style="margin-top:2px">Exercices &amp; corrigés</h2>
+  <span class="sg-label first">.exo + details.corrige</span>
+  <div class="exo">
+    <p><span class="exo-num">Exercice 1.</span> <span class="consigne">Écris en arabizi les sons de gorge que tu entends.</span></p>
+    <ol>
+      <li><span class="ar">حال</span> → …</li>
+      <li><span class="ar">عام</span> → …</li>
+    </ol>
+    <details class="corrige">
+      <summary>Voir le corrigé</summary>
+      <ol>
+        <li><span class="ar">حال</span> → <span class="arabizi">7al</span> (état)</li>
+        <li><span class="ar">عام</span> → <span class="arabizi">3am</span> (année)</li>
+      </ol>
+    </details>
+  </div>
+</section>
+
+<!-- ============ 11. LISTES, PIED, MARQUES ============ -->
+<section class="sg-section">
+  <span class="sg-kicker">11 · Divers</span>
+  <h2 style="margin-top:2px">Listes, pied &amp; marques</h2>
+
+  <div class="sg-grid-2">
+    <div>
+      <span class="sg-label first">ul.puces-orient</span>
+      <ul class="puces-orient">
+        <li>Puce ornée au losange d'or.</li>
+        <li>Idéale pour les points clés.</li>
+        <li>Reste lisible à l'impression.</li>
+      </ul>
+    </div>
+    <div>
+      <span class="sg-label first">.a-completer</span>
+      <div class="a-completer">Bloc « à compléter » — marque un contenu encore en squelette (hachures ivoire).</div>
+    </div>
+  </div>
+
+  <span class="sg-label">.pied-chapitre</span>
+  <div class="pied-chapitre">
+    <span>Manuel de Darija</span>
+    <span>الدارجة</span>
+  </div>
+</section>
+
+<!-- ============ 12. BOUTONS & NAVIGATION ============ -->
+<section class="sg-section">
+  <span class="sg-kicker">12 · Navigation</span>
+  <h2 style="margin-top:2px">Boutons &amp; navigation</h2>
+
+  <span class="sg-label first">Bouton CTA (vert arrondi)</span>
+  <p><a href="#" style="display:inline-block; background:var(--vert); color:#fff; text-decoration:none; padding:12px 26px; border-radius:999px; font-family:var(--serif-titre); font-size:18px;">Commencer par le Chapitre I &nbsp;→</a></p>
+
+  <span class="sg-label">.nav-livre (défile horizontalement sous 720 px)</span>
+  <nav class="nav-livre" style="margin-top:10px">
+    <a href="#">✦ Sommaire</a>
+    <a href="#" class="actuel">I · Phonétique</a>
+    <a href="#">II · Bases</a>
+    <a href="#">III · Dialogues</a>
+    <a href="#">IV · Culture</a>
+    <a href="#">V · Exercices</a>
+    <a href="#">✒ Écriture</a>
+    <a href="#">☆ Ressources</a>
+  </nav>
+</section>
+
+<!-- ============ 13. SOMMAIRE ============ -->
+<section class="sg-section">
+  <span class="sg-kicker">13 · Navigation</span>
+  <h2 style="margin-top:2px">Sommaire</h2>
+  <span class="sg-label first">ol.toc &gt; li</span>
+  <ol class="toc">
+    <li><span class="toc-num">I</span><span><a class="toc-titre" href="#">Phonétique du darija</a><span class="toc-desc">Appareil phonatoire, consonnes, emphatiques, voyelles.</span></span></li>
+    <li><span class="toc-num">II</span><span><a class="toc-titre" href="#">Les bases de la langue</a><span class="toc-desc">Salutations, pronoms, présent, futur, négation.</span></span></li>
+  </ol>
+</section>
+
+<!-- ============ 14. MINI-COUVERTURE ============ -->
+<section class="sg-section">
+  <span class="sg-kicker">14 · Pièce maîtresse</span>
+  <h2 style="margin-top:2px">Couverture</h2>
+  <p class="sg-note">Dégradé bleu nuit, cadre d'or, arabe en majesté, motif zellige en pied.
+  Classes : <code>.couverture</code>, <code>.couv-*</code>, <code>.zellige</code>.</p>
+  <div class="couverture" style="margin-top:6px">
+    <div class="couv-sur">Méthode personnelle · Édition vivante</div>
+    <div class="couv-ar">الدارجة</div>
+    <div class="couv-titre">Manuel de Darija</div>
+    <div class="couv-sous">l'arabe marocain, du son à la parole</div>
+    <div class="couv-etoile">۞ ❁ ۞</div>
+    <div class="couv-origines">origines&nbsp;: <span>Agadir</span> — <span>Casablanca</span> — <span>Amizmiz</span></div>
+    <div class="zellige"></div>
+  </div>
+</section>
+
+<!-- ============ 15. RESPONSIVE & IMPRESSION ============ -->
+<section class="sg-section">
+  <span class="sg-kicker">15 · Comportement</span>
+  <h2 style="margin-top:2px">Responsive &amp; impression</h2>
+  <ul class="puces-orient">
+    <li><strong>Deux points de rupture</strong> : <code>≤ 720 px</code> (tablette / grand téléphone)
+    et <code>≤ 480 px</code> (petit smartphone). Titres et couverture rétrécissent, la fiche-son
+    passe en colonne, la barre de nav défile horizontalement.</li>
+    <li><strong>Tableaux</strong> : toujours dans <code>.table-scroll</code> → défilement latéral
+    plutôt que débordement.</li>
+    <li><strong>Impression / PDF</strong> (feuille <code>print.css</code> séparée dans l'app) :
+    la nav est masquée, les filets flottants retirés, chaque chapitre démarre sur une page neuve,
+    les corrigés <code>&lt;details&gt;</code> s'impriment dépliés, format A4.</li>
+    <li><strong>PWA</strong> : <code>theme-color #0E5A54</code>, <code>manifest.json</code> et
+    favicon SVG zellige permettent « Ajouter à l'écran d'accueil ».</li>
+  </ul>
+  <div class="pied-chapitre">
+    <span>Charte graphique — Manuel de Darija</span>
+    <span>الدارجة</span>
+  </div>
+</section>
+
+</body>
+</html>
