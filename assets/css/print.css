@@ -1,0 +1,70 @@
+/* =====================================================================
+   MANUEL DE DARIJA — Feuille de style d'impression (export PDF)
+   Format livre A4, en-têtes courants, sauts de page maîtrisés.
+   ===================================================================== */
+
+@page {
+  size: A4;
+  margin: 20mm 18mm 22mm;
+}
+
+@media print {
+  html, body {
+    background: #fff !important;
+  }
+
+  /* on masque la navigation à l'écran */
+  .nav-livre,
+  .no-print { display: none !important; }
+
+  .page {
+    max-width: none;
+    width: auto;
+    margin: 0;
+    padding: 0;
+    box-shadow: none;
+    border: none;
+    border-radius: 0;
+    background: #fff;
+  }
+  .page::before { display: none; }   /* pas de filet flottant à l'impression */
+
+  /* couleurs fidèles (encadrés, tableaux, fiches) */
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* chaque chapitre démarre sur une nouvelle page */
+  .ouverture-chapitre { page-break-before: always; }
+  .page > .ouverture-chapitre:first-child { page-break-before: avoid; }
+
+  /* ne pas couper ces blocs au milieu */
+  .fiche-son,
+  .callout,
+  .exo,
+  table,
+  figure { page-break-inside: avoid; }
+
+  h2, h3, h4 { page-break-after: avoid; }
+  h2 { page-break-before: auto; }
+
+  /* éviter les lignes veuves/orphelines */
+  p { orphans: 3; widows: 3; }
+
+  /* liens : afficher l'URL en note pour la version papier */
+  .ressources a[href^="http"]::after {
+    content: " (" attr(href) ")";
+    font-size: .8em;
+    color: #555;
+    word-break: break-all;
+  }
+
+  a { color: inherit; text-decoration: none; }
+
+  /* détails/corrigés dépliés à l'impression */
+  details { display: block; }
+  details > summary { list-style: none; }
+  details[open] .corrige,
+  details .corrige { display: block; }
+}

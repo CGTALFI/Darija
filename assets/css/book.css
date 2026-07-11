@@ -1,0 +1,386 @@
+/* =====================================================================
+   MANUEL DE DARIJA — Feuille de style principale
+   Design épuré à touche orientale · palette ivoire / vert pétrole /
+   terracotta / or · typographies EB Garamond + Cormorant + Amiri
+   ===================================================================== */
+
+/* ---------- Polices (Google Fonts, avec repli système) ---------- */
+@import url('https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Scheherazade+New:wght@400;700&display=swap');
+
+/* ---------- Variables de thème ---------- */
+:root {
+  --papier:        #FBF7EF;   /* ivoire chaud, fond de page          */
+  --papier-2:      #F3ECDD;   /* ivoire un peu plus soutenu          */
+  --encre:         #2A2724;   /* anthracite, texte principal         */
+  --encre-douce:   #5A544C;   /* gris chaud, texte secondaire        */
+  --vert:          #0E5A54;   /* vert pétrole / sarcelle profond     */
+  --vert-clair:    #126B62;
+  --vert-voile:    #E4EEEA;   /* fond d'encadré vert très pâle       */
+  --terre:         #B8503A;   /* terracotta / brique                 */
+  --terre-voile:   #F6E6DF;   /* fond d'encadré terracotta pâle      */
+  --or:            #C8A24A;   /* or discret, accents & filets        */
+  --or-clair:      #E7D6A6;
+  --bleu-nuit:     #1C2E3A;   /* pour la couverture                  */
+
+  --serif-titre:   'Cormorant Garamond', 'EB Garamond', Georgia, serif;
+  --serif-corps:   'EB Garamond', Georgia, 'Times New Roman', serif;
+  --arabe:         'Amiri', 'Scheherazade New', 'Traditional Arabic', serif;
+
+  --page-larg:     190mm;     /* largeur utile « page » à l'écran    */
+  --ombre-page:    0 2px 24px rgba(42, 39, 36, .10);
+  --rayon:         10px;
+}
+
+/* ---------- Base ---------- */
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background:
+    radial-gradient(circle at 50% -10%, #fff 0%, var(--papier) 55%) fixed;
+  color: var(--encre);
+  font-family: var(--serif-corps);
+  font-size: 18px;
+  line-height: 1.68;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* ---------- Conteneur « page/livre » ---------- */
+.page {
+  max-width: var(--page-larg);
+  margin: 28px auto;
+  padding: 46px 52px 60px;
+  background: var(--papier);
+  box-shadow: var(--ombre-page);
+  border-radius: var(--rayon);
+  position: relative;
+  border: 1px solid #EADFC9;
+}
+
+/* filet d'or intérieur discret */
+.page::before {
+  content: "";
+  position: absolute;
+  inset: 14px;
+  border: 1px solid var(--or-clair);
+  border-radius: 6px;
+  pointer-events: none;
+  opacity: .55;
+}
+
+/* ---------- Barre de navigation inter-chapitres ---------- */
+.nav-livre {
+  max-width: var(--page-larg);
+  margin: 22px auto 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--serif-corps);
+  font-size: 14px;
+}
+.nav-livre a {
+  color: var(--vert);
+  text-decoration: none;
+  padding: 5px 12px;
+  border: 1px solid var(--or-clair);
+  border-radius: 999px;
+  background: #fff8;
+  transition: all .15s ease;
+}
+.nav-livre a:hover { background: var(--vert); color: #fff; border-color: var(--vert); }
+.nav-livre a.actuel { background: var(--vert); color: #fff; border-color: var(--vert); }
+
+/* ---------- Titres ---------- */
+h1, h2, h3, h4 { font-family: var(--serif-titre); color: var(--vert); font-weight: 600; line-height: 1.2; }
+
+.chapitre-num {
+  display: block;
+  font-family: var(--serif-titre);
+  font-size: 15px;
+  letter-spacing: .32em;
+  text-transform: uppercase;
+  color: var(--terre);
+  margin-bottom: 6px;
+}
+
+h1.titre-chapitre {
+  font-size: 46px;
+  margin: 0 0 6px;
+  color: var(--encre);
+  font-weight: 600;
+}
+
+h2 {
+  font-size: 30px;
+  margin: 46px 0 14px;
+  padding-bottom: 8px;
+  position: relative;
+}
+h2::after {
+  content: "";
+  position: absolute; left: 0; bottom: 0;
+  width: 64px; height: 3px;
+  background: linear-gradient(90deg, var(--or), transparent);
+  border-radius: 3px;
+}
+
+h3 { font-size: 23px; margin: 32px 0 10px; color: var(--vert-clair); }
+h4 { font-size: 19px; margin: 22px 0 8px; color: var(--terre); font-weight: 600; }
+
+p { margin: 0 0 14px; }
+a { color: var(--vert-clair); }
+
+.chapeau {                       /* paragraphe d'introduction du chapitre */
+  font-size: 20px;
+  color: var(--encre-douce);
+  font-style: italic;
+  line-height: 1.6;
+  margin: 18px 0 8px;
+}
+
+/* lettrine d'ouverture */
+.lettrine::first-letter {
+  font-family: var(--serif-titre);
+  font-size: 4.4em;
+  line-height: .82;
+  float: left;
+  padding: 6px 12px 0 0;
+  color: var(--terre);
+  font-weight: 600;
+}
+
+/* ---------- Ornements ---------- */
+.ornement {
+  text-align: center;
+  color: var(--or);
+  font-size: 22px;
+  letter-spacing: .5em;
+  margin: 30px 0;
+  user-select: none;
+}
+.ornement::before { content: "۞  ❁  ۞"; }
+
+.filet-or { height: 2px; border: 0; background: linear-gradient(90deg, transparent, var(--or), transparent); margin: 34px 0; }
+
+/* médaillon numéroté d'ouverture de chapitre */
+.medaillon {
+  width: 96px; height: 96px;
+  margin: 0 auto 18px;
+  display: grid; place-items: center;
+  border-radius: 50%;
+  border: 2px solid var(--or);
+  color: var(--vert);
+  font-family: var(--serif-titre);
+  font-size: 40px; font-weight: 600;
+  background:
+    repeating-conic-gradient(from 0deg, var(--papier-2) 0deg 15deg, var(--papier) 15deg 30deg);
+  box-shadow: inset 0 0 0 6px var(--papier), 0 2px 10px rgba(0,0,0,.06);
+}
+
+.ouverture-chapitre { text-align: center; padding: 8px 0 4px; }
+
+/* ---------- Écriture arabe & translittération inline ---------- */
+.ar   { font-family: var(--arabe); font-size: 1.5em; line-height: 1; direction: rtl; unicode-bidi: isolate; }
+.ar-xl{ font-family: var(--arabe); font-size: 2.4em; line-height: 1; direction: rtl; }
+.translit { font-style: italic; color: var(--terre); font-weight: 500; }
+.api  { font-family: 'Charis SIL', 'Doulos SIL', 'Gentium Plus', 'Segoe UI', sans-serif; color: var(--encre-douce); }
+.arabizi { font-weight: 600; color: var(--vert-clair); font-variant-numeric: lining-nums; }
+
+/* ---------- Encadrés ---------- */
+.callout { position: relative; margin: 26px 0; padding: 18px 22px 18px 54px; border-radius: var(--rayon); font-size: 17px; }
+.callout .callout-titre { display:block; font-family: var(--serif-titre); font-weight:700; font-size:18px; letter-spacing:.02em; margin-bottom:4px; }
+.callout::before {
+  position: absolute; left: 16px; top: 16px;
+  font-size: 24px; line-height: 1;
+}
+
+.callout-retenir { background: var(--vert-voile); border-left: 4px solid var(--vert); }
+.callout-retenir .callout-titre { color: var(--vert); }
+.callout-retenir::before { content: "📌"; }
+
+.astuce { background: #FBF3D9; border-left: 4px solid var(--or); }
+.astuce .callout-titre { color: #9A7B1E; }
+.astuce::before { content: "💡"; }
+
+.piege { background: var(--terre-voile); border-left: 4px solid var(--terre); }
+.piege .callout-titre { color: var(--terre); }
+.piege::before { content: "⚠️"; }
+
+.note-regionale { background: #EAF0F4; border-left: 4px solid var(--bleu-nuit); }
+.note-regionale .callout-titre { color: var(--bleu-nuit); }
+.note-regionale::before { content: "📍"; }
+
+/* ---------- Fiche de son (Chapitre 1) ---------- */
+.fiche-son {
+  display: grid;
+  grid-template-columns: 130px 1fr;
+  gap: 0;
+  margin: 24px 0;
+  border: 1px solid #E7DcC4;
+  border-radius: var(--rayon);
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 1px 6px rgba(42,39,36,.05);
+  break-inside: avoid;
+}
+.fiche-son .glyphe {
+  background: linear-gradient(160deg, var(--vert), var(--vert-clair));
+  color: #fff;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  padding: 16px 10px; text-align: center; gap: 6px;
+}
+.fiche-son .glyphe .lettre { font-family: var(--arabe); font-size: 52px; line-height: 1; }
+.fiche-son .glyphe .z { font-size: 22px; font-weight: 700; color: var(--or-clair); font-family: var(--serif-titre); }
+.fiche-son .glyphe .nom { font-size: 12px; letter-spacing:.12em; text-transform: uppercase; opacity: .85; }
+
+.fiche-son .corps { padding: 14px 20px; }
+.fiche-son .corps dl { display: grid; grid-template-columns: max-content 1fr; gap: 4px 14px; margin: 0; }
+.fiche-son .corps dt { font-family: var(--serif-titre); font-weight: 600; color: var(--terre); font-size: 15px; letter-spacing:.02em; }
+.fiche-son .corps dd { margin: 0; font-size: 16px; }
+.fiche-son .corps dd .api { font-size: 17px; }
+
+/* ---------- Tableaux ---------- */
+table { width: 100%; border-collapse: collapse; margin: 22px 0; font-size: 16px; background: #fff; border-radius: var(--rayon); overflow: hidden; box-shadow: 0 1px 6px rgba(42,39,36,.05); }
+thead th {
+  background: var(--vert);
+  color: #fff;
+  font-family: var(--serif-titre);
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: .03em;
+  text-align: left;
+  padding: 11px 14px;
+}
+tbody td { padding: 10px 14px; border-top: 1px solid #EEE6D6; vertical-align: top; }
+tbody tr:nth-child(even) td { background: var(--papier-2); }
+tbody tr:hover td { background: var(--vert-voile); }
+caption { caption-side: top; text-align: left; font-family: var(--serif-titre); font-weight: 600; color: var(--terre); font-size: 17px; margin-bottom: 8px; }
+
+/* tableau vocabulaire (chapitres 2-5) */
+.vocab-table .ar { font-size: 1.35em; }
+.vocab-table td:first-child { text-align: right; }
+
+/* ---------- Exercices ---------- */
+.exo { background: #fff; border: 1px dashed var(--or); border-radius: var(--rayon); padding: 16px 20px; margin: 20px 0; }
+.exo .exo-num { font-family: var(--serif-titre); color: var(--terre); font-weight: 700; }
+.corrige { background: var(--vert-voile); border-radius: 6px; padding: 12px 16px; margin-top: 10px; font-size: 15px; }
+.corrige summary { cursor: pointer; font-family: var(--serif-titre); font-weight: 600; color: var(--vert); }
+
+/* ---------- Listes ---------- */
+ul.puces-orient { list-style: none; padding-left: 0; }
+ul.puces-orient li { position: relative; padding-left: 26px; margin: 6px 0; }
+ul.puces-orient li::before { content: "❖"; position: absolute; left: 0; color: var(--or); }
+
+/* ---------- Pied de page chapitre ---------- */
+.pied-chapitre { margin-top: 50px; padding-top: 18px; border-top: 1px solid var(--or-clair); display: flex; justify-content: space-between; font-size: 14px; color: var(--encre-douce); font-family: var(--serif-titre); }
+.pied-chapitre a { text-decoration: none; }
+
+/* squelette : marque « à compléter » */
+.a-completer { border: 1px dashed #C9BEA6; background: repeating-linear-gradient(45deg, transparent, transparent 10px, #F5EEDD 10px, #F5EEDD 20px); border-radius: var(--rayon); padding: 14px 18px; color: var(--encre-douce); font-style: italic; margin: 14px 0; }
+
+/* ---------- Sommaire (index) ---------- */
+.toc { list-style: none; padding: 0; margin: 10px 0; }
+.toc li { display: flex; align-items: baseline; gap: 10px; padding: 12px 4px; border-bottom: 1px dotted var(--or-clair); }
+.toc .toc-num { font-family: var(--serif-titre); font-size: 22px; color: var(--terre); width: 42px; flex: none; }
+.toc .toc-titre { font-family: var(--serif-titre); font-size: 21px; color: var(--vert); text-decoration: none; }
+.toc .toc-titre:hover { color: var(--terre); }
+.toc .toc-desc { display:block; font-size: 15px; color: var(--encre-douce); font-style: italic; }
+
+/* ---------- Responsive ---------- */
+
+/* enveloppe de défilement horizontal pour grands tableaux sur petit écran */
+.table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+
+@media (max-width: 720px) {
+  body { font-size: 16.5px; }
+  .page { margin: 12px; padding: 26px 16px 36px; }
+  .page::before { inset: 6px; }
+  h1.titre-chapitre { font-size: 34px; }
+  h2 { font-size: 25px; }
+  h3 { font-size: 20px; }
+
+  /* Couverture */
+  .couverture { padding: 40px 20px 44px; }
+  .couv-ar { font-size: 52px !important; }
+  .couv-titre { font-size: 36px; }
+  .couv-sous { font-size: 18px; }
+
+  /* Navigation scrollable horizontalement */
+  .nav-livre {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    justify-content: flex-start;
+    padding: 8px 12px;
+    gap: 6px;
+    scrollbar-width: none;
+  }
+  .nav-livre::-webkit-scrollbar { display: none; }
+  .nav-livre a { white-space: nowrap; padding: 8px 14px; font-size: 13px; }
+
+  /* Callouts */
+  .callout { padding: 16px 16px 16px 44px; font-size: 16px; }
+  .callout::before { left: 12px; top: 14px; font-size: 22px; }
+
+  /* Fiches de son */
+  .fiche-son { grid-template-columns: 1fr; }
+  .fiche-son .glyphe { flex-direction: row; gap: 14px; padding: 12px 16px; }
+  .fiche-son .glyphe .lettre { font-size: 42px; }
+  .fiche-son .corps { padding: 12px 16px; }
+  .fiche-son .corps dl { grid-template-columns: 1fr; gap: 2px 0; }
+  .fiche-son .corps dt { color: var(--terre); margin-top: 6px; }
+
+  /* Tableaux */
+  table { font-size: 14px; }
+  thead th { padding: 9px 10px; font-size: 13px; }
+  tbody td { padding: 8px 10px; }
+
+  /* Sommaire */
+  .toc li { flex-direction: column; gap: 4px; }
+  .toc .toc-num { width: auto; }
+
+  /* Pied de chapitre */
+  .pied-chapitre { flex-direction: column; gap: 6px; text-align: center; }
+
+  /* Médaillon */
+  .medaillon { width: 80px; height: 80px; font-size: 34px; }
+
+  /* Lettrine plus petite */
+  .lettrine::first-letter { font-size: 3.2em; }
+}
+
+/* ---------- Petit smartphone (≤ 480px) ---------- */
+@media (max-width: 480px) {
+  body { font-size: 15.5px; }
+  .page { padding: 20px 12px 32px; margin: 8px; }
+  .page::before { display: none; }
+  h1.titre-chapitre { font-size: 28px; }
+  h2 { font-size: 22px; }
+  h3 { font-size: 18px; }
+
+  .couverture { padding: 32px 16px 36px; }
+  .couv-ar { font-size: 42px !important; }
+  .couv-titre { font-size: 30px; }
+  .couv-sous { font-size: 16px; }
+  .couv-sur { font-size: 11px; letter-spacing: .25em; }
+  .couv-origines { font-size: 13px; }
+
+  .medaillon { width: 64px; height: 64px; font-size: 28px; }
+
+  .callout { padding: 14px 14px 14px 40px; font-size: 15px; }
+  .callout::before { left: 10px; font-size: 20px; }
+
+  .fiche-son .glyphe .lettre { font-size: 36px; }
+  .fiche-son .corps dl { gap: 1px 0; }
+  .fiche-son .corps dd { font-size: 15px; }
+
+  .chapeau { font-size: 17px; }
+  .lettrine::first-letter { font-size: 2.6em; }
+
+  .nav-livre a { padding: 7px 11px; font-size: 12px; }
+}

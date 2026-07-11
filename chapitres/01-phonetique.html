@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0E5A54">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>Chapitre I — Phonétique du darija</title>
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+<link rel="manifest" href="../manifest.json">
+<link rel="stylesheet" href="../assets/css/book.css">
+<link rel="stylesheet" href="../assets/css/print.css">
+<style>
+  /* styles locaux pour les schémas de ce chapitre */
+  figure { margin: 26px 0; text-align: center; }
+  figure svg { max-width: 100%; height: auto; background: #fff; border: 1px solid #E7DcC4; border-radius: var(--rayon); box-shadow: 0 1px 6px rgba(42,39,36,.05); }
+  figcaption { font-family: var(--serif-titre); font-style: italic; color: var(--encre-douce); font-size: 15px; margin-top: 8px; }
+  .svg-lbl { font: 13px 'EB Garamond', serif; fill: var(--encre); }
+  .svg-lbl-b { font: 600 13px 'EB Garamond', serif; fill: var(--vert); }
+  .svg-lead { stroke: var(--encre-douce); stroke-width: 1; fill: none; }
+  .svg-dot { fill: var(--terre); }
+  .mini-svg { width: 120px; height: 120px; }
+  /* bande des zones d'articulation */
+  .zone-strip text { font: 600 11px 'EB Garamond', serif; }
+</style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav class="nav-livre no-print">
+  <a href="../index.html">✦ Sommaire</a>
+  <a href="01-phonetique.html" class="actuel">I · Phonétique</a>
+  <a href="02-bases-langue.html">II · Bases</a>
+  <a href="03-dialogues.html">III · Dialogues</a>
+  <a href="04-culture.html">IV · Culture</a>
+  <a href="05-exercices.html">V · Exercices</a>
+  <a href="annexe-ecriture.html">✒ Écriture</a>
+  <a href="ressources.html">☆ Ressources</a>
+</nav>
+
+<main class="page">
+
+  <!-- ============ OUVERTURE ============ -->
+  <div class="ouverture-chapitre">
+    <div class="medaillon">I</div>
+    <span class="chapitre-num">Chapitre premier</span>
+    <h1 class="titre-chapitre">Phonétique du darija</h1>
+    <p class="couv-ar" style="color:var(--or); font-family:var(--arabe); font-size:40px; direction:rtl;">الأصوات</p>
+    <div class="ornement"></div>
+  </div>
+
+  <p class="chapeau">Avant de parler, il faut entendre&nbsp;; et avant d'entendre juste, il faut
+  savoir <em>où</em> et <em>comment</em> naît chaque son. Le darija possède une poignée de sons
+  que le français ignore&nbsp;: des consonnes de gorge, des emphatiques, une petite voyelle
+  passe-partout. Ce chapitre te donne l'oreille et la bouche pour les produire.</p>
+
+  <div class="callout callout-retenir">
+    <span class="callout-titre">L'idée directrice</span>
+    Un son, c'est de l'air mis en forme. En déplaçant la <strong>langue</strong>, les
+    <strong>lèvres</strong> et le <strong>voile du palais</strong>, on sculpte le souffle qui
+    sort des poumons. Apprendre la phonétique, c'est apprendre cette gymnastique invisible.
+  </div>
+
+  <!-- ============ 1. ANATOMIE ============ -->
+  <h2>1 · L'appareil phonatoire</h2>
+  <p class="lettrine">Tous les sons de la parole se fabriquent sur le trajet de l'air, des
+  poumons jusqu'aux lèvres. On appelle ce trajet le <strong>conduit vocal</strong>. Voici,
+  en coupe, les organes que tu vas solliciter&nbsp;: repère-les, tu les retrouveras dans chaque
+  fiche de son.</p>
+
+  <figure>
+    <svg viewBox="0 0 720 540" role="img" aria-label="Coupe sagittale de l'appareil phonatoire">
+      <!-- cavités -->
+      <path d="M180,60 C300,50 470,70 500,130 C510,150 505,175 480,185
+               C520,200 545,235 545,275 C545,330 520,375 500,410
+               C495,470 470,510 430,515 L250,515 C210,510 190,470 195,420
+               C150,410 120,360 120,300 C120,210 140,110 180,60 Z"
+            fill="#FCF7EA" stroke="#E7DcC4" stroke-width="2"/>
+
+      <!-- cavité nasale -->
+      <path d="M205,95 C300,85 430,100 470,140 L470,170 C420,150 300,150 210,165 Z"
+            fill="#EAF0F4" stroke="#cbd6dd"/>
+      <text class="svg-lbl-b" x="250" y="120">Cavité nasale</text>
+
+      <!-- palais dur -->
+      <path d="M215,185 C300,175 400,180 460,195 L460,205 C400,192 300,190 220,200 Z"
+            fill="#E7D6A6"/>
+      <!-- voile / vélum -->
+      <path d="M460,195 C500,200 515,215 512,240 C510,258 495,262 478,255 C470,235 465,212 460,205 Z"
+            fill="#B8503A" opacity=".55"/>
+      <!-- luette -->
+      <path d="M495,258 c6,10 4,22 -3,26 c-7,-4 -8,-16 -3,-26 Z" fill="#B8503A"/>
+
+      <!-- langue -->
+      <path d="M235,300 C300,255 380,255 440,285 C475,305 470,360 430,395
+               C360,420 280,415 240,395 C210,380 205,325 235,300 Z"
+            fill="#D98C7A" stroke="#B8503A" stroke-width="1.5"/>
+      <!-- zones de la langue -->
+      <text class="svg-lbl" x="250" y="300" style="font-style:italic;">apex</text>
+      <text class="svg-lbl" x="330" y="300" style="font-style:italic;">dos</text>
+      <text class="svg-lbl" x="420" y="330" style="font-style:italic;">racine</text>
+
+      <!-- dents + alvéoles + lèvres -->
+      <rect x="205" y="205" width="14" height="26" rx="3" fill="#fff" stroke="#ccc"/>
+      <rect x="205" y="250" width="14" height="24" rx="3" fill="#fff" stroke="#ccc"/>
+      <path d="M188,205 C176,215 176,265 190,278 L205,274 L205,232 Z" fill="#E8A" opacity=".5"/>
+
+      <!-- pharynx / larynx / glotte -->
+      <path d="M470,300 C500,320 500,410 480,470" fill="none" stroke="#cbb" stroke-width="18" stroke-linecap="round" opacity=".45"/>
+      <circle cx="486" cy="450" r="9" class="svg-dot"/>
+
+      <!-- épiglotte -->
+      <path d="M455,420 c14,-4 24,4 22,16 c-10,4 -20,-2 -22,-16 Z" fill="#B8503A" opacity=".7"/>
+
+      <!-- ===== étiquettes avec lignes de rappel ===== -->
+      <!-- lèvres -->
+      <line class="svg-lead" x1="150" y1="245" x2="188" y2="240"/>
+      <text class="svg-lbl-b" x="70" y="248">Lèvres</text>
+      <!-- dents -->
+      <line class="svg-lead" x1="150" y1="215" x2="205" y2="215"/>
+      <text class="svg-lbl-b" x="86" y="200">Dents</text>
+      <!-- alvéoles -->
+      <line class="svg-lead" x1="250" y1="230" x2="238" y2="205"/>
+      <text class="svg-lbl-b" x="215" y="245">Alvéoles</text>
+      <!-- palais dur -->
+      <line class="svg-lead" x1="360" y1="188" x2="360" y2="150"/>
+      <text class="svg-lbl-b" x="315" y="145">Palais dur</text>
+      <!-- voile du palais -->
+      <line class="svg-lead" x1="490" y1="230" x2="560" y2="205"/>
+      <text class="svg-lbl-b" x="560" y="200">Voile du palais</text>
+      <text class="svg-lbl" x="560" y="216">(vélum)</text>
+      <!-- luette -->
+      <line class="svg-lead" x1="497" y1="280" x2="575" y2="270"/>
+      <text class="svg-lbl-b" x="575" y="266">Luette</text>
+      <text class="svg-lbl" x="575" y="282">(uvule)</text>
+      <!-- pharynx -->
+      <line class="svg-lead" x1="490" y1="360" x2="575" y2="360"/>
+      <text class="svg-lbl-b" x="575" y="356">Pharynx</text>
+      <!-- épiglotte -->
+      <line class="svg-lead" x1="470" y1="430" x2="575" y2="420"/>
+      <text class="svg-lbl-b" x="575" y="416">Épiglotte</text>
+      <!-- larynx / glotte -->
+      <line class="svg-lead" x1="486" y1="450" x2="575" y2="470"/>
+      <text class="svg-lbl-b" x="575" y="466">Larynx / glotte</text>
+      <!-- langue -->
+      <line class="svg-lead" x1="330" y1="360" x2="330" y2="470"/>
+      <text class="svg-lbl-b" x="300" y="486">Langue</text>
+    </svg>
+    <figcaption>Coupe sagittale (profil) du conduit vocal — les organes de la parole.</figcaption>
+  </figure>
+
+  <div class="callout astuce">
+    <span class="callout-titre">Astuce</span>
+    Passe le bout de ta langue de tes dents vers l'arrière du palais&nbsp;: tu sens d'abord les
+    <strong>alvéoles</strong> (la petite bosse derrière les dents), puis le <strong>palais dur</strong>
+    (voûte osseuse), puis le <strong>voile</strong> (partie molle), et tout au fond la
+    <strong>luette</strong> qui pend. C'est ta carte routière des sons.
+  </div>
+
+  <!-- ============ 2. LIEUX D'ARTICULATION ============ -->
+  <h2>2 · Les lieux d'articulation</h2>
+  <p>Le <strong>lieu d'articulation</strong>, c'est l'endroit du conduit vocal où l'air est
+  freiné ou bloqué. Du plus avant (les lèvres) au plus profond (la glotte), voici les zones qui
+  comptent en darija&nbsp;:</p>
+
+  <figure>
+    <svg viewBox="0 0 700 130" class="zone-strip" role="img" aria-label="Bande des zones d'articulation, de l'avant vers l'arrière">
+      <defs>
+        <linearGradient id="grad" x1="0" x2="1">
+          <stop offset="0" stop-color="#B8503A"/>
+          <stop offset="0.5" stop-color="#C8A24A"/>
+          <stop offset="1" stop-color="#0E5A54"/>
+        </linearGradient>
+      </defs>
+      <rect x="20" y="40" width="660" height="26" rx="13" fill="url(#grad)"/>
+      <text x="20" y="30" fill="#B8503A">◀ AVANT (lèvres)</text>
+      <text x="560" y="30" fill="#0E5A54">ARRIÈRE (gorge) ▶</text>
+      <!-- graduations -->
+      <g fill="#2A2724" text-anchor="middle">
+        <text x="55"  y="92">labial</text><line class="svg-lead" x1="55" y1="66" x2="55" y2="78"/>
+        <text x="150" y="92">dental</text><line class="svg-lead" x1="150" y1="66" x2="150" y2="78"/>
+        <text x="250" y="92">alvéolaire</text><line class="svg-lead" x1="250" y1="66" x2="250" y2="78"/>
+        <text x="350" y="92">palatal</text><line class="svg-lead" x1="350" y1="66" x2="350" y2="78"/>
+        <text x="440" y="92">vélaire</text><line class="svg-lead" x1="440" y1="66" x2="440" y2="78"/>
+        <text x="530" y="92">uvulaire</text><line class="svg-lead" x1="530" y1="66" x2="530" y2="78"/>
+        <text x="605" y="92">pharyngal</text><line class="svg-lead" x1="605" y1="66" x2="605" y2="78"/>
+        <text x="660" y="110">glottal</text><line class="svg-lead" x1="655" y1="66" x2="655" y2="78"/>
+      </g>
+    </svg>
+    <figcaption>De l'avant vers l'arrière&nbsp;: les zones où se forment les consonnes du darija.</figcaption>
+  </figure>
+
+  <div class="table-scroll">
+  <table>
+    <caption>Les sept familles de lieux</caption>
+    <thead>
+      <tr><th>Lieu</th><th>Organe(s) mobilisé(s)</th><th>Sons du darija</th><th>Existe en français&nbsp;?</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Labial</strong></td><td>les deux lèvres</td><td><span class="ar">ب م و</span> — b, m, w</td><td>oui</td></tr>
+      <tr><td><strong>Labio-dental</strong></td><td>lèvre inférieure + dents</td><td><span class="ar">ف</span> — f</td><td>oui</td></tr>
+      <tr><td><strong>Dental / alvéolaire</strong></td><td>pointe de langue + dents / alvéoles</td><td><span class="ar">ت د ن ل ر س ز</span></td><td>oui</td></tr>
+      <tr><td><strong>Palatal</strong></td><td>dos de langue + palais dur</td><td><span class="ar">ش ج ي</span> — ch, j, y</td><td>oui</td></tr>
+      <tr><td><strong>Vélaire</strong></td><td>arrière de langue + voile</td><td><span class="ar">ك گ خ غ</span> — k, g, kh, gh</td><td>en partie</td></tr>
+      <tr><td><strong>Uvulaire</strong></td><td>racine de langue + luette</td><td><span class="ar">ق</span> — q&nbsp;(9)</td><td>non</td></tr>
+      <tr><td><strong>Pharyngal</strong></td><td>racine de langue + paroi du pharynx</td><td><span class="ar">ح ع</span> — ḥ&nbsp;(7), 3</td><td><strong>non</strong></td></tr>
+      <tr><td><strong>Glottal</strong></td><td>les cordes vocales</td><td><span class="ar">ه ء</span> — h, hamza&nbsp;(2)</td><td>en partie</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <!-- ============ 3. MODES D'ARTICULATION ============ -->
+  <h2>3 · Les modes d'articulation</h2>
+  <p>Le <strong>mode</strong>, c'est <em>la façon</em> dont l'air est traité au lieu choisi&nbsp;:
+  bloqué net, laissé filer en frottant, passé par le nez…</p>
+
+  <div class="table-scroll">
+  <table>
+    <thead>
+      <tr><th>Mode</th><th>Ce qui se passe</th><th>Exemples darija</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Occlusive</strong></td><td>l'air est bloqué puis relâché d'un coup</td><td>b, t, d, k, g, q, hamza</td></tr>
+      <tr><td><strong>Fricative</strong></td><td>l'air passe dans un canal étroit et frotte</td><td>f, s, z, ch, j, kh, gh, ḥ, 3, h</td></tr>
+      <tr><td><strong>Nasale</strong></td><td>le voile s'abaisse, l'air sort par le nez</td><td>m, n</td></tr>
+      <tr><td><strong>Vibrante (roulée)</strong></td><td>la pointe de langue bat contre les alvéoles</td><td>r&nbsp;<span class="ar">ر</span> (roulé&nbsp;!)</td></tr>
+      <tr><td><strong>Latérale</strong></td><td>l'air contourne la langue par les côtés</td><td>l</td></tr>
+      <tr><td><strong>Semi-voyelle</strong></td><td>une voyelle qui « glisse » en consonne</td><td>w, y</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="callout callout-retenir">
+    <span class="callout-titre">Voisement</span>
+    À chaque son, pose la main sur ta gorge. Si ça <strong>vibre</strong>, le son est
+    <em>voisé</em> (b, d, z, j, 3…). Sinon il est <em>sourd</em> (t, s, ch, ḥ…). Beaucoup de
+    sons vont par paires sourd/voisé&nbsp;: s/z, t/d, ch/j, ḥ(7)/3.
+  </div>
+
+  <!-- ============ 4. LES CONSONNES ============ -->
+  <h2>4 · Les consonnes, une par une</h2>
+  <p>D'abord les consonnes « transparentes », proches du français&nbsp;: tu les liras presque
+  sans effort. Ensuite, les fiches détaillées des consonnes <strong>propres au darija</strong>,
+  celles qui demandent un entraînement.</p>
+
+  <h3>Les consonnes proches du français</h3>
+  <div class="table-scroll">
+  <table>
+    <thead>
+      <tr><th>Arabe</th><th>Arabizi</th><th>API</th><th>Prononciation FR</th><th>Exemple</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="ar">ب</td><td class="arabizi">b</td><td class="api">/b/</td><td>b de <em>bateau</em></td><td><span class="ar">باب</span> bab — porte</td></tr>
+      <tr><td class="ar">ت</td><td class="arabizi">t</td><td class="api">/t/</td><td>t de <em>table</em></td><td><span class="ar">تفاح</span> teffah — pommes</td></tr>
+      <tr><td class="ar">ج</td><td class="arabizi">j</td><td class="api">/ʒ/</td><td>j de <em>jour</em></td><td><span class="ar">جوج</span> jouj — deux</td></tr>
+      <tr><td class="ar">د</td><td class="arabizi">d</td><td class="api">/d/</td><td>d de <em>dos</em></td><td><span class="ar">دار</span> dar — maison</td></tr>
+      <tr><td class="ar">ز</td><td class="arabizi">z</td><td class="api">/z/</td><td>z de <em>zéro</em></td><td><span class="ar">زين</span> zin — beau</td></tr>
+      <tr><td class="ar">س</td><td class="arabizi">s</td><td class="api">/s/</td><td>s de <em>sac</em></td><td><span class="ar">سمك</span> smek — poisson</td></tr>
+      <tr><td class="ar">ش</td><td class="arabizi">ch / sh</td><td class="api">/ʃ/</td><td>ch de <em>chat</em></td><td><span class="ar">شمس</span> chems — soleil</td></tr>
+      <tr><td class="ar">ف</td><td class="arabizi">f</td><td class="api">/f/</td><td>f de <em>feu</em></td><td><span class="ar">فوق</span> fouq — sur/en haut</td></tr>
+      <tr><td class="ar">ك</td><td class="arabizi">k</td><td class="api">/k/</td><td>k de <em>képi</em></td><td><span class="ar">كلب</span> kelb — chien</td></tr>
+      <tr><td class="ar">ل</td><td class="arabizi">l</td><td class="api">/l/</td><td>l de <em>lit</em></td><td><span class="ar">ليل</span> lil — nuit</td></tr>
+      <tr><td class="ar">م</td><td class="arabizi">m</td><td class="api">/m/</td><td>m de <em>main</em></td><td><span class="ar">ما</span> ma — eau</td></tr>
+      <tr><td class="ar">ن</td><td class="arabizi">n</td><td class="api">/n/</td><td>n de <em>nid</em></td><td><span class="ar">نهار</span> nhar — jour</td></tr>
+      <tr><td class="ar">ه</td><td class="arabizi">h</td><td class="api">/h/</td><td>h <em>expiré</em> (comme en anglais <em>hello</em>)</td><td><span class="ar">هنا</span> hna — ici</td></tr>
+      <tr><td class="ar">و</td><td class="arabizi">w</td><td class="api">/w/</td><td>ou de <em>oui</em></td><td><span class="ar">واحد</span> wahed — un</td></tr>
+      <tr><td class="ar">ي</td><td class="arabizi">y</td><td class="api">/j/</td><td>y de <em>yeux</em></td><td><span class="ar">يد</span> yedd — main</td></tr>
+      <tr><td class="ar">گ / ڭ</td><td class="arabizi">g</td><td class="api">/ɡ/</td><td>g <em>dur</em> de <em>gare</em></td><td><span class="ar">گاع</span> ga3 — tout / sol</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="callout piege">
+    <span class="callout-titre">Piège — le « h » n'est jamais muet</span>
+    En français, le <em>h</em> ne se prononce pas. En darija, le <span class="ar">ه</span> (h)
+    est un vrai souffle qu'on <strong>entend</strong>&nbsp;: <span class="translit">hna</span> (ici)
+    ≠ <span class="translit">na</span>. Expire comme si tu embuais une vitre.
+  </div>
+
+  <h3>Les consonnes propres au darija</h3>
+  <p>Voici le cœur du chapitre. Chaque fiche te dit <em>où</em>, <em>comment</em>, et comment
+  <em>placer</em> la langue, les lèvres et le voile du palais.</p>
+
+  <!-- FICHE : hamza -->
+  <div class="fiche-son">
+    <div class="glyphe">
+      <span class="lettre">ء</span>
+      <span class="z">2</span>
+      <span class="nom">hamza</span>
+    </div>
+    <div class="corps">
+      <dl>
+        <dt>API</dt><dd><span class="api">/ʔ/</span> — coup de glotte</dd>
+        <dt>Lieu / mode</dt><dd>glottal · occlusive</dd>
+        <dt>Placement</dt><dd>Ferme puis rouvre brusquement la glotte, comme le petit blocage entre les deux « a » de <em>« a-a »</em> (français <em>« hein-hein »</em> de refus).</dd>
+        <dt>Français</dt><dd>Le « coup » au début de <em>« oh&nbsp;! »</em> prononcé sèchement.</dd>
+        <dt>Exemple</dt><dd><span class="ar">سأل</span> <span class="translit">s2el</span> — il a demandé</dd>
+        <dt>Astuce</dt><dd>Pense à la coupure anglaise <em>uh-oh</em>&nbsp;: le silence net au milieu, c'est la hamza.</dd>
+      </dl>
+    </div>
+  </div>
+
+  <!-- FICHE : 7 = ح -->
+  <div class="fiche-son">
+    <div class="glyphe">
+      <span class="lettre">ح</span>
+      <span class="z">7</span>
+      <span class="nom">ḥa</span>
+    </div>
+    <div class="corps">
+      <dl>
+        <dt>API</dt><dd><span class="api">/ħ/</span> — fricative pharyngale sourde</dd>
+        <dt>Lieu / mode</dt><dd>pharyngal · fricative · <em>sourde</em></dd>
+        <dt>Placement</dt><dd>Resserre le fond de la gorge (racine de langue vers la paroi du pharynx) et souffle&nbsp;: un « h » <strong>chaud et râpeux</strong>, sans vibration.</dd>
+        <dt>Français</dt><dd>N'existe pas. Imagine embuer un miroir en forçant très fort, la gorge serrée.</dd>
+        <dt>Exemple</dt><dd><span class="ar">حوت</span> <span class="translit">7out</span> — poisson</dd>
+        <dt>Astuce</dt><dd>Bâille à moitié, garde la gorge serrée, puis souffle&nbsp;: tu y es presque.</dd>
+      </dl>
+    </div>
+  </div>
+
+  <!-- FICHE : 3 = ع -->
+  <div class="fiche-son">
+    <div class="glyphe">
+      <span class="lettre">ع</span>
+      <span class="z">3</span>
+      <span class="nom">3ayn</span>
+    </div>
+    <div class="corps">
+      <dl>
+        <dt>API</dt><dd><span class="api">/ʕ/</span> — fricative pharyngale <em>voisée</em></dd>
+        <dt>Lieu / mode</dt><dd>pharyngal · fricative · <em>voisée</em> (la gorge vibre&nbsp;!)</dd>
+        <dt>Placement</dt><dd>Même serrage de gorge que pour le 7, mais cette fois <strong>avec la voix</strong>. On dirait un « a » étranglé qui monte du fond de la gorge.</dd>
+        <dt>Français</dt><dd>N'existe pas. C'est le jumeau sonore du 7&nbsp;: 7 = souffle, 3 = voix.</dd>
+        <dt>Exemple</dt><dd><span class="ar">عين</span> <span class="translit">3ayn</span> — œil / source</dd>
+        <dt>Astuce</dt><dd>Chante un « a » grave, puis serre progressivement la gorge jusqu'à l'étrangler&nbsp;: ce grognement, c'est le 3.</dd>
+      </dl>
+    </div>
+  </div>
+
+  <div class="callout piege">
+    <span class="callout-titre">Piège — 7 et 3 sont des jumeaux</span>
+    <span class="arabizi">7</span> (ح) et <span class="arabizi">3</span> (ع) se font <em>au même
+    endroit</em>. La seule différence&nbsp;: le <strong>7 est soufflé (sourd)</strong>, le
+    <strong>3 est sonore (voisé)</strong>. Main sur la gorge&nbsp;: pas de vibration = 7, vibration = 3.
+  </div>
+
+  <!-- FICHE : kh / 5 = خ -->
+  <div class="fiche-son">
+    <div class="glyphe">
+      <span class="lettre">خ</span>
+      <span class="z">kh · 5</span>
+      <span class="nom">kha</span>
+    </div>
+    <div class="corps">
+      <dl>
+        <dt>API</dt><dd><span class="api">/χ/</span> — fricative vélaire/uvulaire sourde</dd>
+        <dt>Lieu / mode</dt><dd>vélaire · fricative · sourde</dd>
+        <dt>Placement</dt><dd>Arrière de la langue près du voile, on souffle en faisant « racler ». C'est la <em>jota</em> espagnole (<em>Juan</em>) ou le <em>ch</em> allemand de <em>Bach</em>.</dd>
+        <dt>Français</dt><dd>Proche du « r » parisien mais <strong>sans voix</strong> et plus raclé.</dd>
+        <dt>Exemple</dt><dd><span class="ar">خبز</span> <span class="translit">khobz</span> — pain</dd>
+        <dt>Astuce</dt><dd>Fais semblant de nettoyer ta gorge tout doucement&nbsp;: ce raclement léger, c'est le kh.</dd>
+      </dl>
+    </div>
+  </div>
+
+  <!-- FICHE : gh = غ -->
+  <div class="fiche-son">
+    <div class="glyphe">
+      <span class="lettre">غ</span>
+      <span class="z">gh · 8</span>
+      <span class="nom">ghayn</span>
+    </div>
+    <div class="corps">
+      <dl>
+        <dt>API</dt><dd><span class="api">/ʁ/</span> — fricative vélaire/uvulaire <em>voisée</em></dd>
+        <dt>Lieu / mode</dt><dd>vélaire · fricative · voisée</dd>
+        <dt>Placement</dt><dd>Exactement le <strong>« r » français grasseyé</strong> (celui de <em>Paris</em>), en un peu plus appuyé. C'est le jumeau voisé du kh.</dd>
+        <dt>Français</dt><dd>Oui&nbsp;! le r « de gorge » du français en est très proche.</dd>
+        <dt>Exemple</dt><dd><span class="ar">غالي</span> <span class="translit">ghali</span> — cher (coûteux)</dd>
+        <dt>Astuce</dt><dd>kh + voix = gh. Dis « kh » puis ajoute le grondement de la voix.</dd>
+      </dl>
+    </div>
+  </div>
+
+  <!-- FICHE : q / 9 = ق -->
+  <div class="fiche-son">
+    <div class="glyphe">
+      <span class="lettre">ق</span>
+      <span class="z">9 · q</span>
+      <span class="nom">qaf</span>
+    </div>
+    <div class="corps">
+      <dl>
+        <dt>API</dt><dd><span class="api">/q/</span> — occlusive uvulaire sourde</dd>
+        <dt>Lieu / mode</dt><dd>uvulaire · occlusive · sourde</dd>
+        <dt>Placement</dt><dd>Un « k » produit <strong>beaucoup plus au fond</strong>, contre la luette. La racine de la langue vient toucher tout à l'arrière, puis se détache d'un coup sec.</dd>
+        <dt>Français</dt><dd>N'existe pas. Un « k » très profond, presque « avalé ».</dd>
+        <dt>Exemple</dt><dd><span class="ar">قلب</span> <span class="translit">qalb / 9alb</span> — cœur</dd>
+        <dt>Astuce</dt><dd>Dis « ka-ka-ka » puis recule le point de contact le plus loin possible vers la gorge.</dd>
+      </dl>
+    </div>
+  </div>
+
+  <div class="callout note-regionale">
+    <span class="callout-titre">Note régionale — le ق (9)</span>
+    À <strong>Casablanca</strong> et dans les villes, le <span class="ar">ق</span> se dit souvent
+    <span class="arabizi">q</span> (uvulaire net) ou même <span class="arabizi">g</span> selon les
+    mots. Dans les parlers ruraux et bédouins, il devient volontiers <span class="arabizi">g</span>
+    (<span class="translit">gal</span> « il a dit »). Autour d'<strong>Agadir</strong> et
+    <strong>Amizmiz</strong>, l'influence amazighe (tachelhit) colore aussi la réalisation&nbsp;:
+    écoute ton interlocuteur et calque-toi sur lui.
+  </div>
+
+  <!-- FICHE : r roulé -->
+  <div class="fiche-son">
+    <div class="glyphe">
+      <span class="lettre">ر</span>
+      <span class="z">r</span>
+      <span class="nom">ra</span>
+    </div>
+    <div class="corps">
+      <dl>
+        <dt>API</dt><dd><span class="api">/r/</span> — vibrante alvéolaire (roulée)</dd>
+        <dt>Lieu / mode</dt><dd>alvéolaire · vibrante · voisée</dd>
+        <dt>Placement</dt><dd>La pointe de la langue <strong>bat</strong> contre les alvéoles, comme le « r » roulé italien ou espagnol (<em>perro</em>). Surtout <strong>pas</strong> le « r » de gorge français&nbsp;!</dd>
+        <dt>Français</dt><dd>N'existe plus (le français standard a un r de gorge). Pense au « r » roulé du Sud ou de l'italien.</dd>
+        <dt>Exemple</dt><dd><span class="ar">راجل</span> <span class="translit">rajel</span> — homme</dd>
+        <dt>Astuce</dt><dd>Répète vite « te-de-te-de », puis laisse la langue vibrer librement&nbsp;: « rrr ».</dd>
+      </dl>
+    </div>
+  </div>
+
+  <!-- ============ 5. EMPHATIQUES ============ -->
+  <h2>5 · Les consonnes emphatiques</h2>
+  <p class="lettrine">Voici la signature sonore de l'arabe. Une consonne <strong>emphatique</strong>
+  est une consonne ordinaire prononcée <em>« en gros »</em>&nbsp;: la racine de la langue recule
+  vers le pharynx (on parle de <strong>vélarisation / pharyngalisation</strong>), ce qui
+  <strong>assombrit</strong> tout le mot et surtout les voyelles autour. Le « a » devient un « a »
+  sombre, proche de « o ».</p>
+
+  <figure>
+    <svg viewBox="0 0 620 220" role="img" aria-label="Comparaison langue neutre et langue emphatique">
+      <!-- neutre -->
+      <g transform="translate(0,0)">
+        <text class="svg-lbl-b" x="80" y="24" text-anchor="middle">s — neutre</text>
+        <path d="M20,120 Q90,60 170,110 L170,150 L20,150 Z" fill="#FCF7EA" stroke="#E7DcC4"/>
+        <path d="M40,120 Q95,85 160,118 Q120,135 60,132 Z" fill="#D98C7A" stroke="#B8503A"/>
+        <text class="svg-lbl" x="95" y="180" text-anchor="middle">pointe en avant, dos plat</text>
+      </g>
+      <line x1="310" y1="40" x2="310" y2="190" stroke="#E7DcC4" stroke-dasharray="4 4"/>
+      <!-- emphatique -->
+      <g transform="translate(320,0)">
+        <text class="svg-lbl-b" x="80" y="24" text-anchor="middle">ṣ — emphatique</text>
+        <path d="M20,120 Q90,60 170,110 L170,150 L20,150 Z" fill="#FCF7EA" stroke="#E7DcC4"/>
+        <path d="M40,122 Q90,108 150,95 Q175,120 150,140 Q90,138 55,133 Z" fill="#B8503A" stroke="#8a3a28"/>
+        <text class="svg-lbl" x="95" y="180" text-anchor="middle">racine reculée, dos creusé</text>
+      </g>
+    </svg>
+    <figcaption>Le geste emphatique&nbsp;: la masse de la langue recule et se creuse, « assombrissant » le son.</figcaption>
+  </figure>
+
+  <div class="table-scroll">
+  <table>
+    <thead>
+      <tr><th>Emphatique</th><th>API</th><th>Version « claire »</th><th>Exemple (emphatique)</th><th>À ne pas confondre</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="ar">ص <span class="arabizi" style="font-size:.8em">(ṣ / S)</span></td><td class="api">/sˤ/</td><td>س s</td><td><span class="ar">صيف</span> ṣif — été</td><td><span class="ar">سيف</span> sif — épée</td></tr>
+      <tr><td class="ar">ط <span class="arabizi" style="font-size:.8em">(ṭ / T)</span></td><td class="api">/tˤ/</td><td>ت t</td><td><span class="ar">طاجين</span> ṭajin — tajine</td><td>t « clair » de <em>table</em></td></tr>
+      <tr><td class="ar">ض <span class="arabizi" style="font-size:.8em">(ḍ / D)</span></td><td class="api">/dˤ/</td><td>د d</td><td><span class="ar">ضو</span> ḍou — lumière</td><td>d « clair » de <em>dos</em></td></tr>
+      <tr><td class="ar">ظ <span class="arabizi" style="font-size:.8em">(ẓ / Z)</span></td><td class="api">/ðˤ~zˤ/</td><td>ز z</td><td><span class="ar">ظل</span> ḍell — ombre</td><td>z « clair » de <em>zéro</em></td></tr>
+      <tr><td>r emphatique</td><td class="api">/rˤ/</td><td>ر r</td><td><span class="ar">راه</span> ṛah — le voici</td><td>r roulé « clair »</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="callout astuce">
+    <span class="callout-titre">Astuce — l'oreille avant la bouche</span>
+    Ne cherche pas d'abord à « faire » l'emphatique&nbsp;: écoute la <strong>couleur du « a »</strong>.
+    Dans <span class="translit">ṣ</span>if (été), le a est <em>sombre</em> (presque « ço »)&nbsp;;
+    dans <span class="translit">s</span>if (épée), le a est <em>clair</em>. La voyelle trahit
+    l'emphatique.
+  </div>
+
+  <div class="callout callout-retenir">
+    <span class="callout-titre">À retenir — en arabizi</span>
+    Sur le clavier, on note souvent l'emphatique par une <strong>MAJUSCULE</strong>&nbsp;:
+    <span class="arabizi">S</span>=ص, <span class="arabizi">T</span>=ط, <span class="arabizi">D</span>=ض,
+    <span class="arabizi">Z</span>=ظ. Ainsi <span class="translit">3Sir</span> (jus) se distingue de
+    la version claire.
+  </div>
+
+  <!-- ============ 6. LETTRES-CHIFFRES ============ -->
+  <h2>6 · Les lettres écrites avec des chiffres (arabizi)</h2>
+  <p>Quand on écrit le darija au clavier latin (SMS, réseaux), les sons arabes sans équivalent
+  latin sont notés par des <strong>chiffres</strong> dont la <em>forme</em> rappelle la lettre
+  arabe. C'est l'<strong>arabizi</strong> (ou <em>3arabizi</em>). Table de référence&nbsp;:</p>
+
+  <div class="table-scroll">
+  <table>
+    <thead>
+      <tr><th>Chiffre</th><th>Lettre arabe</th><th>API</th><th>Son</th><th>Pourquoi ce chiffre&nbsp;?</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="arabizi" style="font-size:1.3em">2</td><td class="ar">ء</td><td class="api">/ʔ/</td><td>coup de glotte (hamza)</td><td>la forme du 2 évoque la petite hamza</td></tr>
+      <tr><td class="arabizi" style="font-size:1.3em">3</td><td class="ar">ع</td><td class="api">/ʕ/</td><td>3ayn (voisé, gorge)</td><td>le 3 est un <span class="ar">ع</span> retourné</td></tr>
+      <tr><td class="arabizi" style="font-size:1.3em">5</td><td class="ar">خ</td><td class="api">/χ/</td><td>kh (raclé, sourd)</td><td>alternative à « kh »&nbsp;; forme voisine</td></tr>
+      <tr><td class="arabizi" style="font-size:1.3em">7</td><td class="ar">ح</td><td class="api">/ħ/</td><td>ḥ (soufflé, gorge)</td><td>le 7 dessine la boucle du <span class="ar">ح</span></td></tr>
+      <tr><td class="arabizi" style="font-size:1.3em">9</td><td class="ar">ق</td><td class="api">/q/</td><td>qaf (uvulaire)</td><td>le 9 rappelle la boucle du <span class="ar">ق</span></td></tr>
+      <tr><td class="arabizi" style="font-size:1.1em">gh / 8</td><td class="ar">غ</td><td class="api">/ʁ/</td><td>ghayn (r grasseyé)</td><td>« gh », parfois 8 (jumeau du 7)</td></tr>
+      <tr><td class="arabizi" style="font-size:1.1em">kh</td><td class="ar">خ</td><td class="api">/χ/</td><td>kh</td><td>notation lettre, équivaut au 5</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="callout astuce">
+    <span class="callout-titre">Astuce mnémotechnique</span>
+    <strong>Les gorges vont par deux&nbsp;:</strong> <span class="arabizi">7</span> et
+    <span class="arabizi">3</span> (pharyngales, 7 sourd / 3 voisé), <span class="arabizi">5(kh)</span>
+    et <span class="arabizi">gh</span> (vélaires, kh sourd / gh voisé). Dans chaque paire&nbsp;:
+    même endroit, un soufflé + un chanté.
+  </div>
+
+  <!-- ============ 7. VOYELLES ============ -->
+  <h2>7 · Les voyelles</h2>
+  <p>Le darija a peu de voyelles pleines, mais une voyelle « fantôme » omniprésente&nbsp;: le
+  <strong>schwa</strong>. C'est ce qui donne à l'arabe marocain ses grappes de consonnes
+  (<span class="translit">ktb</span>, <span class="translit">mchit</span>…).</p>
+
+  <div class="table-scroll">
+  <table>
+    <thead>
+      <tr><th>Voyelle</th><th>Arabizi</th><th>API</th><th>Prononciation FR</th><th>Exemple</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>a bref</td><td class="arabizi">a</td><td class="api">/a/</td><td>a de <em>patte</em></td><td><span class="ar">دار</span> dar — maison</td></tr>
+      <tr><td>i bref/long</td><td class="arabizi">i</td><td class="api">/i/</td><td>i de <em>lit</em></td><td><span class="ar">زين</span> zin — beau</td></tr>
+      <tr><td>ou bref/long</td><td class="arabizi">ou / u</td><td class="api">/u/</td><td>ou de <em>fou</em></td><td><span class="ar">فوق</span> fouq — en haut</td></tr>
+      <tr><td>a long</td><td class="arabizi">a / â</td><td class="api">/aː/</td><td>a tenu, allongé</td><td><span class="ar">باب</span> bab — porte</td></tr>
+      <tr><td><strong>schwa</strong></td><td class="arabizi">e</td><td class="api">/ə/</td><td>e « avalé » de <em>le</em>, <em>petit</em></td><td><span class="ar">كتب</span> kteb — il a écrit</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="callout callout-retenir">
+    <span class="callout-titre">À retenir — le schwa (ə)</span>
+    Ce petit « e » très bref n'est pas une vraie voyelle&nbsp;: il sert juste à
+    <strong>lubrifier</strong> les groupes de consonnes pour qu'on puisse les prononcer.
+    <span class="translit">kteb</span> ≈ « k'teb », <span class="translit">mcha</span> ≈ « m'cha ».
+    N'appuie pas dessus, laisse-le à peine s'entendre.
+  </div>
+
+  <div class="callout piege">
+    <span class="callout-titre">Piège — pas de voyelles nasales</span>
+    Le darija n'a <strong>pas</strong> les voyelles nasales du français (<em>an, on, in, un</em>).
+    Le <span class="ar">ن</span> (n) se prononce toujours comme une vraie consonne&nbsp;:
+    <span class="translit">bnt</span> (fille) = « b-n-t », jamais « ban ».
+  </div>
+
+  <!-- ============ 8. COMPARAISON FR ============ -->
+  <h2>8 · Comparaison avec le français</h2>
+
+  <div class="table-scroll">
+  <table>
+    <thead>
+      <tr><th>Sons français absents du darija</th><th>Sons darija absents du français</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <ul class="puces-orient" style="margin:0">
+            <li>voyelles nasales <em>an / on / in / un</em></li>
+            <li>le <em>u</em> de <em>tu</em> (/y/)</li>
+            <li>le <em>eu</em> de <em>peur</em> (/œ/)</li>
+            <li>le <em>r</em> de gorge (remplacé par r roulé)</li>
+          </ul>
+        </td>
+        <td>
+          <ul class="puces-orient" style="margin:0">
+            <li><span class="arabizi">7</span> ḥ et <span class="arabizi">3</span> (pharyngales)</li>
+            <li><span class="arabizi">9</span> q (uvulaire)</li>
+            <li>les emphatiques ṣ ṭ ḍ ẓ</li>
+            <li>le <em>r</em> roulé et la hamza (coup de glotte)</li>
+            <li>le schwa systématique en grappes de consonnes</li>
+          </ul>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+
+  <!-- ============ 9. PIÈGES ============ -->
+  <h2>9 · Les pièges les plus fréquents</h2>
+
+  <div class="callout piege">
+    <span class="callout-titre">1. Confondre 7 (ح) et kh/5 (خ)</span>
+    Le <span class="arabizi">7</span> vient du <strong>pharynx</strong> (gorge basse, air chaud)&nbsp;;
+    le <span class="arabizi">kh</span> vient du <strong>voile</strong> (raclement haut). Beaucoup de
+    débutants font un kh partout&nbsp;: pense « 7 = souffle chaud, kh = raclement ».
+  </div>
+  <div class="callout piege">
+    <span class="callout-titre">2. Oublier le 3 (ع) — le rendre muet</span>
+    Le <span class="arabizi">3</span> n'est pas silencieux&nbsp;! <span class="translit">3ayn</span>
+    ≠ « ayn ». Sans lui, <span class="translit">sa3a</span> (heure) devient « saa » et le mot se perd.
+  </div>
+  <div class="callout piege">
+    <span class="callout-titre">3. Prononcer q (9) comme un k</span>
+    <span class="translit">qalb</span> (cœur) ≠ <span class="translit">kalb</span>… et
+    <span class="translit">kelb</span> = chien&nbsp;! Un lieu d'articulation trop en avant change le sens.
+  </div>
+  <div class="callout piege">
+    <span class="callout-titre">4. Négliger l'emphatique</span>
+    <span class="translit">ṣ</span>if (été) vs <span class="translit">s</span>if (épée)&nbsp;:
+    une paire minimale entièrement portée par l'emphatique. Assombris le « a ».
+  </div>
+
+  <!-- ============ 10. EXERCICES ============ -->
+  <h2>10 · Exercices de prononciation</h2>
+  <p>Entraîne l'oreille avec des <strong>paires minimales</strong> (deux mots qui ne diffèrent que
+  par un son). Prononce-les à voix haute, enregistre-toi, compare.</p>
+
+  <div class="exo">
+    <p><span class="exo-num">Exercice 1 — </span>Distingue les jumeaux de gorge. Lis à voix haute&nbsp;:</p>
+    <ul class="puces-orient">
+      <li><span class="translit">7al</span> (il a ouvert) &nbsp;↔&nbsp; <span class="translit">3al</span> (haut)</li>
+      <li><span class="translit">7ob</span> (amour) &nbsp;↔&nbsp; <span class="translit">khob</span>…</li>
+      <li><span class="translit">sa3a</span> (heure) &nbsp;↔&nbsp; <span class="translit">saka</span></li>
+    </ul>
+    <details class="corrige">
+      <summary>Voir la piste de correction</summary>
+      Concentre-toi sur la vibration&nbsp;: 7 = pas de vibration à la gorge&nbsp;; 3 = vibration.
+      Le corrigé audio détaillé se trouvera au <a href="05-exercices.html">Chapitre V</a>.
+    </details>
+  </div>
+
+  <div class="exo">
+    <p><span class="exo-num">Exercice 2 — </span>Emphatique ou clair&nbsp;? Écoute la couleur du « a »&nbsp;:</p>
+    <ul class="puces-orient">
+      <li><span class="translit">ṣif</span> (été) &nbsp;↔&nbsp; <span class="translit">sif</span> (épée)</li>
+      <li><span class="translit">ṭab</span> (cuit) &nbsp;↔&nbsp; <span class="translit">tab</span></li>
+      <li><span class="translit">ḍar</span> (il a nui) &nbsp;↔&nbsp; <span class="translit">dar</span> (maison)</li>
+    </ul>
+    <details class="corrige">
+      <summary>Voir la piste de correction</summary>
+      Dans la version emphatique, le « a » recule et s'assombrit (proche de « o »). Enregistre-toi
+      et compare la couleur de la voyelle. Corrigé complet au <a href="05-exercices.html">Chapitre V</a>.
+    </details>
+  </div>
+
+  <div class="exo">
+    <p><span class="exo-num">Exercice 3 — </span>Virelangue des grappes de consonnes (schwa)&nbsp;:</p>
+    <p style="text-align:center; font-size:20px;">
+      <span class="ar-xl">كتبت لك</span><br>
+      <span class="translit">ktebt lek</span> — « je t'ai écrit »
+    </p>
+    <details class="corrige">
+      <summary>Voir la piste de correction</summary>
+      Ne mets pas de « e » plein&nbsp;: « k'tebt l'k », les consonnes s'enchaînent avec un schwa à peine audible.
+    </details>
+  </div>
+
+  <hr class="filet-or">
+  <div class="callout callout-retenir">
+    <span class="callout-titre">Bilan du chapitre</span>
+    Tu sais maintenant <em>où</em> et <em>comment</em> naît chaque son du darija, reconnaître les
+    quatre paires de gorge (7/3, kh/gh), sentir l'emphatique dans la couleur du « a », et lire
+    l'arabizi (2·3·5·7·9). La suite&nbsp;: mettre ces sons en mots au
+    <a href="02-bases-langue.html">Chapitre II</a>.
+  </div>
+
+  <!-- Pied de page -->
+  <div class="pied-chapitre">
+    <a href="../index.html">← Sommaire</a>
+    <span>Chapitre I · Phonétique</span>
+    <a href="02-bases-langue.html">Chapitre II →</a>
+  </div>
+
+</main>
+</body>
+</html>

@@ -1,0 +1,17 @@
+{
+  "name": "Manuel de Darija",
+  "short_name": "Darija",
+  "description": "Méthode personnelle d'apprentissage du darija marocain",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#FBF7EF",
+  "theme_color": "#0E5A54",
+  "lang": "fr",
+  "icons": [
+    {
+      "src": "assets/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

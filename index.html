@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0E5A54">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>Manuel de Darija — Couverture & Sommaire</title>
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="manifest" href="manifest.json">
+<link rel="stylesheet" href="assets/css/book.css">
+<link rel="stylesheet" href="assets/css/print.css">
+<style>
+  /* --- Couverture --- */
+  .couverture {
+    max-width: var(--page-larg);
+    margin: 28px auto 0;
+    border-radius: var(--rayon);
+    overflow: hidden;
+    box-shadow: var(--ombre-page);
+    background:
+      radial-gradient(circle at 50% 18%, #24404f 0%, var(--bleu-nuit) 60%, #0e1a22 100%);
+    color: #F6EFDF;
+    text-align: center;
+    padding: 64px 40px 56px;
+    position: relative;
+  }
+  .couverture::before {
+    content: "";
+    position: absolute; inset: 18px;
+    border: 1.5px solid var(--or);
+    border-radius: 8px;
+    opacity: .8;
+    pointer-events: none;
+  }
+  .couv-sur { font-family: var(--serif-titre); letter-spacing:.42em; text-transform: uppercase; font-size: 14px; color: var(--or-clair); }
+  .couv-ar { font-family: var(--arabe); font-size: 88px; line-height: 1.1; color: var(--or); margin: 10px 0 4px; direction: rtl; text-shadow: 0 2px 18px rgba(200,162,74,.25); }
+  .couv-titre { font-family: var(--serif-titre); font-size: 62px; font-weight: 600; margin: 8px 0 2px; color: #fff; }
+  .couv-sous { font-family: var(--serif-corps); font-style: italic; font-size: 22px; color: #E7D6A6; margin-bottom: 22px; }
+  .couv-etoile { color: var(--or); font-size: 20px; letter-spacing:.6em; margin: 18px 0; }
+  .couv-origines { font-size: 15px; color: #cfc4ac; letter-spacing:.06em; }
+  .couv-origines span { color: var(--or-clair); }
+
+  /* motif zellige discret en bas de couverture */
+  .zellige {
+    position:absolute; left:0; right:0; bottom:0; height: 60px;
+    background:
+      repeating-linear-gradient(45deg, transparent 0 14px, rgba(200,162,74,.10) 14px 15px),
+      repeating-linear-gradient(-45deg, transparent 0 14px, rgba(200,162,74,.10) 14px 15px);
+    opacity:.7;
+  }
+</style>
+</head>
+<body>
+
+<!-- ======================= COUVERTURE ======================= -->
+<section class="couverture">
+  <div class="couv-sur">Méthode personnelle · Édition vivante</div>
+  <div class="couv-ar">الدارجة</div>
+  <h1 class="couv-titre">Manuel de Darija</h1>
+  <div class="couv-sous">l'arabe marocain, du son à la parole</div>
+  <div class="couv-etoile">۞ ❁ ۞</div>
+  <div class="couv-origines">
+    Un livre construit au fil des cours &nbsp;·&nbsp; origines&nbsp;:
+    <span>Agadir</span> — <span>Casablanca</span> — <span>Amizmiz</span>
+  </div>
+  <div class="zellige"></div>
+</section>
+
+<!-- ======================= SOMMAIRE ======================= -->
+<main class="page">
+
+  <div class="ouverture-chapitre">
+    <span class="chapitre-num">Table des matières</span>
+    <h1 class="titre-chapitre">Sommaire</h1>
+    <div class="ornement"></div>
+  </div>
+
+  <ol class="toc">
+    <li>
+      <span class="toc-num">I</span>
+      <span>
+        <a class="toc-titre" href="chapitres/01-phonetique.html">Phonétique du darija</a>
+        <span class="toc-desc">Appareil phonatoire, lieux &amp; modes d'articulation, consonnes, emphatiques, voyelles, lettres-chiffres, pièges &amp; exercices.</span>
+      </span>
+    </li>
+    <li>
+      <span class="toc-num">II</span>
+      <span>
+        <a class="toc-titre" href="chapitres/02-bases-langue.html">Les bases de la langue</a>
+        <span class="toc-desc">Salutations, pronoms, présent, futur, négation.</span>
+      </span>
+    </li>
+    <li>
+      <span class="toc-num">III</span>
+      <span>
+        <a class="toc-titre" href="chapitres/03-dialogues.html">Dialogues</a>
+        <span class="toc-desc">Entre amis, en famille, entre collègues, entre inconnus.</span>
+      </span>
+    </li>
+    <li>
+      <span class="toc-num">IV</span>
+      <span>
+        <a class="toc-titre" href="chapitres/04-culture.html">Culture marocaine</a>
+        <span class="toc-desc">Histoire, géographie, géopolitique, linguistique, gastronomie, culture.</span>
+      </span>
+    </li>
+    <li>
+      <span class="toc-num">V</span>
+      <span>
+        <a class="toc-titre" href="chapitres/05-exercices.html">Exercices &amp; corrigés</a>
+        <span class="toc-desc">Auto-évaluation, révisions, corrigés détaillés.</span>
+      </span>
+    </li>
+    <li>
+      <span class="toc-num">✒</span>
+      <span>
+        <a class="toc-titre" href="chapitres/annexe-ecriture.html">Annexe — Écriture &amp; calligraphie</a>
+        <span class="toc-desc">L'alphabet arabe, le sens de l'écriture, initiation à la calligraphie.</span>
+      </span>
+    </li>
+    <li>
+      <span class="toc-num">☆</span>
+      <span>
+        <a class="toc-titre" href="chapitres/ressources.html">Ressources pour apprendre</a>
+        <span class="toc-desc">Chaînes vidéo, sites, comptes Instagram &amp; Facebook, applications.</span>
+      </span>
+    </li>
+  </ol>
+
+  <hr class="filet-or">
+
+  <!-- ======================= MODE D'EMPLOI ======================= -->
+  <h2>Comment utiliser ce manuel</h2>
+  <p class="lettrine">Ce livre n'est pas une simple fiche : c'est une méthode qui grandit
+  au rythme de tes cours. Chaque chapitre est une « page-livre » que l'on complète et affine
+  au fur et à mesure. Tu peux le lire à l'écran, ou l'imprimer en PDF (menu <em>Imprimer</em>
+  de ton navigateur) : la mise en page est prévue pour le format livre.</p>
+
+  <p>Pour tirer le meilleur de chaque leçon, familiarise-toi avec les <strong>colonnes</strong>
+  que tu retrouveras partout&nbsp;:</p>
+
+  <div class="table-scroll">
+  <table>
+    <caption>La légende des colonnes</caption>
+    <thead>
+      <tr><th>Colonne</th><th>À quoi elle sert</th><th>Exemple</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Arabe</strong></td><td>Le mot en écriture arabe (naskh).</td><td><span class="ar">كيفاش</span></td></tr>
+      <tr><td><strong>Arabizi</strong></td><td>La transcription latine avec chiffres (clavier téléphone).</td><td><span class="arabizi">kifach</span></td></tr>
+      <tr><td><strong>Prononciation FR</strong></td><td>Une lecture « à la française », approximative mais utile au départ.</td><td>ki-<em>fache</em></td></tr>
+      <tr><td><strong>API</strong></td><td>L'Alphabet Phonétique International, la prononciation exacte.</td><td><span class="api">/kiˈfaʃ/</span></td></tr>
+      <tr><td><strong>Sens</strong></td><td>La traduction française.</td><td>comment</td></tr>
+      <tr><td><strong>Explication</strong></td><td>La logique linguistique (grammaire, origine, nuance).</td><td>mot interrogatif</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="callout callout-retenir">
+    <span class="callout-titre">À retenir</span>
+    Les encadrés colorés te guident&nbsp;: <strong>📌 À retenir</strong> (l'essentiel),
+    <strong>💡 Astuce</strong> (moyen mnémotechnique), <strong>⚠️ Piège</strong> (erreur fréquente),
+    <strong>📍 Note régionale</strong> (différences entre Agadir, Casa et Amizmiz).
+  </div>
+
+  <p style="text-align:center; margin-top:34px;">
+    <a href="chapitres/01-phonetique.html" style="display:inline-block; background:var(--vert); color:#fff; text-decoration:none; padding:12px 26px; border-radius:999px; font-family:var(--serif-titre); font-size:18px;">
+      Commencer par le Chapitre I &nbsp;→
+    </a>
+  </p>
+
+  <div class="pied-chapitre">
+    <span>Manuel de Darija</span>
+    <span>الدارجة</span>
+  </div>
+</main>
+
+</body>
+</html>

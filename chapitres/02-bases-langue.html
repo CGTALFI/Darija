@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0E5A54">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>Chapitre II — Les bases de la langue</title>
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+<link rel="manifest" href="../manifest.json">
+<link rel="stylesheet" href="../assets/css/book.css">
+<link rel="stylesheet" href="../assets/css/print.css">
+<style>
+  /* petit tableau de conjugaison mis en valeur */
+  .conj th { background: var(--terre); }
+  .conj td:first-child { font-family: var(--serif-titre); color: var(--terre); font-weight: 600; white-space: nowrap; }
+  .pilule { display:inline-block; background:var(--vert-voile); color:var(--vert); border:1px solid #bcd8d0; border-radius:999px; padding:2px 12px; font-family:var(--serif-titre); font-weight:600; font-size:15px; margin:2px; }
+</style>
+</head>
+<body>
+
+<nav class="nav-livre no-print">
+  <a href="../index.html">✦ Sommaire</a>
+  <a href="01-phonetique.html">I · Phonétique</a>
+  <a href="02-bases-langue.html" class="actuel">II · Bases</a>
+  <a href="03-dialogues.html">III · Dialogues</a>
+  <a href="04-culture.html">IV · Culture</a>
+  <a href="05-exercices.html">V · Exercices</a>
+  <a href="annexe-ecriture.html">✒ Écriture</a>
+  <a href="ressources.html">☆ Ressources</a>
+</nav>
+
+<main class="page">
+
+  <!-- ============ OUVERTURE ============ -->
+  <div class="ouverture-chapitre">
+    <div class="medaillon">II</div>
+    <span class="chapitre-num">Chapitre deux</span>
+    <h1 class="titre-chapitre">Les bases de la langue</h1>
+    <p style="color:var(--or); font-family:var(--arabe); font-size:40px; direction:rtl;">الأساسيات</p>
+    <div class="ornement"></div>
+  </div>
+
+  <p class="chapeau">Avec les sons du chapitre précédent en bouche, on assemble les premières
+  briques&nbsp;: saluer, désigner les gens, dire ce qu'on fait, ce qu'on fera, et ce qu'on ne
+  fait pas. Cinq outils, et déjà de vraies phrases.</p>
+
+  <div class="callout callout-retenir">
+    <span class="callout-titre">La logique du darija</span>
+    Trois idées qui reviendront sans cesse&nbsp;: (1) on colle des <strong>suffixes</strong> aux
+    mots (ma maison = <span class="translit">dar+i</span>)&nbsp;; (2) le verbe se conjugue par
+    <strong>préfixes</strong> (je fais = <span class="translit">n+</span>…)&nbsp;; (3) le présent
+    s'annonce par la petite particule <strong><span class="translit">ka-</span></strong>.
+  </div>
+
+  <!-- ============ 1. SALUTATIONS ============ -->
+  <h2>1 · Les salutations</h2>
+  <p class="lettrine">Au Maroc, on ne se croise pas sans se saluer&nbsp;: c'est un petit rituel,
+  souvent long, chaleureux, où l'on demande plusieurs fois « ça va&nbsp;? ». Voici l'essentiel.</p>
+
+  <h3>Se saluer</h3>
+  <div class="table-scroll">
+  <table class="vocab-table">
+    <thead>
+      <tr><th>Arabe</th><th>Arabizi</th><th>Prononciation FR</th><th>API</th><th>Sens</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="ar">السلام عليكم</td><td class="arabizi">salamou 3alaykom</td><td>sa-la-mou 3a-lay-koum</td><td class="api">/salaːmu ʕalajkum/</td><td>bonjour <em>(la paix sur vous)</em></td></tr>
+      <tr><td class="ar">وعليكم السلام</td><td class="arabizi">w 3alaykom salam</td><td>ou 3a-lay-koum sa-lam</td><td class="api">/wʕalajkum salaːm/</td><td><em>réponse&nbsp;:</em> et sur vous la paix</td></tr>
+      <tr><td class="ar">صباح الخير</td><td class="arabizi">sba7 lkhir</td><td>sba7 l-khir</td><td class="api">/sˤbaħ lχir/</td><td>bonjour <em>(matin)</em></td></tr>
+      <tr><td class="ar">مسا الخير</td><td class="arabizi">msa lkhir</td><td>msa l-khir</td><td class="api">/msa lχir/</td><td>bonsoir</td></tr>
+      <tr><td class="ar">أهلا</td><td class="arabizi">ahlan</td><td>ah-lann</td><td class="api">/ahlan/</td><td>salut / bienvenue</td></tr>
+      <tr><td class="ar">مرحبا</td><td class="arabizi">mer7ba</td><td>mer-7ba</td><td class="api">/mərħba/</td><td>bienvenue</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h3>Prendre des nouvelles</h3>
+  <div class="table-scroll">
+  <table class="vocab-table">
+    <thead>
+      <tr><th>Arabe</th><th>Arabizi</th><th>Prononciation FR</th><th>Sens</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="ar">لاباس؟</td><td class="arabizi">labas ?</td><td>la-bass</td><td>ça va&nbsp;? <em>(litt. pas de mal&nbsp;?)</em></td></tr>
+      <tr><td class="ar">كي داير؟ / كي دايرة؟</td><td class="arabizi">ki dayer ? / ki dayra ?</td><td>ki da-yer / ki day-ra</td><td>comment tu vas&nbsp;? <em>(m. / f.)</em></td></tr>
+      <tr><td class="ar">كل شي بخير؟</td><td class="arabizi">kolchi bikhir ?</td><td>koul-chi bi-khir</td><td>tout va bien&nbsp;?</td></tr>
+      <tr><td class="ar">شنو أخبارك؟</td><td class="arabizi">chno khbarek ?</td><td>chno kh-ba-rek</td><td>quoi de neuf&nbsp;?</td></tr>
+      <tr><td class="ar">لاباس، الحمد لله</td><td class="arabizi">labas, l7amdoullah</td><td>la-bass, l-7am-dou-llah</td><td><em>réponse&nbsp;:</em> ça va, Dieu merci</td></tr>
+      <tr><td class="ar">بخير</td><td class="arabizi">bikhir</td><td>bi-khir</td><td>bien / en forme</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h3>Politesse &amp; formules utiles</h3>
+  <div class="table-scroll">
+  <table class="vocab-table">
+    <thead>
+      <tr><th>Arabe</th><th>Arabizi</th><th>Prononciation FR</th><th>Sens</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="ar">عافاك</td><td class="arabizi">3afak</td><td>3a-fak</td><td>s'il te plaît</td></tr>
+      <tr><td class="ar">شكرا (بزاف)</td><td class="arabizi">choukran (bezzaf)</td><td>chou-krann (be-zzaf)</td><td>merci (beaucoup)</td></tr>
+      <tr><td class="ar">الله يخليك</td><td class="arabizi">llah ykhllik</td><td>llah y-khllik</td><td>merci / s'il te plaît <em>(litt. que Dieu te garde)</em></td></tr>
+      <tr><td class="ar">سمح ليا</td><td class="arabizi">sme7 liya</td><td>sme7 li-ya</td><td>excuse-moi / pardon</td></tr>
+      <tr><td class="ar">واخا</td><td class="arabizi">wakha</td><td>wa-kha</td><td>d'accord / ok</td></tr>
+      <tr><td class="ar">إيه / لا</td><td class="arabizi">iyeh / la</td><td>i-yeh / la</td><td>oui / non</td></tr>
+      <tr><td class="ar">بسلامة</td><td class="arabizi">bslama</td><td>b-sla-ma</td><td>au revoir</td></tr>
+      <tr><td class="ar">تهلا في راسك</td><td class="arabizi">thella f rasek</td><td>the-lla f ra-sek</td><td>prends soin de toi</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="callout astuce">
+    <span class="callout-titre">Astuce — le réflexe « l7amdoullah »</span>
+    À presque toutes les questions « ça va&nbsp;? », on répond
+    <span class="translit">labas, l7amdoullah</span>. C'est passe-partout, poli, et ça te laisse
+    le temps de réfléchir à la suite&nbsp;!
+  </div>
+
+  <div class="callout note-regionale">
+    <span class="callout-titre">Note régionale</span>
+    <span class="translit">labas</span> est compris partout. Autour d'<strong>Agadir</strong>
+    (zone berbérophone/tachelhit), tu entendras aussi des salutations en amazigh, p.&nbsp;ex.
+    <span class="translit">is tgit labas&nbsp;?</span> ou le simple <span class="translit">azul</span>
+    (bonjour). À <strong>Casablanca</strong>, le darija urbain domine sans mélange.
+  </div>
+
+  <!-- ============ 2. PRONOMS ============ -->
+  <h2>2 · Les pronoms</h2>
+  <p>Trois familles à connaître&nbsp;: les pronoms <strong>sujets</strong> (moi, toi…), les
+  suffixes <strong>possessifs</strong> (ma, ton…), et le verbe <strong>« avoir »</strong> qui,
+  en darija, n'est pas un vrai verbe mais un suffixe collé à <span class="translit">3nd</span>.</p>
+
+  <h3>Les pronoms sujets</h3>
+  <div class="table-scroll">
+  <table>
+    <thead>
+      <tr><th>Français</th><th>Arabe</th><th>Arabizi</th><th>API</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>je / moi</td><td class="ar">أنا</td><td class="arabizi">ana</td><td class="api">/ana/</td></tr>
+      <tr><td>toi <em>(masc.)</em></td><td class="ar">نتا</td><td class="arabizi">nta</td><td class="api">/nta/</td></tr>
+      <tr><td>toi <em>(fém.)</em></td><td class="ar">نتي</td><td class="arabizi">nti</td><td class="api">/nti/</td></tr>
+      <tr><td>il / lui</td><td class="ar">هو</td><td class="arabizi">howa</td><td class="api">/huwa/</td></tr>
+      <tr><td>elle</td><td class="ar">هي</td><td class="arabizi">hiya</td><td class="api">/hija/</td></tr>
+      <tr><td>nous</td><td class="ar">حنا</td><td class="arabizi">7na</td><td class="api">/ħna/</td></tr>
+      <tr><td>vous</td><td class="ar">نتوما</td><td class="arabizi">ntoma</td><td class="api">/ntuma/</td></tr>
+      <tr><td>ils / elles</td><td class="ar">هوما</td><td class="arabizi">houma</td><td class="api">/huma/</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <div class="callout piege">
+    <span class="callout-titre">Piège — le « tu » a un genre</span>
+    Contrairement au français, <strong>« tu » change selon le sexe</strong>&nbsp;:
+    <span class="translit">nta</span> à un homme, <span class="translit">nti</span> à une femme.
+    En revanche, il n'y a <em>qu'un seul</em> « vous » (<span class="translit">ntoma</span>), sans
+    vouvoiement de politesse&nbsp;: on tutoie tout le monde.
+  </div>
+
+  <h3>Les suffixes possessifs</h3>
+  <p>Pour dire « ma / ta / sa… », on <strong>colle un suffixe</strong> au nom. Exemple avec
+  <span class="translit">dar</span> (maison) et <span class="translit">smiya</span> (prénom)&nbsp;:</p>
+  <div class="table-scroll">
+  <table>
+    <thead>
+      <tr><th>Sens</th><th>Suffixe</th><th>Exemple <span class="ar">دار</span></th><th>Arabizi</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>ma / mon</td><td class="arabizi">-i</td><td class="ar">داري</td><td class="arabizi">dar-i</td></tr>
+      <tr><td>ta / ton</td><td class="arabizi">-ek</td><td class="ar">دارك</td><td class="arabizi">dar-ek</td></tr>
+      <tr><td>sa / son <em>(à lui)</em></td><td class="arabizi">-o / -ou</td><td class="ar">دارو</td><td class="arabizi">dar-o</td></tr>
+      <tr><td>sa / son <em>(à elle)</em></td><td class="arabizi">-ha</td><td class="ar">دارها</td><td class="arabizi">dar-ha</td></tr>
+      <tr><td>notre</td><td class="arabizi">-na</td><td class="ar">دارنا</td><td class="arabizi">dar-na</td></tr>
+      <tr><td>votre</td><td class="arabizi">-kom</td><td class="ar">داركم</td><td class="arabizi">dar-kom</td></tr>
+      <tr><td>leur</td><td class="arabizi">-hom</td><td class="ar">دارهم</td><td class="arabizi">dar-hom</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <div class="callout astuce">
+    <span class="callout-titre">Astuce — un jeu de LEGO</span>
+    Ces mêmes suffixes servent aussi de <strong>compléments d'objet</strong> sur le verbe&nbsp;:
+    <span class="translit">chaf</span> (il a vu) → <span class="translit">chaf-ni</span> (il m'a vu),
+    <span class="translit">chaf-ek</span> (il t'a vu). Un suffixe appris = deux usages.
+  </div>
+
+  <h3>« Avoir »&nbsp;: <span class="translit">3nd</span> + suffixe</h3>
+  <p>Le darija n'a pas de verbe « avoir ». On utilise <span class="ar">عند</span>
+  (<span class="translit">3nd</span>, « chez / auprès de ») + le suffixe de la personne&nbsp;:</p>
+  <div class="table-scroll">
+  <table>
+    <thead>
+      <tr><th>Français</th><th>Arabe</th><th>Arabizi</th><th>Exemple</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>j'ai</td><td class="ar">عندي</td><td class="arabizi">3ndi</td><td class="ar">عندي دار — <span class="arabizi">3ndi dar</span> (j'ai une maison)</td></tr>
+      <tr><td>tu as</td><td class="ar">عندك</td><td class="arabizi">3ndek</td><td>—</td></tr>
+      <tr><td>il a</td><td class="ar">عندو</td><td class="arabizi">3ndo</td><td>—</td></tr>
+      <tr><td>elle a</td><td class="ar">عندها</td><td class="arabizi">3ndha</td><td>—</td></tr>
+      <tr><td>nous avons</td><td class="ar">عندنا</td><td class="arabizi">3ndna</td><td>—</td></tr>
+      <tr><td>vous avez</td><td class="ar">عندكم</td><td class="arabizi">3ndkom</td><td>—</td></tr>
+      <tr><td>ils ont</td><td class="ar">عندهم</td><td class="arabizi">3ndhom</td><td>—</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <!-- ============ 3. PRÉSENT ============ -->
+  <h2>3 · Le présent</h2>
+  <p class="lettrine">Le présent se forme en deux temps&nbsp;: on prend le <strong>radical</strong>
+  du verbe, on lui ajoute le <strong>préfixe de personne</strong>, et on annonce le tout par la
+  particule <strong><span class="translit">ka-</span></strong>, qui marque l'action en cours ou
+  habituelle (comme le <em>-ing</em> anglais ou « je suis en train de »).</p>
+
+  <div class="callout callout-retenir">
+    <span class="callout-titre">La formule</span>
+    <span class="pilule">ka-</span> + <span class="pilule">préfixe</span> +
+    <span class="pilule">radical</span>. Les préfixes&nbsp;:
+    <span class="translit">n-</span> (je), <span class="translit">t-</span> (tu/elle),
+    <span class="translit">y-</span> (il), et l'on ajoute <span class="translit">-ou</span> au
+    pluriel, <span class="translit">-i</span> au féminin « tu ».
+  </div>
+
+  <p>Exemple avec le verbe <span class="ar">كتب</span> (<span class="translit">kteb</span>,
+  « écrire »)&nbsp;:</p>
+  <div class="table-scroll">
+  <table class="conj">
+    <thead>
+      <tr><th>Pronom</th><th>Arabe</th><th>Arabizi</th><th>Prononciation FR</th><th>Sens</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>ana</td><td class="ar">كنكتب</td><td class="arabizi">kanekteb</td><td>ka-nek-teb</td><td>j'écris</td></tr>
+      <tr><td>nta</td><td class="ar">كتكتب</td><td class="arabizi">katekteb</td><td>ka-tek-teb</td><td>tu écris <em>(m.)</em></td></tr>
+      <tr><td>nti</td><td class="ar">كتكتبي</td><td class="arabizi">katketbi</td><td>kat-ket-bi</td><td>tu écris <em>(f.)</em></td></tr>
+      <tr><td>howa</td><td class="ar">كيكتب</td><td class="arabizi">kaykteb</td><td>kayk-teb</td><td>il écrit</td></tr>
+      <tr><td>hiya</td><td class="ar">كتكتب</td><td class="arabizi">katekteb</td><td>ka-tek-teb</td><td>elle écrit</td></tr>
+      <tr><td>7na</td><td class="ar">كنكتبو</td><td class="arabizi">kanketbou</td><td>kan-ket-bou</td><td>nous écrivons</td></tr>
+      <tr><td>ntoma</td><td class="ar">كتكتبو</td><td class="arabizi">katketbou</td><td>kat-ket-bou</td><td>vous écrivez</td></tr>
+      <tr><td>houma</td><td class="ar">كيكتبو</td><td class="arabizi">kayketbou</td><td>kayk-et-bou</td><td>ils écrivent</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="callout piege">
+    <span class="callout-titre">Piège — « il » et « elle » se ressemblent presque</span>
+    <span class="translit">kaykteb</span> (il) commence par <strong>ka-<u>y</u></strong>, alors que
+    <span class="translit">katekteb</span> (elle) commence par <strong>ka-<u>t</u></strong> —
+    exactement comme « tu (m.) ». Le contexte lève l'ambiguïté.
+  </div>
+
+  <div class="callout note-regionale">
+    <span class="callout-titre">Note régionale — ka- ou ta-&nbsp;?</span>
+    À <strong>Casablanca</strong> et dans la majorité du pays, on dit <span class="translit">ka-</span>
+    (<span class="translit">kanakol</span>, je mange). Dans certains parlers du Nord et de zones
+    rurales, on entend <span class="translit">ta-</span> (<span class="translit">tanakol</span>).
+    Les deux sont justes&nbsp;: cale-toi sur ton entourage d'Agadir/Amizmiz.
+  </div>
+
+  <!-- ============ 4. FUTUR ============ -->
+  <h2>4 · Le futur</h2>
+  <p>Le futur est le plus facile&nbsp;: on remplace la particule <span class="translit">ka-</span>
+  par le mot <strong><span class="ar">غادي</span> (<span class="translit">ghadi</span>)</strong>,
+  « aller » au sens de « je vais… ». Le verbe reste au présent <em>sans</em>
+  <span class="translit">ka-</span>.</p>
+
+  <div class="callout callout-retenir">
+    <span class="callout-titre">La formule</span>
+    <span class="pilule">ghadi</span> + <span class="pilule">verbe (sans ka-)</span>.
+    <br>Ex.&nbsp;: <span class="translit">nekteb</span> (que j'écrive) →
+    <span class="translit">ghadi nekteb</span> (je vais écrire).
+  </div>
+
+  <div class="table-scroll">
+  <table class="conj">
+    <thead>
+      <tr><th>Pronom</th><th>Arabe</th><th>Arabizi</th><th>Sens</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>ana</td><td class="ar">غادي نكتب</td><td class="arabizi">ghadi nekteb</td><td>je vais écrire</td></tr>
+      <tr><td>nta</td><td class="ar">غادي تكتب</td><td class="arabizi">ghadi tekteb</td><td>tu vas écrire <em>(m.)</em></td></tr>
+      <tr><td>nti</td><td class="ar">غادي تكتبي</td><td class="arabizi">ghadi tketbi</td><td>tu vas écrire <em>(f.)</em></td></tr>
+      <tr><td>howa</td><td class="ar">غادي يكتب</td><td class="arabizi">ghadi yekteb</td><td>il va écrire</td></tr>
+      <tr><td>hiya</td><td class="ar">غادي تكتب</td><td class="arabizi">ghadi tekteb</td><td>elle va écrire</td></tr>
+      <tr><td>7na</td><td class="ar">غادي نكتبو</td><td class="arabizi">ghadi nketbou</td><td>nous allons écrire</td></tr>
+      <tr><td>ntoma</td><td class="ar">غادي تكتبو</td><td class="arabizi">ghadi tketbou</td><td>vous allez écrire</td></tr>
+      <tr><td>houma</td><td class="ar">غادي يكتبو</td><td class="arabizi">ghadi yketbou</td><td>ils vont écrire</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="callout astuce">
+    <span class="callout-titre">Astuce — la version courte « gha- »</span>
+    À l'oral, <span class="translit">ghadi</span> se raccourcit souvent en préfixe
+    <strong><span class="translit">gha-</span></strong> collé au verbe&nbsp;:
+    <span class="translit">gha-nekteb</span> (<span class="ar">غنكتب</span>) = « je vais écrire ».
+    <span class="translit">ghadi</span> peut aussi s'accorder&nbsp;: <span class="translit">ghadya</span>
+    (f.), <span class="translit">ghadyin</span> (pl.).
+  </div>
+
+  <!-- ============ 5. NÉGATION ============ -->
+  <h2>5 · La négation</h2>
+  <p class="lettrine">La négation du darija <strong>encadre</strong> le verbe, un peu comme le
+  « ne… pas » français, mais soudé au mot&nbsp;: <span class="ar">ما</span>
+  (<span class="translit">ma-</span>) devant, <span class="ar">ش</span>
+  (<span class="translit">-ch</span>) derrière.</p>
+
+  <div class="callout callout-retenir">
+    <span class="callout-titre">La formule</span>
+    <span class="pilule">ma</span> + <span class="pilule">verbe</span> + <span class="pilule">ch</span>.
+    <br>La particule <span class="translit">ka-</span> ou <span class="translit">ghadi</span> reste
+    à sa place, à l'intérieur de l'étau.
+  </div>
+
+  <div class="table-scroll">
+  <table>
+    <thead>
+      <tr><th>Affirmatif</th><th>Négatif</th><th>Sens</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="ar">كنكتب</td><td class="ar">ما كنكتبش</td><td><span class="translit">ma kanktebch</span> — je n'écris pas</td></tr>
+      <tr><td class="ar">كلا</td><td class="ar">ما كلاش</td><td><span class="translit">ma klach</span> — il n'a pas mangé</td></tr>
+      <tr><td class="ar">غادي نمشي</td><td class="ar">ما غاديش نمشي</td><td><span class="translit">ma ghadich nemchi</span> — je ne vais pas aller</td></tr>
+      <tr><td class="ar">عندي</td><td class="ar">ما عنديش</td><td><span class="translit">ma 3ndich</span> — je n'ai pas</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h3>Nier un nom ou un adjectif&nbsp;: <span class="translit">machi</span></h3>
+  <p>Devant un nom, un adjectif ou un pronom (pas un verbe), on utilise
+  <strong><span class="ar">ماشي</span> (<span class="translit">machi</span>)</strong>, « ne… pas / pas »&nbsp;:</p>
+  <ul class="puces-orient">
+    <li><span class="ar">ماشي كبير</span> — <span class="translit">machi kbir</span> — <em>pas grand</em></li>
+    <li><span class="ar">ماشي أنا</span> — <span class="translit">machi ana</span> — <em>ce n'est pas moi</em></li>
+    <li><span class="ar">ماشي بزاف</span> — <span class="translit">machi bezzaf</span> — <em>pas beaucoup</em></li>
+  </ul>
+
+  <div class="callout piege">
+    <span class="callout-titre">Piège — <span class="translit">ma…ch</span> ou <span class="translit">machi</span>&nbsp;?</span>
+    Verbe ⇒ on l'<strong>encadre</strong> par <span class="translit">ma…ch</span>
+    (<span class="translit">ma kanktebch</span>). Nom / adjectif ⇒ un seul mot devant,
+    <span class="translit">machi</span> (<span class="translit">machi kbir</span>). Ne mélange pas
+    les deux&nbsp;!
+  </div>
+
+  <h3>Interdire&nbsp;: « ne fais pas… »</h3>
+  <p>Pour l'ordre négatif, même étau <span class="translit">ma…ch</span> autour du verbe au présent
+  sans <span class="translit">ka-</span>&nbsp;:</p>
+  <ul class="puces-orient">
+    <li><span class="ar">ما تكتبش</span> — <span class="translit">ma tektebch</span> — <em>n'écris pas</em></li>
+    <li><span class="ar">ما تمشيش</span> — <span class="translit">ma temchich</span> — <em>ne pars pas</em></li>
+  </ul>
+
+  <!-- ============ BILAN ============ -->
+  <hr class="filet-or">
+  <div class="callout callout-retenir">
+    <span class="callout-titre">Bilan du chapitre</span>
+    Tu sais saluer et remercier, désigner les personnes (<span class="translit">ana, nta…</span>),
+    coller les possessifs (<span class="translit">dar-i, dar-ek…</span>), dire « j'ai »
+    (<span class="translit">3ndi</span>), conjuguer au présent (<span class="translit">ka-</span>),
+    au futur (<span class="translit">ghadi</span>) et nier (<span class="translit">ma…ch</span> /
+    <span class="translit">machi</span>). De quoi tenir tes premières vraies phrases — on les met
+    en scène au <a href="03-dialogues.html">Chapitre III</a>.
+  </div>
+
+  <div class="callout astuce">
+    <span class="callout-titre">Ta première phrase complète</span>
+    <span class="ar-xl">أنا ما عنديش الوقت، غادي نمشي</span><br>
+    <span class="translit">ana ma 3ndich lweqt, ghadi nemchi</span> — « moi, je n'ai pas le temps,
+    je vais y aller ». Tu y reconnais&nbsp;: pronom + « avoir » nié + futur. 🎉
+  </div>
+
+  <!-- Pied de page -->
+  <div class="pied-chapitre">
+    <a href="01-phonetique.html">← Chapitre I</a>
+    <span>Chapitre II · Bases</span>
+    <a href="03-dialogues.html">Chapitre III →</a>
+  </div>
+
+</main>
+</body>
+</html>
