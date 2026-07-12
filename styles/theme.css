@@ -1,0 +1,75 @@
+/* =====================================================================
+   PALAIS DU DARIJA — Design tokens
+   Palette : sable / beige / ivoire / pierre naturelle, touches discrètes
+   de rouge marocain et d'or. Polices : cursive calligraphique pour les
+   grands titres, serif élégant pour les intitulés, serif lisible pour
+   le corps de texte, Amiri pour l'arabe.
+   Consommé par app/globals.css via @import, mappé vers les tokens
+   Tailwind v4 par le bloc @theme inline.
+   ===================================================================== */
+
+:root {
+  /* ---------- Palette ---------- */
+  --color-ivoire: #fbf6ec;       /* fond principal, chaud et clair       */
+  --color-ivoire-voile: #f3ead9; /* fond de carte / section légèrement soutenu */
+  --color-sable: #ede0c8;        /* sable, fonds secondaires, cartes      */
+  --color-sable-fonce: #d9c6a0;  /* bordures, filets sur fond clair       */
+  --color-pierre: #b9ae9a;       /* pierre naturelle, dividers, muted     */
+  --color-pierre-fonce: #6e6656; /* texte secondaire sur fond clair       */
+
+  --color-nuit: #1e1912;         /* encre profonde, texte principal, titres */
+  --color-nuit-voile: #2a231a;   /* surfaces sombres (hall, nuit)         */
+  --color-nuit-profond: #14100c; /* fond très sombre (scènes nocturnes)   */
+
+  --color-or: #b8923e;           /* or, accents discrets                  */
+  --color-or-clair: #e4c77e;     /* or clair, lueur/highlight             */
+  --color-or-sombre: #8c6d2f;    /* or profond, bordures sur fond sombre  */
+
+  --color-rouge: #9e2b25;        /* rouge marocain, accents très discrets */
+  --color-rouge-sombre: #7a1f1b;
+
+  --color-emeraude: #2f6b58;     /* accent secondaire sourd (succès/progression) */
+  --color-emeraude-voile: #e4eeea;
+
+  /* ---------- Typographie (polices posées via next/font, variables CSS) ---------- */
+  --font-display: var(--font-cursive), "Brush Script MT", cursive;   /* grands titres calligraphiques */
+  --font-heading: var(--font-heading-serif), Georgia, serif;         /* intitulés de section          */
+  --font-body: var(--font-body-serif), Georgia, "Times New Roman", serif; /* corps de texte lisible   */
+  --font-arabic: var(--font-arabic-naskh), "Traditional Arabic", serif;   /* écriture arabe            */
+
+  /* ---------- Rayon / ombre communs ---------- */
+  --radius-palais: 14px;
+  --ombre-douce: 0 4px 28px rgba(30, 25, 18, 0.12);
+  --ombre-portee: 0 12px 48px rgba(20, 16, 12, 0.28);
+}
+
+/* Mappage vers les tokens Tailwind v4 (utilisables comme bg-ivoire, text-nuit, font-display, etc.) */
+@theme inline {
+  --color-ivoire: var(--color-ivoire);
+  --color-ivoire-voile: var(--color-ivoire-voile);
+  --color-sable: var(--color-sable);
+  --color-sable-fonce: var(--color-sable-fonce);
+  --color-pierre: var(--color-pierre);
+  --color-pierre-fonce: var(--color-pierre-fonce);
+
+  --color-nuit: var(--color-nuit);
+  --color-nuit-voile: var(--color-nuit-voile);
+  --color-nuit-profond: var(--color-nuit-profond);
+
+  --color-or: var(--color-or);
+  --color-or-clair: var(--color-or-clair);
+  --color-or-sombre: var(--color-or-sombre);
+
+  --color-rouge: var(--color-rouge);
+  --color-rouge-sombre: var(--color-rouge-sombre);
+
+  --color-emeraude: var(--color-emeraude);
+  --color-emeraude-voile: var(--color-emeraude-voile);
+
+  --font-display: var(--font-display);
+  --font-heading: var(--font-heading);
+  --font-body: var(--font-body);
+  --font-arabic: var(--font-arabic);
+
+  --radius-palais: var(--radius-palais);
+}
