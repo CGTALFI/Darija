@@ -22,6 +22,13 @@
   --or-clair:      #E7D6A6;
   --bleu-nuit:     #1C2E3A;   /* pour la couverture                  */
 
+  --bois:          #4A2E1F;   /* brun bois, panneaux de porte        */
+  --bois-clair:    #6B4530;   /* bois moyen, reliefs des planches    */
+  --bois-fonce:    #2E1B12;   /* bois très sombre, jointures/ombres  */
+  --laiton:        #C8A24A;   /* ferrures, alias sémantique de --or  */
+  --laiton-vif:    #E8C97A;   /* reflet chaud sur clous/heurtoir     */
+  --ombre-portail: 0 40px 90px rgba(20,10,4,.55), 0 8px 24px rgba(20,10,4,.35);
+
   --serif-titre:   'Cormorant Garamond', 'EB Garamond', Georgia, serif;
   --serif-corps:   'EB Garamond', Georgia, 'Times New Roman', serif;
   --arabe:         'Amiri', 'Scheherazade New', 'Traditional Arabic', serif;
@@ -82,14 +89,19 @@ body {
   justify-content: center;
   font-family: var(--serif-corps);
   font-size: 14px;
+  background: linear-gradient(180deg, var(--bois-clair), var(--bois));
+  padding: 10px 14px;
+  border-radius: 14px 14px 4px 4px;
+  box-shadow: 0 3px 10px rgba(20,10,4,.18);
 }
 .nav-livre a {
-  color: var(--vert);
+  color: var(--laiton-vif);
   text-decoration: none;
   padding: 5px 12px;
-  border: 1px solid var(--or-clair);
-  border-radius: 999px;
-  background: #fff8;
+  border: 1px solid var(--laiton);
+  border-top: 2px solid var(--laiton-vif);
+  border-radius: 4px 4px 999px 999px;
+  background: rgba(0,0,0,.18);
   transition: all .15s ease;
 }
 .nav-livre a:hover { background: var(--vert); color: #fff; border-color: var(--vert); }
@@ -158,16 +170,17 @@ a { color: var(--vert-clair); }
 .ornement {
   text-align: center;
   color: var(--or);
-  font-size: 22px;
+  font-size: 24px;
   letter-spacing: .5em;
   margin: 30px 0;
   user-select: none;
+  text-shadow: 0 1px 0 var(--laiton-vif);
 }
 .ornement::before { content: "۞  ❁  ۞"; }
 
 .filet-or { height: 2px; border: 0; background: linear-gradient(90deg, transparent, var(--or), transparent); margin: 34px 0; }
 
-/* médaillon numéroté d'ouverture de chapitre */
+/* médaillon numéroté d'ouverture de chapitre, niché dans une arche */
 .medaillon {
   width: 96px; height: 96px;
   margin: 0 auto 18px;
@@ -180,6 +193,23 @@ a { color: var(--vert-clair); }
   background:
     repeating-conic-gradient(from 0deg, var(--papier-2) 0deg 15deg, var(--papier) 15deg 30deg);
   box-shadow: inset 0 0 0 6px var(--papier), 0 2px 10px rgba(0,0,0,.06);
+  position: relative;
+  z-index: 1;
+}
+.medaillon::before {
+  content: "";
+  position: absolute;
+  left: 50%; bottom: -6px;
+  translate: -50% 0;
+  width: 148px; height: 168px;
+  z-index: -1;
+  background: linear-gradient(180deg, var(--papier-2), var(--or-clair) 120%);
+  border: 1px solid var(--laiton);
+  opacity: .55;
+  clip-path: url(#arc-fer-cheval);
+}
+@supports not (clip-path: url(#x)) {
+  .medaillon::before { clip-path: none; border-radius: 50% 50% 6px 6px / 45% 45% 0 0; }
 }
 
 .ouverture-chapitre { text-align: center; padding: 8px 0 4px; }
@@ -279,17 +309,147 @@ ul.puces-orient li::before { content: "❖"; position: absolute; left: 0; color:
 /* ---------- Pied de page chapitre ---------- */
 .pied-chapitre { margin-top: 50px; padding-top: 18px; border-top: 1px solid var(--or-clair); display: flex; justify-content: space-between; font-size: 14px; color: var(--encre-douce); font-family: var(--serif-titre); }
 .pied-chapitre a { text-decoration: none; }
+.pied-chapitre a:first-child { display: inline-flex; align-items: center; gap: 6px; }
+.pied-chapitre a:first-child::before,
+.retour-haut a::before {
+  content: "";
+  display: inline-block;
+  width: 13px; height: 18px;
+  border-radius: 7px 7px 2px 2px / 9px 9px 2px 2px;
+  background: linear-gradient(160deg, var(--bois-clair), var(--bois-fonce));
+  box-shadow: inset 0 0 0 1px var(--laiton);
+  vertical-align: middle;
+}
+.retour-haut a { display: inline-flex; align-items: center; gap: 6px; }
 
 /* squelette : marque « à compléter » */
 .a-completer { border: 1px dashed #C9BEA6; background: repeating-linear-gradient(45deg, transparent, transparent 10px, #F5EEDD 10px, #F5EEDD 20px); border-radius: var(--rayon); padding: 14px 18px; color: var(--encre-douce); font-style: italic; margin: 14px 0; }
 
-/* ---------- Sommaire (index) ---------- */
-.toc { list-style: none; padding: 0; margin: 10px 0; }
-.toc li { display: flex; align-items: baseline; gap: 10px; padding: 12px 4px; border-bottom: 1px dotted var(--or-clair); }
-.toc .toc-num { font-family: var(--serif-titre); font-size: 22px; color: var(--terre); width: 42px; flex: none; }
-.toc .toc-titre { font-family: var(--serif-titre); font-size: 21px; color: var(--vert); text-decoration: none; }
-.toc .toc-titre:hover { color: var(--terre); }
-.toc .toc-desc { display:block; font-size: 15px; color: var(--encre-douce); font-style: italic; }
+/* ---------- Portes des planches (recette commune) ---------- */
+.porte-planches {
+  background:
+    repeating-linear-gradient(90deg, var(--bois-clair) 0 3px, transparent 3px 46px),
+    repeating-linear-gradient(45deg, rgba(0,0,0,.12) 0 2px, transparent 2px 18px),
+    linear-gradient(160deg, var(--bois-clair), var(--bois) 55%, var(--bois-fonce));
+  position: absolute; inset: 0;
+}
+
+/* ---------- Portail d'entrée ---------- */
+.portail {
+  display: none;
+  position: fixed; inset: 0; z-index: 900;
+  align-items: center; justify-content: center;
+  flex-direction: column; gap: 22px;
+  background:
+    radial-gradient(circle at 50% 25%, #24404f 0%, var(--bleu-nuit) 60%, #0e1a22 100%);
+}
+html.portail-actif .portail { display: flex; }
+html.portail-actif { overflow: hidden; }
+.portail.is-caché { visibility: hidden; }
+.portail.is-ouvert { pointer-events: none; }
+
+.portail-scene { display: flex; flex-direction: column; align-items: center; gap: 18px; }
+.portail-cadre {
+  position: relative;
+  width: min(78vw, 420px); height: min(78vw, 560px);
+  perspective: 1600px;
+  filter: drop-shadow(var(--ombre-portail));
+}
+.porte-battant {
+  position: absolute; top: 0; bottom: 0; width: 50%;
+  border: 0; padding: 0; cursor: pointer;
+  transform-style: preserve-3d;
+  transition: transform .9s cubic-bezier(.62,.02,.18,1);
+}
+.porte-g { left: 0; transform-origin: left center; }
+.porte-d { right: 0; transform-origin: right center; }
+.portail.is-ouvert .porte-g { transform: rotateY(-108deg); }
+.portail.is-ouvert .porte-d { transform: rotateY(108deg); }
+.porte-battant .porte-planches { box-shadow: inset 0 0 0 2px var(--laiton); }
+.porte-g .porte-planches { border-radius: 0 0 0 4px; }
+.porte-d .porte-planches { border-radius: 0 0 4px 0; }
+
+.heurtoir {
+  position: absolute; top: 50%; left: 50%; translate: -50% -50%;
+  width: 46px; height: 46px; z-index: 2;
+  display: grid; place-items: center;
+  border-radius: 50%;
+  color: var(--bois-fonce);
+  font-size: 20px;
+  background: repeating-conic-gradient(from 0deg, var(--laiton-vif) 0deg 15deg, var(--laiton) 15deg 30deg);
+  box-shadow: inset 0 0 0 4px var(--bois-fonce), 0 2px 10px rgba(0,0,0,.4);
+  pointer-events: none;
+  animation: heurtoir-pulse 2.6s ease-in-out infinite;
+}
+@keyframes heurtoir-pulse {
+  0%, 100% { transform: scale(1); box-shadow: inset 0 0 0 4px var(--bois-fonce), 0 2px 10px rgba(0,0,0,.4); }
+  50% { transform: scale(1.08); box-shadow: inset 0 0 0 4px var(--bois-fonce), 0 2px 22px rgba(232,201,122,.65); }
+}
+
+.portail-invite { color: var(--laiton-vif); font-family: var(--serif-titre); font-style: italic; font-size: 16px; text-align: center; }
+
+@media (prefers-reduced-motion: reduce) {
+  .porte-battant { transition: none; }
+  .heurtoir { animation: none; }
+}
+
+/* ---------- Sommaire en portes (index) ---------- */
+.portes-sommaire {
+  list-style: none; margin: 26px 0; padding: 0;
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 28px 22px;
+}
+.portes-secondaires { margin-top: 8px; }
+.porte-chapitre {
+  display: flex; flex-direction: column; align-items: center; gap: 10px;
+  text-decoration: none; text-align: center;
+}
+.porte-cadre {
+  position: relative;
+  width: 100%; aspect-ratio: 3 / 4;
+  clip-path: url(#arc-fer-cheval);
+  background: var(--bois-fonce);
+  box-shadow: var(--ombre-page);
+  transition: box-shadow .25s ease, transform .25s ease;
+}
+@supports not (clip-path: url(#x)) {
+  .porte-cadre { clip-path: none; border-radius: 50% 50% 6px 6px / 45% 45% 0 0; }
+}
+.porte-petite .porte-cadre { aspect-ratio: 1 / 1; }
+.porte-vantail {
+  position: absolute; inset: 0; width: 50%;
+  overflow: hidden;
+  transform-style: preserve-3d;
+  transition: transform .35s ease;
+}
+.porte-vg { left: 0; transform-origin: left; }
+.porte-vd { right: 0; transform-origin: right; }
+.porte-medaillon {
+  position: absolute; top: 50%; left: 50%; translate: -50% -50%; z-index: 1;
+  width: 40px; height: 40px;
+  display: grid; place-items: center;
+  border-radius: 50%;
+  background: var(--laiton);
+  color: var(--bois-fonce);
+  font-family: var(--serif-titre); font-weight: 700; font-size: 17px;
+  box-shadow: 0 1px 4px rgba(0,0,0,.4);
+}
+.porte-titre { font-family: var(--serif-titre); font-size: 20px; color: var(--vert); }
+.porte-desc { font-size: 14px; color: var(--encre-douce); font-style: italic; }
+.porte-chapitre:hover .porte-cadre,
+.porte-chapitre:focus-visible .porte-cadre { transform: translateY(-4px); box-shadow: var(--ombre-portail); }
+.porte-chapitre:hover .porte-vg,
+.porte-chapitre:focus-visible .porte-vg { transform: rotateY(-22deg); }
+.porte-chapitre:hover .porte-vd,
+.porte-chapitre:focus-visible .porte-vd { transform: rotateY(22deg); }
+.porte-chapitre:hover .porte-titre,
+.porte-chapitre:focus-visible .porte-titre { color: var(--terre); }
+.porte-chapitre:focus-visible { outline: 3px solid var(--or); outline-offset: 6px; border-radius: 6px; }
+
+@media (prefers-reduced-motion: reduce) {
+  .porte-cadre, .porte-vantail { transition: none; }
+  .porte-chapitre:hover .porte-vg, .porte-chapitre:focus-visible .porte-vg,
+  .porte-chapitre:hover .porte-vd, .porte-chapitre:focus-visible .porte-vd { transform: none; }
+}
 
 /* ---------- Responsive ---------- */
 
@@ -340,15 +500,18 @@ ul.puces-orient li::before { content: "❖"; position: absolute; left: 0; color:
   thead th { padding: 9px 10px; font-size: 13px; }
   tbody td { padding: 8px 10px; }
 
-  /* Sommaire */
-  .toc li { flex-direction: column; gap: 4px; }
-  .toc .toc-num { width: auto; }
+  /* Sommaire en portes */
+  .portes-sommaire { grid-template-columns: repeat(2, 1fr); }
 
   /* Pied de chapitre */
   .pied-chapitre { flex-direction: column; gap: 6px; text-align: center; }
 
   /* Médaillon */
   .medaillon { width: 80px; height: 80px; font-size: 34px; }
+  .medaillon::before { width: 124px; height: 142px; }
+
+  /* Portail */
+  .portail-cadre { width: min(85vw, 340px); height: min(85vw, 460px); }
 
   /* Lettrine plus petite */
   .lettrine::first-letter { font-size: 3.2em; }
@@ -371,6 +534,10 @@ ul.puces-orient li::before { content: "❖"; position: absolute; left: 0; color:
   .couv-origines { font-size: 13px; }
 
   .medaillon { width: 64px; height: 64px; font-size: 28px; }
+  .medaillon::before { width: 100px; height: 114px; }
+
+  /* Sommaire en portes */
+  .portes-sommaire { grid-template-columns: 1fr; }
 
   .callout { padding: 14px 14px 14px 40px; font-size: 15px; }
   .callout::before { left: 10px; font-size: 20px; }

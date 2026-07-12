@@ -43,6 +43,7 @@
   .fiche-son,
   .callout,
   .exo,
+  .porte-chapitre,
   table,
   figure { page-break-inside: avoid; }
 
