@@ -30,6 +30,12 @@
   --ombre-portail: 0 40px 90px rgba(20,10,4,.55), 0 8px 24px rgba(20,10,4,.35);
   --ratio-porte:   0.7235;    /* rapport largeur/hauteur de l'arche polylobée #arc-fer-cheval */
 
+  /* Thème de module par chapitre — replis vers les tokens globaux,
+     redéfinis par chapitre via body[data-module="…"] (voir plus bas) */
+  --m-accent:      var(--vert);
+  --m-accent-2:    var(--terre);
+  --m-voile:       color-mix(in srgb, var(--m-accent) 12%, var(--papier));
+
   --serif-titre:   'Cormorant Garamond', 'EB Garamond', Georgia, serif;
   --serif-corps:   'EB Garamond', Georgia, 'Times New Roman', serif;
   --arabe:         'Amiri', 'Scheherazade New', 'Traditional Arabic', serif;
@@ -117,7 +123,7 @@ h1, h2, h3, h4 { font-family: var(--serif-titre); color: var(--vert); font-weigh
   font-size: 15px;
   letter-spacing: .32em;
   text-transform: uppercase;
-  color: var(--terre);
+  color: var(--m-accent-2);
   margin-bottom: 6px;
 }
 
@@ -188,7 +194,7 @@ a { color: var(--vert-clair); }
   display: grid; place-items: center;
   border-radius: 50%;
   border: 2px solid var(--or);
-  color: var(--vert);
+  color: var(--m-accent);
   font-family: var(--serif-titre);
   font-size: 40px; font-weight: 600;
   background:
@@ -230,8 +236,8 @@ a { color: var(--vert-clair); }
   font-size: 24px; line-height: 1;
 }
 
-.callout-retenir { background: var(--vert-voile); border-left: 4px solid var(--vert); }
-.callout-retenir .callout-titre { color: var(--vert); }
+.callout-retenir { background: var(--m-voile); border-left: 4px solid var(--m-accent); }
+.callout-retenir .callout-titre { color: var(--m-accent); }
 .callout-retenir::before { content: "📌"; }
 
 .astuce { background: #FBF3D9; border-left: 4px solid var(--or); }
@@ -278,7 +284,7 @@ a { color: var(--vert-clair); }
 /* ---------- Tableaux ---------- */
 table { width: 100%; border-collapse: collapse; margin: 22px 0; font-size: 16px; background: #fff; border-radius: var(--rayon); overflow: hidden; box-shadow: 0 1px 6px rgba(42,39,36,.05); }
 thead th {
-  background: var(--vert);
+  background: var(--m-accent);
   color: #fff;
   font-family: var(--serif-titre);
   font-weight: 600;
@@ -298,9 +304,9 @@ caption { caption-side: top; text-align: left; font-family: var(--serif-titre); 
 
 /* ---------- Exercices ---------- */
 .exo { background: #fff; border: 1px dashed var(--or); border-radius: var(--rayon); padding: 16px 20px; margin: 20px 0; }
-.exo .exo-num { font-family: var(--serif-titre); color: var(--terre); font-weight: 700; }
-.corrige { background: var(--vert-voile); border-radius: 6px; padding: 12px 16px; margin-top: 10px; font-size: 15px; }
-.corrige summary { cursor: pointer; font-family: var(--serif-titre); font-weight: 600; color: var(--vert); }
+.exo .exo-num { font-family: var(--serif-titre); color: var(--m-accent-2); font-weight: 700; }
+.corrige { background: var(--m-voile); border-radius: 6px; padding: 12px 16px; margin-top: 10px; font-size: 15px; }
+.corrige summary { cursor: pointer; font-family: var(--serif-titre); font-weight: 600; color: var(--m-accent); }
 
 /* ---------- Listes ---------- */
 ul.puces-orient { list-style: none; padding-left: 0; }
@@ -499,6 +505,79 @@ html.portail-actif { overflow: hidden; }
   .porte-cadre, .porte-vantail { transition: none; }
   .porte-chapitre:hover .porte-vg, .porte-chapitre:focus-visible .porte-vg,
   .porte-chapitre:hover .porte-vd, .porte-chapitre:focus-visible .porte-vd { transform: none; }
+}
+
+/* =====================================================================
+   MODULES PAR CHAPITRE — un univers par porte, toujours dans le palais
+   ===================================================================== */
+body[data-module="phon"]    { --m-accent:#0E5A54; --m-accent-2:#2F8F9E; }
+body[data-module="bases"]   { --m-accent:#8A5A2B; --m-accent-2:#C8A24A; }
+body[data-module="dial"]    { --m-accent:#7A3B8C; --m-accent-2:#B8503A; }
+body[data-module="culture"] { --m-accent:#1C2E3A; --m-accent-2:#B8503A; }
+body[data-module="exo"]     { --m-accent:#3C6E47; --m-accent-2:#C8A24A; }
+body[data-module="ecriture"]{ --m-accent:#4A2E1F; --m-accent-2:#C8A24A; }
+body[data-module="res"]     { --m-accent:#2F6B57; --m-accent-2:#D98C3D; }
+
+/* apparition douce d'une page de chapitre thématisée à l'arrivée */
+@keyframes arrivee-page { from { opacity:0; transform:scale(.985); } to { opacity:1; transform:none; } }
+@keyframes lueur-arrivee { 0% { opacity:0; } 40% { opacity:.35; } 100% { opacity:0; } }
+body[data-module] .page { animation: arrivee-page .5s ease-out both; }
+body[data-module] .ouverture-chapitre { position: relative; z-index: 1; }
+body[data-module] .ouverture-chapitre::before {
+  content: ""; position: absolute; top: -20px; left: 50%; translate: -50% 0;
+  width: 220px; height: 220px; border-radius: 50%; z-index: 0; pointer-events: none;
+  background: radial-gradient(circle, var(--m-accent-2) 0%, transparent 70%);
+  opacity: 0; animation: lueur-arrivee .8s ease-out .1s both;
+}
+@media (prefers-reduced-motion: reduce) {
+  body[data-module] .page,
+  body[data-module] .ouverture-chapitre::before { animation: none; }
+}
+
+/* ---------- Transition de porte (sommaire → chapitre) ---------- */
+.porte-transition {
+  display: block;
+  position: fixed; inset: 0; z-index: 950;
+  pointer-events: none;
+}
+.pt-vantail {
+  position: absolute; top: 0; bottom: 0; width: 50%;
+  transition: transform .5s cubic-bezier(.62,.02,.18,1);
+}
+.pt-vantail .porte-planches::after {
+  content: ""; position: absolute; inset: 0;
+  background: var(--m-accent, var(--vert)); mix-blend-mode: multiply; opacity: .55;
+}
+.pt-vg { left: 0; transform: translateX(-100%); }
+.pt-vd { right: 0; transform: translateX(100%); }
+.porte-transition.is-active .pt-vg,
+.porte-transition.is-active .pt-vd { transform: translateX(0); }
+
+.pt-lumiere {
+  position: absolute; top: 50%; left: 50%; translate: -50% -50%;
+  width: 36px; height: 36px; z-index: 3; border-radius: 50%;
+  background: radial-gradient(circle, #fff 0%, var(--m-accent-2, var(--laiton-vif)) 35%, transparent 72%);
+  opacity: 0; pointer-events: none;
+}
+.porte-transition.is-active .pt-lumiere { animation: lumiere-eclat 1.1s ease-out .2s both; }
+
+.pt-paillettes { position: absolute; top: 50%; left: 50%; width: 3px; height: 3px; z-index: 3; border-radius: 50%; background: transparent; pointer-events: none; opacity: 0; }
+.pt-paillettes-1 { box-shadow:
+  -58px -74px 0 1px var(--m-accent-2, var(--laiton-vif)), 44px -102px 0 0 #fff,
+  92px -38px 0 1px var(--m-accent-2, var(--laiton-vif)), -96px -12px 0 0 #fff,
+  18px -128px 0 0 var(--m-accent-2, var(--laiton-vif)), -28px -110px 0 1px #fff,
+  70px 20px 0 0 var(--m-accent-2, var(--laiton-vif)), -70px 24px 0 1px #fff; }
+.pt-paillettes-2 { box-shadow:
+  68px -66px 0 0 #fff, -80px -46px 0 1px var(--m-accent-2, var(--laiton-vif)),
+  8px -96px 0 1px #fff, -46px -122px 0 0 var(--m-accent-2, var(--laiton-vif)),
+  100px -92px 0 0 #fff, 30px 40px 0 1px var(--m-accent-2, var(--laiton-vif)),
+  -100px 46px 0 0 #fff; }
+.porte-transition.is-active .pt-paillettes-1 { animation: paillette-scintille .9s ease-out .3s both; }
+.porte-transition.is-active .pt-paillettes-2 { animation: paillette-scintille 1s ease-out .45s both; }
+
+@media (prefers-reduced-motion: reduce) {
+  .pt-vantail { transition: none; }
+  .pt-lumiere, .pt-paillettes { animation: none !important; }
 }
 
 /* ---------- Responsive ---------- */

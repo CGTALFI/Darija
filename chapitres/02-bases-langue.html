@@ -15,10 +15,35 @@
   /* petit tableau de conjugaison mis en valeur */
   .conj th { background: var(--terre); }
   .conj td:first-child { font-family: var(--serif-titre); color: var(--terre); font-weight: 600; white-space: nowrap; }
-  .pilule { display:inline-block; background:var(--vert-voile); color:var(--vert); border:1px solid #bcd8d0; border-radius:999px; padding:2px 12px; font-family:var(--serif-titre); font-weight:600; font-size:15px; margin:2px; }
+
+  /* ---------- Module « L'Atelier du Bâtisseur » ---------- */
+  .pilule {
+    display:inline-block; background:var(--terre-voile); color:var(--m-accent);
+    border:1px solid var(--m-accent-2); border-radius:3px;
+    padding:2px 12px; font-family:var(--serif-titre); font-weight:600; font-size:15px; margin:2px;
+  }
+  .ouverture-chapitre::after {
+    content:"";
+    position:absolute; top:-4px; left:50%; translate:-50% 0;
+    width:100%; max-width:360px; height:54px; z-index:-1;
+    background-image:
+      linear-gradient(rgba(138,90,43,.22) 2px, transparent 2px),
+      linear-gradient(90deg, rgba(138,90,43,.22) 2px, transparent 2px);
+    background-size: 46px 24px, 46px 24px;
+    -webkit-mask-image: linear-gradient(to bottom, black, transparent);
+            mask-image: linear-gradient(to bottom, black, transparent);
+    opacity:.9;
+  }
+  .medaillon::after {
+    content:"";
+    position:absolute; top:100%; left:50%; translate:-50% 8px;
+    width:92px; height:9px;
+    background: repeating-linear-gradient(90deg, var(--m-accent) 0 20px, var(--m-accent-2) 20px 22px);
+    opacity:.8;
+  }
 </style>
 </head>
-<body>
+<body data-module="bases">
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <defs>

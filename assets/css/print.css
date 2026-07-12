@@ -1,6 +1,13 @@
 /* =====================================================================
    MANUEL DE DARIJA — Feuille de style d'impression (export PDF)
    Format livre A4, en-têtes courants, sauts de page maîtrisés.
+
+   Depuis que chaque chapitre est un module indépendant (chapitres/*.html
+   est la seule version, index.html n'a plus l'édition intégrale en une
+   page), l'impression se fait chapitre par chapitre, depuis sa propre
+   page. Idée pour plus tard, hors-scope ici : une page impression.html
+   qui irait chercher (fetch) le contenu des 7 chapitres pour proposer de
+   nouveau un export PDF complet en un clic.
    ===================================================================== */
 
 @page {
@@ -68,4 +75,9 @@
   details > summary { list-style: none; }
   details[open] .corrige,
   details .corrige { display: block; }
+
+  /* pas d'animation d'arrivée figée en cours de fondu sur le papier */
+  body[data-module] .page,
+  body[data-module] .ouverture-chapitre::before,
+  .ouverture-chapitre::after { animation: none !important; opacity: 1 !important; transform: none !important; }
 }

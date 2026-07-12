@@ -14,12 +14,36 @@
 <style>
   .alpha-grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(120px,1fr)); gap:10px; margin:20px 0; }
   .alpha-cell { background:#fff; border:1px solid #E7DcC4; border-radius:var(--rayon); text-align:center; padding:12px 6px; box-shadow:0 1px 6px rgba(42,39,36,.05); }
-  .alpha-cell .g { font-family:var(--arabe); font-size:40px; color:var(--vert); line-height:1; }
+  .alpha-cell .g { font-family:var(--arabe); font-size:40px; color:var(--m-accent); line-height:1; }
   .alpha-cell .n { font-size:13px; color:var(--encre-douce); margin-top:6px; }
-  .alpha-cell .z { font-weight:600; color:var(--terre); }
+  .alpha-cell .z { font-weight:600; color:var(--m-accent-2); }
+
+  /* ---------- Module « Le Cabinet du Calligraphe » ---------- */
+  .alpha-grid { position: relative; }
+  .alpha-grid::before {
+    content:"";
+    position:absolute; inset:-4px; z-index:-1;
+    background-image: repeating-linear-gradient(0deg, rgba(74,46,31,.09) 0 1px, transparent 1px 34px);
+  }
+  .ouverture-chapitre::after {
+    content:"";
+    position:absolute; top:100%; left:50%; translate:-50% 14px;
+    width:150px; height:30px; z-index:0;
+    background:
+      radial-gradient(ellipse 64px 7px at 28% 55%, rgba(74,46,31,.4), transparent 72%),
+      radial-gradient(ellipse 40px 6px at 68% 40%, rgba(200,162,74,.4), transparent 72%);
+    opacity:.85;
+  }
+  .medaillon::after {
+    content:"";
+    position:absolute; top:100%; left:50%; translate:-50% 8px;
+    width:92px; height:9px;
+    background: repeating-linear-gradient(90deg, var(--m-accent) 0 14px, var(--m-accent-2) 14px 16px);
+    opacity:.85;
+  }
 </style>
 </head>
-<body>
+<body data-module="ecriture">
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <defs>
