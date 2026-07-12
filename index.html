@@ -6,7 +6,7 @@
 <meta name="theme-color" content="#0E5A54">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<title>Manuel de Darija — Couverture & Sommaire</title>
+<title>Manuel de Darija — Édition complète en une page</title>
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 <link rel="manifest" href="manifest.json">
 <link rel="stylesheet" href="assets/css/book.css">
@@ -41,8 +41,6 @@
   .couv-etoile { color: var(--or); font-size: 20px; letter-spacing:.6em; margin: 18px 0; }
   .couv-origines { font-size: 15px; color: #cfc4ac; letter-spacing:.06em; }
   .couv-origines span { color: var(--or-clair); }
-
-  /* motif zellige discret en bas de couverture */
   .zellige {
     position:absolute; left:0; right:0; bottom:0; height: 60px;
     background:
@@ -50,13 +48,84 @@
       repeating-linear-gradient(-45deg, transparent 0 14px, rgba(200,162,74,.10) 14px 15px);
     opacity:.7;
   }
+
+  /* --- Navigation unique (page unique, ancres) --- */
+  .nav-livre a[href^="#"] { }
+
+  /* --- Chapitre I : schémas --- */
+  figure { margin: 26px 0; text-align: center; }
+  figure svg { max-width: 100%; height: auto; background: #fff; border: 1px solid #E7DcC4; border-radius: var(--rayon); box-shadow: 0 1px 6px rgba(42,39,36,.05); }
+  figcaption { font-family: var(--serif-titre); font-style: italic; color: var(--encre-douce); font-size: 15px; margin-top: 8px; }
+  .svg-lbl { font: 13px 'EB Garamond', serif; fill: var(--encre); }
+  .svg-lbl-b { font: 600 13px 'EB Garamond', serif; fill: var(--vert); }
+  .svg-lead { stroke: var(--encre-douce); stroke-width: 1; fill: none; }
+  .svg-dot { fill: var(--terre); }
+  .mini-svg { width: 120px; height: 120px; }
+  .zone-strip text { font: 600 11px 'EB Garamond', serif; }
+
+  /* --- Chapitre II : conjugaison --- */
+  .conj th { background: var(--terre); }
+  .conj td:first-child { font-family: var(--serif-titre); color: var(--terre); font-weight: 600; white-space: nowrap; }
+  .pilule { display:inline-block; background:var(--vert-voile); color:var(--vert); border:1px solid #bcd8d0; border-radius:999px; padding:2px 12px; font-family:var(--serif-titre); font-weight:600; font-size:15px; margin:2px; }
+
+  /* --- Chapitre III : dialogues --- */
+  .dialogue { background:#fff; border:1px solid #E7DcC4; border-radius:var(--rayon); padding:10px 22px; margin:18px 0; box-shadow:0 1px 6px rgba(42,39,36,.05); break-inside:avoid; }
+  .dialogue .titre-scene { font-family:var(--serif-titre); font-style:italic; color:var(--encre-douce); font-size:15px; margin:8px 0 4px; }
+  .dialogue .ligne { display:grid; grid-template-columns:74px 1fr; gap:12px; padding:10px 0; border-bottom:1px dotted var(--or-clair); align-items:start; }
+  .dialogue .ligne:last-child { border-bottom:0; }
+  .dialogue .qui { font-family:var(--serif-titre); font-weight:600; color:var(--terre); padding-top:2px; }
+  .dialogue .ar { display:block; font-size:1.35em; direction:rtl; text-align:right; line-height:1.5; }
+  .dialogue .translit { display:block; font-size:.95em; }
+  .dialogue .fr { display:block; color:var(--encre-douce); font-style:italic; font-size:.92em; }
+  .registre { display:inline-block; font-family:var(--serif-titre); font-size:13px; letter-spacing:.08em; text-transform:uppercase; color:#fff; background:var(--vert); border-radius:999px; padding:3px 12px; margin-left:6px; vertical-align:middle; }
+  .registre.fam { background:var(--terre); }
+  .registre.pro { background:var(--bleu-nuit); }
+  .registre.inc { background:#7A5C99; }
+
+  /* --- Chapitre IV : histoire / villes --- */
+  .timeline th { background: var(--terre); }
+  .timeline td:first-child { font-family:var(--serif-titre); font-weight:600; color:var(--terre); white-space:nowrap; }
+  .villes { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:14px; margin:18px 0; }
+  .ville { background:#fff; border:1px solid #E7DcC4; border-radius:var(--rayon); padding:14px 16px; box-shadow:0 1px 6px rgba(42,39,36,.05); }
+  .ville h4 { margin:0 0 6px; }
+  .ville .ar { font-size:1.2em; color:var(--or); }
+  .ville p { font-size:14px; color:var(--encre-douce); margin:0; }
+
+  /* --- Chapitre V : exercices --- */
+  .exo ol { margin:8px 0 0; padding-left:22px; }
+  .exo ol li { margin:6px 0; }
+  .exo .consigne { font-style:italic; color:var(--encre-douce); }
+  .corrige ol { margin:8px 0 0; padding-left:22px; }
+  .corrige li { margin:5px 0; }
+  .badge-serie { display:inline-block; background:var(--vert); color:#fff; font-family:var(--serif-titre); font-size:14px; letter-spacing:.06em; border-radius:999px; padding:3px 14px; }
+
+  /* --- Annexe Écriture --- */
+  .alpha-grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(120px,1fr)); gap:10px; margin:20px 0; }
+  .alpha-cell { background:#fff; border:1px solid #E7DcC4; border-radius:var(--rayon); text-align:center; padding:12px 6px; box-shadow:0 1px 6px rgba(42,39,36,.05); }
+  .alpha-cell .g { font-family:var(--arabe); font-size:40px; color:var(--vert); line-height:1; }
+  .alpha-cell .n { font-size:13px; color:var(--encre-douce); margin-top:6px; }
+  .alpha-cell .z { font-weight:600; color:var(--terre); }
+  .formes-table .ar { font-size:1.5em; }
+  .non-liante { background: var(--terre-voile) !important; }
+
+  /* --- Ressources --- */
+  .res-card { background:#fff; border:1px solid #E7DcC4; border-radius:var(--rayon); padding:14px 18px; margin:14px 0; box-shadow:0 1px 6px rgba(42,39,36,.05); }
+  .res-card h4 { margin:0 0 4px; }
+  .res-card .res-lien { font-size:14px; }
+  .res-card .res-desc { font-size:15px; color:var(--encre-douce); margin:4px 0 0; }
+
+  /* --- Section-title médaillon (remplace nav inter-chapitre) --- */
+  .section-sep { text-align:center; margin:60px 0 10px; }
+  .retour-haut { display:block; text-align:center; margin-top:40px; }
+  .retour-haut a { font-family:var(--serif-titre); font-size:14px; color:var(--encre-douce); text-decoration:none; border-bottom:1px dotted var(--or); }
+  .retour-haut a:hover { color:var(--vert); }
 </style>
 </head>
 <body>
 
 <!-- ======================= COUVERTURE ======================= -->
-<section class="couverture">
-  <div class="couv-sur">Méthode personnelle · Édition vivante</div>
+<section class="couverture" id="couverture">
+  <div class="couv-sur">Méthode personnelle · Édition vivante · Édition intégrale en une page</div>
   <div class="couv-ar">الدارجة</div>
   <h1 class="couv-titre">Manuel de Darija</h1>
   <div class="couv-sous">l'arabe marocain, du son à la parole</div>
@@ -68,8 +137,20 @@
   <div class="zellige"></div>
 </section>
 
+<!-- ======================= NAVIGATION UNIQUE (ANCRES) ======================= -->
+<nav class="nav-livre no-print">
+  <a href="#sommaire">✦ Sommaire</a>
+  <a href="#chapitre-1">I · Phonétique</a>
+  <a href="#chapitre-2">II · Bases</a>
+  <a href="#chapitre-3">III · Dialogues</a>
+  <a href="#chapitre-4">IV · Culture</a>
+  <a href="#chapitre-5">V · Exercices</a>
+  <a href="#ecriture">✒ Écriture</a>
+  <a href="#ressources">☆ Ressources</a>
+</nav>
+
 <!-- ======================= SOMMAIRE ======================= -->
-<main class="page">
+<main class="page" id="sommaire">
 
   <div class="ouverture-chapitre">
     <span class="chapitre-num">Table des matières</span>
@@ -77,54 +158,62 @@
     <div class="ornement"></div>
   </div>
 
+  <div class="callout callout-retenir">
+    <span class="callout-titre">Édition en une seule page</span>
+    Cette version rassemble <strong>l'intégralité du manuel</strong> — couverture, sept chapitres
+    et annexes — dans un seul fichier, sans aucun renvoi externe. Utilise la navigation ci-dessus
+    ou les liens ci-dessous pour te déplacer par ancre&nbsp;; <kbd>Ctrl/Cmd+F</kbd> fonctionne aussi
+    sur tout le contenu à la fois.
+  </div>
+
   <ol class="toc">
     <li>
       <span class="toc-num">I</span>
       <span>
-        <a class="toc-titre" href="chapitres/01-phonetique.html">Phonétique du darija</a>
+        <a class="toc-titre" href="#chapitre-1">Phonétique du darija</a>
         <span class="toc-desc">Appareil phonatoire, lieux &amp; modes d'articulation, consonnes, emphatiques, voyelles, lettres-chiffres, pièges &amp; exercices.</span>
       </span>
     </li>
     <li>
       <span class="toc-num">II</span>
       <span>
-        <a class="toc-titre" href="chapitres/02-bases-langue.html">Les bases de la langue</a>
+        <a class="toc-titre" href="#chapitre-2">Les bases de la langue</a>
         <span class="toc-desc">Salutations, pronoms, présent, futur, négation.</span>
       </span>
     </li>
     <li>
       <span class="toc-num">III</span>
       <span>
-        <a class="toc-titre" href="chapitres/03-dialogues.html">Dialogues</a>
+        <a class="toc-titre" href="#chapitre-3">Dialogues</a>
         <span class="toc-desc">Entre amis, en famille, entre collègues, entre inconnus.</span>
       </span>
     </li>
     <li>
       <span class="toc-num">IV</span>
       <span>
-        <a class="toc-titre" href="chapitres/04-culture.html">Culture marocaine</a>
+        <a class="toc-titre" href="#chapitre-4">Culture marocaine</a>
         <span class="toc-desc">Histoire, géographie, géopolitique, linguistique, gastronomie, culture.</span>
       </span>
     </li>
     <li>
       <span class="toc-num">V</span>
       <span>
-        <a class="toc-titre" href="chapitres/05-exercices.html">Exercices &amp; corrigés</a>
+        <a class="toc-titre" href="#chapitre-5">Exercices &amp; corrigés</a>
         <span class="toc-desc">Auto-évaluation, révisions, corrigés détaillés.</span>
       </span>
     </li>
     <li>
       <span class="toc-num">✒</span>
       <span>
-        <a class="toc-titre" href="chapitres/annexe-ecriture.html">Annexe — Écriture &amp; calligraphie</a>
-        <span class="toc-desc">L'alphabet arabe, le sens de l'écriture, initiation à la calligraphie.</span>
+        <a class="toc-titre" href="#ecriture">Annexe — Écriture &amp; calligraphie</a>
+        <span class="toc-desc">Alphabet complet (28 lettres), formes liées isolée/initiale/médiane/finale, harakat, initiation à la calligraphie.</span>
       </span>
     </li>
     <li>
       <span class="toc-num">☆</span>
       <span>
-        <a class="toc-titre" href="chapitres/ressources.html">Ressources pour apprendre</a>
-        <span class="toc-desc">Chaînes vidéo, sites, comptes Instagram &amp; Facebook, applications.</span>
+        <a class="toc-titre" href="#ressources">Ressources pour apprendre</a>
+        <span class="toc-desc">Chaînes vidéo, sites, comptes Instagram, podcasts, applications.</span>
       </span>
     </li>
   </ol>
@@ -166,16 +255,2339 @@
   </div>
 
   <p style="text-align:center; margin-top:34px;">
-    <a href="chapitres/01-phonetique.html" style="display:inline-block; background:var(--vert); color:#fff; text-decoration:none; padding:12px 26px; border-radius:999px; font-family:var(--serif-titre); font-size:18px;">
+    <a href="#chapitre-1" style="display:inline-block; background:var(--vert); color:#fff; text-decoration:none; padding:12px 26px; border-radius:999px; font-family:var(--serif-titre); font-size:18px;">
       Commencer par le Chapitre I &nbsp;→
     </a>
   </p>
 
-  <div class="pied-chapitre">
-    <span>Manuel de Darija</span>
-    <span>الدارجة</span>
+  <!-- ============================================================ -->
+  <!-- ===================== CHAPITRE I ============================ -->
+  <!-- ============================================================ -->
+  <hr class="filet-or">
+  <div class="ouverture-chapitre" id="chapitre-1">
+    <div class="medaillon">I</div>
+    <span class="chapitre-num">Chapitre premier</span>
+    <h1 class="titre-chapitre">Phonétique du darija</h1>
+    <p class="couv-ar" style="color:var(--or); font-family:var(--arabe); font-size:40px; direction:rtl;">الأصوات</p>
+    <div class="ornement"></div>
   </div>
-</main>
 
+  <p class="chapeau">Avant de parler, il faut entendre&nbsp;; et avant d'entendre juste, il faut
+  savoir <em>où</em> et <em>comment</em> naît chaque son. Le darija possède une poignée de sons
+  que le français ignore&nbsp;: des consonnes de gorge, des emphatiques, une petite voyelle
+  passe-partout. Ce chapitre te donne l'oreille et la bouche pour les produire.</p>
+
+  <div class="callout callout-retenir">
+    <span class="callout-titre">L'idée directrice</span>
+    Un son, c'est de l'air mis en forme. En déplaçant la <strong>langue</strong>, les
+    <strong>lèvres</strong> et le <strong>voile du palais</strong>, on sculpte le souffle qui
+    sort des poumons. Apprendre la phonétique, c'est apprendre cette gymnastique invisible.
+  </div>
+
+  <!-- ============ 1. ANATOMIE ============ -->
+  <h2>1 · L'appareil phonatoire</h2>
+  <p class="lettrine">Tous les sons de la parole se fabriquent sur le trajet de l'air, des
+  poumons jusqu'aux lèvres. On appelle ce trajet le <strong>conduit vocal</strong>. Voici,
+  en coupe, les organes que tu vas solliciter&nbsp;: repère-les, tu les retrouveras dans chaque
+  fiche de son.</p>
+
+  <figure>
+    <svg viewBox="0 0 720 540" role="img" aria-label="Coupe sagittale de l'appareil phonatoire">
+      <!-- cavités -->
+      <path d="M180,60 C300,50 470,70 500,130 C510,150 505,175 480,185
+               C520,200 545,235 545,275 C545,330 520,375 500,410
+               C495,470 470,510 430,515 L250,515 C210,510 190,470 195,420
+               C150,410 120,360 120,300 C120,210 140,110 180,60 Z"
+            fill="#FCF7EA" stroke="#E7DcC4" stroke-width="2"/>
+
+      <!-- cavité nasale -->
+      <path d="M205,95 C300,85 430,100 470,140 L470,170 C420,150 300,150 210,165 Z"
+            fill="#EAF0F4" stroke="#cbd6dd"/>
+      <text class="svg-lbl-b" x="250" y="120">Cavité nasale</text>
+
+      <!-- palais dur -->
+      <path d="M215,185 C300,175 400,180 460,195 L460,205 C400,192 300,190 220,200 Z"
+            fill="#E7D6A6"/>
+      <!-- voile / vélum -->
+      <path d="M460,195 C500,200 515,215 512,240 C510,258 495,262 478,255 C470,235 465,212 460,205 Z"
+            fill="#B8503A" opacity=".55"/>
+      <!-- luette -->
+      <path d="M495,258 c6,10 4,22 -3,26 c-7,-4 -8,-16 -3,-26 Z" fill="#B8503A"/>
+
+      <!-- langue -->
+      <path d="M235,300 C300,255 380,255 440,285 C475,305 470,360 430,395
+               C360,420 280,415 240,395 C210,380 205,325 235,300 Z"
+            fill="#D98C7A" stroke="#B8503A" stroke-width="1.5"/>
+      <!-- zones de la langue -->
+      <text class="svg-lbl" x="250" y="300" style="font-style:italic;">apex</text>
+      <text class="svg-lbl" x="330" y="300" style="font-style:italic;">dos</text>
+      <text class="svg-lbl" x="420" y="330" style="font-style:italic;">racine</text>
+
+      <!-- dents + alvéoles + lèvres -->
+      <rect x="205" y="205" width="14" height="26" rx="3" fill="#fff" stroke="#ccc"/>
+      <rect x="205" y="250" width="14" height="24" rx="3" fill="#fff" stroke="#ccc"/>
+      <path d="M188,205 C176,215 176,265 190,278 L205,274 L205,232 Z" fill="#E8A" opacity=".5"/>
+
+      <!-- pharynx / larynx / glotte -->
+      <path d="M470,300 C500,320 500,410 480,470" fill="none" stroke="#cbb" stroke-width="18" stroke-linecap="round" opacity=".45"/>
+      <circle cx="486" cy="450" r="9" class="svg-dot"/>
+
+      <!-- épiglotte -->
+      <path d="M455,420 c14,-4 24,4 22,16 c-10,4 -20,-2 -22,-16 Z" fill="#B8503A" opacity=".7"/>
+
+      <!-- ===== étiquettes avec lignes de rappel ===== -->
+      <!-- lèvres -->
+      <line class="svg-lead" x1="150" y1="245" x2="188" y2="240"/>
+      <text class="svg-lbl-b" x="70" y="248">Lèvres</text>
+      <!-- dents -->
+      <line class="svg-lead" x1="150" y1="215" x2="205" y2="215"/>
+      <text class="svg-lbl-b" x="86" y="200">Dents</text>
+      <!-- alvéoles -->
+      <line class="svg-lead" x1="250" y1="230" x2="238" y2="205"/>
+      <text class="svg-lbl-b" x="215" y="245">Alvéoles</text>
+      <!-- palais dur -->
+      <line class="svg-lead" x1="360" y1="188" x2="360" y2="150"/>
+      <text class="svg-lbl-b" x="315" y="145">Palais dur</text>
+      <!-- voile du palais -->
+      <line class="svg-lead" x1="490" y1="230" x2="560" y2="205"/>
+      <text class="svg-lbl-b" x="560" y="200">Voile du palais</text>
+      <text class="svg-lbl" x="560" y="216">(vélum)</text>
+      <!-- luette -->
+      <line class="svg-lead" x1="497" y1="280" x2="575" y2="270"/>
+      <text class="svg-lbl-b" x="575" y="266">Luette</text>
+      <text class="svg-lbl" x="575" y="282">(uvule)</text>
+      <!-- pharynx -->
+      <line class="svg-lead" x1="490" y1="360" x2="575" y2="360"/>
+      <text class="svg-lbl-b" x="575" y="356">Pharynx</text>
+      <!-- épiglotte -->
+      <line class="svg-lead" x1="470" y1="430" x2="575" y2="420"/>
+      <text class="svg-lbl-b" x="575" y="416">Épiglotte</text>
+      <!-- larynx / glotte -->
+      <line class="svg-lead" x1="486" y1="450" x2="575" y2="470"/>
+      <text class="svg-lbl-b" x="575" y="466">Larynx / glotte</text>
+      <!-- langue -->
+      <line class="svg-lead" x1="330" y1="360" x2="330" y2="470"/>
+      <text class="svg-lbl-b" x="300" y="486">Langue</text>
+    </svg>
+    <figcaption>Coupe sagittale (profil) du conduit vocal — les organes de la parole.</figcaption>
+  </figure>
+
+  <div class="callout astuce">
+    <span class="callout-titre">Astuce</span>
+    Passe le bout de ta langue de tes dents vers l'arrière du palais&nbsp;: tu sens d'abord les
+    <strong>alvéoles</strong> (la petite bosse derrière les dents), puis le <strong>palais dur</strong>
+    (voûte osseuse), puis le <strong>voile</strong> (partie molle), et tout au fond la
+    <strong>luette</strong> qui pend. C'est ta carte routière des sons.
+  </div>
+
+  <!-- ============ 2. LIEUX D'ARTICULATION ============ -->
+  <h2>2 · Les lieux d'articulation</h2>
+  <p>Le <strong>lieu d'articulation</strong>, c'est l'endroit du conduit vocal où l'air est
+  freiné ou bloqué. Du plus avant (les lèvres) au plus profond (la glotte), voici les zones qui
+  comptent en darija&nbsp;:</p>
+
+  <figure>
+    <svg viewBox="0 0 700 130" class="zone-strip" role="img" aria-label="Bande des zones d'articulation, de l'avant vers l'arrière">
+      <defs>
+        <linearGradient id="grad" x1="0" x2="1">
+          <stop offset="0" stop-color="#B8503A"/>
+          <stop offset="0.5" stop-color="#C8A24A"/>
+          <stop offset="1" stop-color="#0E5A54"/>
+        </linearGradient>
+      </defs>
+      <rect x="20" y="40" width="660" height="26" rx="13" fill="url(#grad)"/>
+      <text x="20" y="30" fill="#B8503A">◀ AVANT (lèvres)</text>
+      <text x="560" y="30" fill="#0E5A54">ARRIÈRE (gorge) ▶</text>
+      <!-- graduations -->
+      <g fill="#2A2724" text-anchor="middle">
+        <text x="55"  y="92">labial</text><line class="svg-lead" x1="55" y1="66" x2="55" y2="78"/>
+        <text x="150" y="92">dental</text><line class="svg-lead" x1="150" y1="66" x2="150" y2="78"/>
+        <text x="250" y="92">alvéolaire</text><line class="svg-lead" x1="250" y1="66" x2="250" y2="78"/>
+        <text x="350" y="92">palatal</text><line class="svg-lead" x1="350" y1="66" x2="350" y2="78"/>
+        <text x="440" y="92">vélaire</text><line class="svg-lead" x1="440" y1="66" x2="440" y2="78"/>
+        <text x="530" y="92">uvulaire</text><line class="svg-lead" x1="530" y1="66" x2="530" y2="78"/>
+        <text x="605" y="92">pharyngal</text><line class="svg-lead" x1="605" y1="66" x2="605" y2="78"/>
+        <text x="660" y="110">glottal</text><line class="svg-lead" x1="655" y1="66" x2="655" y2="78"/>
+      </g>
+    </svg>
+    <figcaption>De l'avant vers l'arrière&nbsp;: les zones où se forment les consonnes du darija.</figcaption>
+  </figure>
+
+  <div class="table-scroll">
+  <table>
+    <caption>Les sept familles de lieux</caption>
+    <thead>
+      <tr><th>Lieu</th><th>Organe(s) mobilisé(s)</th><th>Sons du darija</th><th>Existe en français&nbsp;?</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Labial</strong></td><td>les deux lèvres</td><td><span class="ar">ب م و</span> — b, m, w</td><td>oui</td></tr>
+      <tr><td><strong>Labio-dental</strong></td><td>lèvre inférieure + dents</td><td><span class="ar">ف</span> — f</td><td>oui</td></tr>
+      <tr><td><strong>Dental / alvéolaire</strong></td><td>pointe de langue + dents / alvéoles</td><td><span class="ar">ت د ن ل ر س ز</span></td><td>oui</td></tr>
+      <tr><td><strong>Palatal</strong></td><td>dos de langue + palais dur</td><td><span class="ar">ش ج ي</span> — ch, j, y</td><td>oui</td></tr>
+      <tr><td><strong>Vélaire</strong></td><td>arrière de langue + voile</td><td><span class="ar">ك گ خ غ</span> — k, g, kh, gh</td><td>en partie</td></tr>
+      <tr><td><strong>Uvulaire</strong></td><td>racine de langue + luette</td><td><span class="ar">ق</span> — q&nbsp;(9)</td><td>non</td></tr>
+      <tr><td><strong>Pharyngal</strong></td><td>racine de langue + paroi du pharynx</td><td><span class="ar">ح ع</span> — ḥ&nbsp;(7), 3</td><td><strong>non</strong></td></tr>
+      <tr><td><strong>Glottal</strong></td><td>les cordes vocales</td><td><span class="ar">ه ء</span> — h, hamza&nbsp;(2)</td><td>en partie</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <!-- ============ 3. MODES D'ARTICULATION ============ -->
+  <h2>3 · Les modes d'articulation</h2>
+  <p>Le <strong>mode</strong>, c'est <em>la façon</em> dont l'air est traité au lieu choisi&nbsp;:
+  bloqué net, laissé filer en frottant, passé par le nez…</p>
+
+  <div class="table-scroll">
+  <table>
+    <thead>
+      <tr><th>Mode</th><th>Ce qui se passe</th><th>Exemples darija</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Occlusive</strong></td><td>l'air est bloqué puis relâché d'un coup</td><td>b, t, d, k, g, q, hamza</td></tr>
+      <tr><td><strong>Fricative</strong></td><td>l'air passe dans un canal étroit et frotte</td><td>f, s, z, ch, j, kh, gh, ḥ, 3, h</td></tr>
+      <tr><td><strong>Nasale</strong></td><td>le voile s'abaisse, l'air sort par le nez</td><td>m, n</td></tr>
+      <tr><td><strong>Vibrante (roulée)</strong></td><td>la pointe de langue bat contre les alvéoles</td><td>r&nbsp;<span class="ar">ر</span> (roulé&nbsp;!)</td></tr>
+      <tr><td><strong>Latérale</strong></td><td>l'air contourne la langue par les côtés</td><td>l</td></tr>
+      <tr><td><strong>Semi-voyelle</strong></td><td>une voyelle qui « glisse » en consonne</td><td>w, y</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="callout callout-retenir">
+    <span class="callout-titre">Voisement</span>
+    À chaque son, pose la main sur ta gorge. Si ça <strong>vibre</strong>, le son est
+    <em>voisé</em> (b, d, z, j, 3…). Sinon il est <em>sourd</em> (t, s, ch, ḥ…). Beaucoup de
+    sons vont par paires sourd/voisé&nbsp;: s/z, t/d, ch/j, ḥ(7)/3.
+  </div>
+
+  <!-- ============ 4. LES CONSONNES ============ -->
+  <h2>4 · Les consonnes, une par une</h2>
+  <p>D'abord les consonnes « transparentes », proches du français&nbsp;: tu les liras presque
+  sans effort. Ensuite, les fiches détaillées des consonnes <strong>propres au darija</strong>,
+  celles qui demandent un entraînement.</p>
+
+  <h3>Les consonnes proches du français</h3>
+  <div class="table-scroll">
+  <table>
+    <thead>
+      <tr><th>Arabe</th><th>Arabizi</th><th>API</th><th>Prononciation FR</th><th>Exemple</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="ar">ب</td><td class="arabizi">b</td><td class="api">/b/</td><td>b de <em>bateau</em></td><td><span class="ar">باب</span> bab — porte</td></tr>
+      <tr><td class="ar">ت</td><td class="arabizi">t</td><td class="api">/t/</td><td>t de <em>table</em></td><td><span class="ar">تفاح</span> teffah — pommes</td></tr>
+      <tr><td class="ar">ج</td><td class="arabizi">j</td><td class="api">/ʒ/</td><td>j de <em>jour</em></td><td><span class="ar">جوج</span> jouj — deux</td></tr>
+      <tr><td class="ar">د</td><td class="arabizi">d</td><td class="api">/d/</td><td>d de <em>dos</em></td><td><span class="ar">دار</span> dar — maison</td></tr>
+      <tr><td class="ar">ز</td><td class="arabizi">z</td><td class="api">/z/</td><td>z de <em>zéro</em></td><td><span class="ar">زين</span> zin — beau</td></tr>
+      <tr><td class="ar">س</td><td class="arabizi">s</td><td class="api">/s/</td><td>s de <em>sac</em></td><td><span class="ar">سمك</span> smek — poisson</td></tr>
+      <tr><td class="ar">ش</td><td class="arabizi">ch / sh</td><td class="api">/ʃ/</td><td>ch de <em>chat</em></td><td><span class="ar">شمس</span> chems — soleil</td></tr>
+      <tr><td class="ar">ف</td><td class="arabizi">f</td><td class="api">/f/</td><td>f de <em>feu</em></td><td><span class="ar">فوق</span> fouq — sur/en haut</td></tr>
+      <tr><td class="ar">ك</td><td class="arabizi">k</td><td class="api">/k/</td><td>k de <em>képi</em></td><td><span class="ar">كلب</span> kelb — chien</td></tr>
+      <tr><td class="ar">ل</td><td class="arabizi">l</td><td class="api">/l/</td><td>l de <em>lit</em></td><td><span class="ar">ليل</span> lil — nuit</td></tr>
+      <tr><td class="ar">م</td><td class="arabizi">m</td><td class="api">/m/</td><td>m de <em>main</em></td><td><span class="ar">ما</span> ma — eau</td></tr>
+      <tr><td class="ar">ن</td><td class="arabizi">n</td><td class="api">/n/</td><td>n de <em>nid</em></td><td><span class="ar">نهار</span> nhar — jour</td></tr>
+      <tr><td class="ar">ه</td><td class="arabizi">h</td><td class="api">/h/</td><td>h <em>expiré</em> (comme en anglais <em>hello</em>)</td><td><span class="ar">هنا</span> hna — ici</td></tr>
+      <tr><td class="ar">و</td><td class="arabizi">w</td><td class="api">/w/</td><td>ou de <em>oui</em></td><td><span class="ar">واحد</span> wahed — un</td></tr>
+      <tr><td class="ar">ي</td><td class="arabizi">y</td><td class="api">/j/</td><td>y de <em>yeux</em></td><td><span class="ar">يد</span> yedd — main</td></tr>
+      <tr><td class="ar">گ / ڭ</td><td class="arabizi">g</td><td class="api">/ɡ/</td><td>g <em>dur</em> de <em>gare</em></td><td><span class="ar">گاع</span> ga3 — tout / sol</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="callout piege">
+    <span class="callout-titre">Piège — le « h » n'est jamais muet</span>
+    En français, le <em>h</em> ne se prononce pas. En darija, le <span class="ar">ه</span> (h)
+    est un vrai souffle qu'on <strong>entend</strong>&nbsp;: <span class="translit">hna</span> (ici)
+    ≠ <span class="translit">na</span>. Expire comme si tu embuais une vitre.
+  </div>
+
+  <h3>Les consonnes propres au darija</h3>
+  <p>Voici le cœur du chapitre. Chaque fiche te dit <em>où</em>, <em>comment</em>, et comment
+  <em>placer</em> la langue, les lèvres et le voile du palais.</p>
+
+  <!-- FICHE : hamza -->
+  <div class="fiche-son">
+    <div class="glyphe">
+      <span class="lettre">ء</span>
+      <span class="z">2</span>
+      <span class="nom">hamza</span>
+    </div>
+    <div class="corps">
+      <dl>
+        <dt>API</dt><dd><span class="api">/ʔ/</span> — coup de glotte</dd>
+        <dt>Lieu / mode</dt><dd>glottal · occlusive</dd>
+        <dt>Placement</dt><dd>Ferme puis rouvre brusquement la glotte, comme le petit blocage entre les deux « a » de <em>« a-a »</em> (français <em>« hein-hein »</em> de refus).</dd>
+        <dt>Français</dt><dd>Le « coup » au début de <em>« oh&nbsp;! »</em> prononcé sèchement.</dd>
+        <dt>Exemple</dt><dd><span class="ar">سأل</span> <span class="translit">s2el</span> — il a demandé</dd>
+        <dt>Astuce</dt><dd>Pense à la coupure anglaise <em>uh-oh</em>&nbsp;: le silence net au milieu, c'est la hamza.</dd>
+      </dl>
+    </div>
+  </div>
+
+  <!-- FICHE : 7 = ح -->
+  <div class="fiche-son">
+    <div class="glyphe">
+      <span class="lettre">ح</span>
+      <span class="z">7</span>
+      <span class="nom">ḥa</span>
+    </div>
+    <div class="corps">
+      <dl>
+        <dt>API</dt><dd><span class="api">/ħ/</span> — fricative pharyngale sourde</dd>
+        <dt>Lieu / mode</dt><dd>pharyngal · fricative · <em>sourde</em></dd>
+        <dt>Placement</dt><dd>Resserre le fond de la gorge (racine de langue vers la paroi du pharynx) et souffle&nbsp;: un « h » <strong>chaud et râpeux</strong>, sans vibration.</dd>
+        <dt>Français</dt><dd>N'existe pas. Imagine embuer un miroir en forçant très fort, la gorge serrée.</dd>
+        <dt>Exemple</dt><dd><span class="ar">حوت</span> <span class="translit">7out</span> — poisson</dd>
+        <dt>Astuce</dt><dd>Bâille à moitié, garde la gorge serrée, puis souffle&nbsp;: tu y es presque.</dd>
+      </dl>
+    </div>
+  </div>
+
+  <!-- FICHE : 3 = ع -->
+  <div class="fiche-son">
+    <div class="glyphe">
+      <span class="lettre">ع</span>
+      <span class="z">3</span>
+      <span class="nom">3ayn</span>
+    </div>
+    <div class="corps">
+      <dl>
+        <dt>API</dt><dd><span class="api">/ʕ/</span> — fricative pharyngale <em>voisée</em></dd>
+        <dt>Lieu / mode</dt><dd>pharyngal · fricative · <em>voisée</em> (la gorge vibre&nbsp;!)</dd>
+        <dt>Placement</dt><dd>Même serrage de gorge que pour le 7, mais cette fois <strong>avec la voix</strong>. On dirait un « a » étranglé qui monte du fond de la gorge.</dd>
+        <dt>Français</dt><dd>N'existe pas. C'est le jumeau sonore du 7&nbsp;: 7 = souffle, 3 = voix.</dd>
+        <dt>Exemple</dt><dd><span class="ar">عين</span> <span class="translit">3ayn</span> — œil / source</dd>
+        <dt>Astuce</dt><dd>Chante un « a » grave, puis serre progressivement la gorge jusqu'à l'étrangler&nbsp;: ce grognement, c'est le 3.</dd>
+      </dl>
+    </div>
+  </div>
+
+  <div class="callout piege">
+    <span class="callout-titre">Piège — 7 et 3 sont des jumeaux</span>
+    <span class="arabizi">7</span> (ح) et <span class="arabizi">3</span> (ع) se font <em>au même
+    endroit</em>. La seule différence&nbsp;: le <strong>7 est soufflé (sourd)</strong>, le
+    <strong>3 est sonore (voisé)</strong>. Main sur la gorge&nbsp;: pas de vibration = 7, vibration = 3.
+  </div>
+
+  <!-- FICHE : kh / 5 = خ -->
+  <div class="fiche-son">
+    <div class="glyphe">
+      <span class="lettre">خ</span>
+      <span class="z">kh · 5</span>
+      <span class="nom">kha</span>
+    </div>
+    <div class="corps">
+      <dl>
+        <dt>API</dt><dd><span class="api">/χ/</span> — fricative vélaire/uvulaire sourde</dd>
+        <dt>Lieu / mode</dt><dd>vélaire · fricative · sourde</dd>
+        <dt>Placement</dt><dd>Arrière de la langue près du voile, on souffle en faisant « racler ». C'est la <em>jota</em> espagnole (<em>Juan</em>) ou le <em>ch</em> allemand de <em>Bach</em>.</dd>
+        <dt>Français</dt><dd>Proche du « r » parisien mais <strong>sans voix</strong> et plus raclé.</dd>
+        <dt>Exemple</dt><dd><span class="ar">خبز</span> <span class="translit">khobz</span> — pain</dd>
+        <dt>Astuce</dt><dd>Fais semblant de nettoyer ta gorge tout doucement&nbsp;: ce raclement léger, c'est le kh.</dd>
+      </dl>
+    </div>
+  </div>
+
+  <!-- FICHE : gh = غ -->
+  <div class="fiche-son">
+    <div class="glyphe">
+      <span class="lettre">غ</span>
+      <span class="z">gh · 8</span>
+      <span class="nom">ghayn</span>
+    </div>
+    <div class="corps">
+      <dl>
+        <dt>API</dt><dd><span class="api">/ʁ/</span> — fricative vélaire/uvulaire <em>voisée</em></dd>
+        <dt>Lieu / mode</dt><dd>vélaire · fricative · voisée</dd>
+        <dt>Placement</dt><dd>Exactement le <strong>« r » français grasseyé</strong> (celui de <em>Paris</em>), en un peu plus appuyé. C'est le jumeau voisé du kh.</dd>
+        <dt>Français</dt><dd>Oui&nbsp;! le r « de gorge » du français en est très proche.</dd>
+        <dt>Exemple</dt><dd><span class="ar">غالي</span> <span class="translit">ghali</span> — cher (coûteux)</dd>
+        <dt>Astuce</dt><dd>kh + voix = gh. Dis « kh » puis ajoute le grondement de la voix.</dd>
+      </dl>
+    </div>
+  </div>
+
+  <!-- FICHE : q / 9 = ق -->
+  <div class="fiche-son">
+    <div class="glyphe">
+      <span class="lettre">ق</span>
+      <span class="z">9 · q</span>
+      <span class="nom">qaf</span>
+    </div>
+    <div class="corps">
+      <dl>
+        <dt>API</dt><dd><span class="api">/q/</span> — occlusive uvulaire sourde</dd>
+        <dt>Lieu / mode</dt><dd>uvulaire · occlusive · sourde</dd>
+        <dt>Placement</dt><dd>Un « k » produit <strong>beaucoup plus au fond</strong>, contre la luette. La racine de la langue vient toucher tout à l'arrière, puis se détache d'un coup sec.</dd>
+        <dt>Français</dt><dd>N'existe pas. Un « k » très profond, presque « avalé ».</dd>
+        <dt>Exemple</dt><dd><span class="ar">قلب</span> <span class="translit">qalb / 9alb</span> — cœur</dd>
+        <dt>Astuce</dt><dd>Dis « ka-ka-ka » puis recule le point de contact le plus loin possible vers la gorge.</dd>
+      </dl>
+    </div>
+  </div>
+
+  <div class="callout note-regionale">
+    <span class="callout-titre">Note régionale — le ق (9)</span>
+    À <strong>Casablanca</strong> et dans les villes, le <span class="ar">ق</span> se dit souvent
+    <span class="arabizi">q</span> (uvulaire net) ou même <span class="arabizi">g</span> selon les
+    mots. Dans les parlers ruraux et bédouins, il devient volontiers <span class="arabizi">g</span>
+    (<span class="translit">gal</span> « il a dit »). Autour d'<strong>Agadir</strong> et
+    <strong>Amizmiz</strong>, l'influence amazighe (tachelhit) colore aussi la réalisation&nbsp;:
+    écoute ton interlocuteur et calque-toi sur lui.
+  </div>
+
+  <!-- FICHE : r roulé -->
+  <div class="fiche-son">
+    <div class="glyphe">
+      <span class="lettre">ر</span>
+      <span class="z">r</span>
+      <span class="nom">ra</span>
+    </div>
+    <div class="corps">
+      <dl>
+        <dt>API</dt><dd><span class="api">/r/</span> — vibrante alvéolaire (roulée)</dd>
+        <dt>Lieu / mode</dt><dd>alvéolaire · vibrante · voisée</dd>
+        <dt>Placement</dt><dd>La pointe de la langue <strong>bat</strong> contre les alvéoles, comme le « r » roulé italien ou espagnol (<em>perro</em>). Surtout <strong>pas</strong> le « r » de gorge français&nbsp;!</dd>
+        <dt>Français</dt><dd>N'existe plus (le français standard a un r de gorge). Pense au « r » roulé du Sud ou de l'italien.</dd>
+        <dt>Exemple</dt><dd><span class="ar">راجل</span> <span class="translit">rajel</span> — homme</dd>
+        <dt>Astuce</dt><dd>Répète vite « te-de-te-de », puis laisse la langue vibrer librement&nbsp;: « rrr ».</dd>
+      </dl>
+    </div>
+  </div>
+
+  <!-- ============ 5. EMPHATIQUES ============ -->
+  <h2>5 · Les consonnes emphatiques</h2>
+  <p class="lettrine">Voici la signature sonore de l'arabe. Une consonne <strong>emphatique</strong>
+  est une consonne ordinaire prononcée <em>« en gros »</em>&nbsp;: la racine de la langue recule
+  vers le pharynx (on parle de <strong>vélarisation / pharyngalisation</strong>), ce qui
+  <strong>assombrit</strong> tout le mot et surtout les voyelles autour. Le « a » devient un « a »
+  sombre, proche de « o ».</p>
+
+  <figure>
+    <svg viewBox="0 0 620 220" role="img" aria-label="Comparaison langue neutre et langue emphatique">
+      <!-- neutre -->
+      <g transform="translate(0,0)">
+        <text class="svg-lbl-b" x="80" y="24" text-anchor="middle">s — neutre</text>
+        <path d="M20,120 Q90,60 170,110 L170,150 L20,150 Z" fill="#FCF7EA" stroke="#E7DcC4"/>
+        <path d="M40,120 Q95,85 160,118 Q120,135 60,132 Z" fill="#D98C7A" stroke="#B8503A"/>
+        <text class="svg-lbl" x="95" y="180" text-anchor="middle">pointe en avant, dos plat</text>
+      </g>
+      <line x1="310" y1="40" x2="310" y2="190" stroke="#E7DcC4" stroke-dasharray="4 4"/>
+      <!-- emphatique -->
+      <g transform="translate(320,0)">
+        <text class="svg-lbl-b" x="80" y="24" text-anchor="middle">ṣ — emphatique</text>
+        <path d="M20,120 Q90,60 170,110 L170,150 L20,150 Z" fill="#FCF7EA" stroke="#E7DcC4"/>
+        <path d="M40,122 Q90,108 150,95 Q175,120 150,140 Q90,138 55,133 Z" fill="#B8503A" stroke="#8a3a28"/>
+        <text class="svg-lbl" x="95" y="180" text-anchor="middle">racine reculée, dos creusé</text>
+      </g>
+    </svg>
+    <figcaption>Le geste emphatique&nbsp;: la masse de la langue recule et se creuse, « assombrissant » le son.</figcaption>
+  </figure>
+
+  <div class="table-scroll">
+  <table>
+    <thead>
+      <tr><th>Emphatique</th><th>API</th><th>Version « claire »</th><th>Exemple (emphatique)</th><th>À ne pas confondre</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="ar">ص <span class="arabizi" style="font-size:.8em">(ṣ / S)</span></td><td class="api">/sˤ/</td><td>س s</td><td><span class="ar">صيف</span> ṣif — été</td><td><span class="ar">سيف</span> sif — épée</td></tr>
+      <tr><td class="ar">ط <span class="arabizi" style="font-size:.8em">(ṭ / T)</span></td><td class="api">/tˤ/</td><td>ت t</td><td><span class="ar">طاجين</span> ṭajin — tajine</td><td>t « clair » de <em>table</em></td></tr>
+      <tr><td class="ar">ض <span class="arabizi" style="font-size:.8em">(ḍ / D)</span></td><td class="api">/dˤ/</td><td>د d</td><td><span class="ar">ضو</span> ḍou — lumière</td><td>d « clair » de <em>dos</em></td></tr>
+      <tr><td class="ar">ظ <span class="arabizi" style="font-size:.8em">(ẓ / Z)</span></td><td class="api">/ðˤ~zˤ/</td><td>ز z</td><td><span class="ar">ظل</span> ḍell — ombre</td><td>z « clair » de <em>zéro</em></td></tr>
+      <tr><td>r emphatique</td><td class="api">/rˤ/</td><td>ر r</td><td><span class="ar">راه</span> ṛah — le voici</td><td>r roulé « clair »</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="callout astuce">
+    <span class="callout-titre">Astuce — l'oreille avant la bouche</span>
+    Ne cherche pas d'abord à « faire » l'emphatique&nbsp;: écoute la <strong>couleur du « a »</strong>.
+    Dans <span class="translit">ṣ</span>if (été), le a est <em>sombre</em> (presque « ço »)&nbsp;;
+    dans <span class="translit">s</span>if (épée), le a est <em>clair</em>. La voyelle trahit
+    l'emphatique.
+  </div>
+
+  <div class="callout callout-retenir">
+    <span class="callout-titre">À retenir — en arabizi</span>
+    Sur le clavier, on note souvent l'emphatique par une <strong>MAJUSCULE</strong>&nbsp;:
+    <span class="arabizi">S</span>=ص, <span class="arabizi">T</span>=ط, <span class="arabizi">D</span>=ض,
+    <span class="arabizi">Z</span>=ظ. Ainsi <span class="translit">3Sir</span> (jus) se distingue de
+    la version claire.
+  </div>
+
+  <!-- ============ 6. LETTRES-CHIFFRES ============ -->
+  <h2>6 · Les lettres écrites avec des chiffres (arabizi)</h2>
+  <p>Quand on écrit le darija au clavier latin (SMS, réseaux), les sons arabes sans équivalent
+  latin sont notés par des <strong>chiffres</strong> dont la <em>forme</em> rappelle la lettre
+  arabe. C'est l'<strong>arabizi</strong> (ou <em>3arabizi</em>). Table de référence&nbsp;:</p>
+
+  <div class="table-scroll">
+  <table>
+    <thead>
+      <tr><th>Chiffre</th><th>Lettre arabe</th><th>API</th><th>Son</th><th>Pourquoi ce chiffre&nbsp;?</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="arabizi" style="font-size:1.3em">2</td><td class="ar">ء</td><td class="api">/ʔ/</td><td>coup de glotte (hamza)</td><td>la forme du 2 évoque la petite hamza</td></tr>
+      <tr><td class="arabizi" style="font-size:1.3em">3</td><td class="ar">ع</td><td class="api">/ʕ/</td><td>3ayn (voisé, gorge)</td><td>le 3 est un <span class="ar">ع</span> retourné</td></tr>
+      <tr><td class="arabizi" style="font-size:1.3em">5</td><td class="ar">خ</td><td class="api">/χ/</td><td>kh (raclé, sourd)</td><td>alternative à « kh »&nbsp;; forme voisine</td></tr>
+      <tr><td class="arabizi" style="font-size:1.3em">7</td><td class="ar">ح</td><td class="api">/ħ/</td><td>ḥ (soufflé, gorge)</td><td>le 7 dessine la boucle du <span class="ar">ح</span></td></tr>
+      <tr><td class="arabizi" style="font-size:1.3em">9</td><td class="ar">ق</td><td class="api">/q/</td><td>qaf (uvulaire)</td><td>le 9 rappelle la boucle du <span class="ar">ق</span></td></tr>
+      <tr><td class="arabizi" style="font-size:1.1em">gh / 8</td><td class="ar">غ</td><td class="api">/ʁ/</td><td>ghayn (r grasseyé)</td><td>« gh », parfois 8 (jumeau du 7)</td></tr>
+      <tr><td class="arabizi" style="font-size:1.1em">kh</td><td class="ar">خ</td><td class="api">/χ/</td><td>kh</td><td>notation lettre, équivaut au 5</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="callout astuce">
+    <span class="callout-titre">Astuce mnémotechnique</span>
+    <strong>Les gorges vont par deux&nbsp;:</strong> <span class="arabizi">7</span> et
+    <span class="arabizi">3</span> (pharyngales, 7 sourd / 3 voisé), <span class="arabizi">5(kh)</span>
+    et <span class="arabizi">gh</span> (vélaires, kh sourd / gh voisé). Dans chaque paire&nbsp;:
+    même endroit, un soufflé + un chanté.
+  </div>
+
+  <!-- ============ 7. VOYELLES ============ -->
+  <h2>7 · Les voyelles</h2>
+  <p>Le darija a peu de voyelles pleines, mais une voyelle « fantôme » omniprésente&nbsp;: le
+  <strong>schwa</strong>. C'est ce qui donne à l'arabe marocain ses grappes de consonnes
+  (<span class="translit">ktb</span>, <span class="translit">mchit</span>…).</p>
+
+  <div class="table-scroll">
+  <table>
+    <thead>
+      <tr><th>Voyelle</th><th>Arabizi</th><th>API</th><th>Prononciation FR</th><th>Exemple</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>a bref</td><td class="arabizi">a</td><td class="api">/a/</td><td>a de <em>patte</em></td><td><span class="ar">دار</span> dar — maison</td></tr>
+      <tr><td>i bref/long</td><td class="arabizi">i</td><td class="api">/i/</td><td>i de <em>lit</em></td><td><span class="ar">زين</span> zin — beau</td></tr>
+      <tr><td>ou bref/long</td><td class="arabizi">ou / u</td><td class="api">/u/</td><td>ou de <em>fou</em></td><td><span class="ar">فوق</span> fouq — en haut</td></tr>
+      <tr><td>a long</td><td class="arabizi">a / â</td><td class="api">/aː/</td><td>a tenu, allongé</td><td><span class="ar">باب</span> bab — porte</td></tr>
+      <tr><td><strong>schwa</strong></td><td class="arabizi">e</td><td class="api">/ə/</td><td>e « avalé » de <em>le</em>, <em>petit</em></td><td><span class="ar">كتب</span> kteb — il a écrit</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="callout callout-retenir">
+    <span class="callout-titre">À retenir — le schwa (ə)</span>
+    Ce petit « e » très bref n'est pas une vraie voyelle&nbsp;: il sert juste à
+    <strong>lubrifier</strong> les groupes de consonnes pour qu'on puisse les prononcer.
+    <span class="translit">kteb</span> ≈ « k'teb », <span class="translit">mcha</span> ≈ « m'cha ».
+    N'appuie pas dessus, laisse-le à peine s'entendre.
+  </div>
+
+  <div class="callout piege">
+    <span class="callout-titre">Piège — pas de voyelles nasales</span>
+    Le darija n'a <strong>pas</strong> les voyelles nasales du français (<em>an, on, in, un</em>).
+    Le <span class="ar">ن</span> (n) se prononce toujours comme une vraie consonne&nbsp;:
+    <span class="translit">bnt</span> (fille) = « b-n-t », jamais « ban ».
+  </div>
+
+  <!-- ============ 8. COMPARAISON FR ============ -->
+  <h2>8 · Comparaison avec le français</h2>
+
+  <div class="table-scroll">
+  <table>
+    <thead>
+      <tr><th>Sons français absents du darija</th><th>Sons darija absents du français</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <ul class="puces-orient" style="margin:0">
+            <li>voyelles nasales <em>an / on / in / un</em></li>
+            <li>le <em>u</em> de <em>tu</em> (/y/)</li>
+            <li>le <em>eu</em> de <em>peur</em> (/œ/)</li>
+            <li>le <em>r</em> de gorge (remplacé par r roulé)</li>
+          </ul>
+        </td>
+        <td>
+          <ul class="puces-orient" style="margin:0">
+            <li><span class="arabizi">7</span> ḥ et <span class="arabizi">3</span> (pharyngales)</li>
+            <li><span class="arabizi">9</span> q (uvulaire)</li>
+            <li>les emphatiques ṣ ṭ ḍ ẓ</li>
+            <li>le <em>r</em> roulé et la hamza (coup de glotte)</li>
+            <li>le schwa systématique en grappes de consonnes</li>
+          </ul>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+
+  <!-- ============ 9. PIÈGES ============ -->
+  <h2>9 · Les pièges les plus fréquents</h2>
+
+  <div class="callout piege">
+    <span class="callout-titre">1. Confondre 7 (ح) et kh/5 (خ)</span>
+    Le <span class="arabizi">7</span> vient du <strong>pharynx</strong> (gorge basse, air chaud)&nbsp;;
+    le <span class="arabizi">kh</span> vient du <strong>voile</strong> (raclement haut). Beaucoup de
+    débutants font un kh partout&nbsp;: pense « 7 = souffle chaud, kh = raclement ».
+  </div>
+  <div class="callout piege">
+    <span class="callout-titre">2. Oublier le 3 (ع) — le rendre muet</span>
+    Le <span class="arabizi">3</span> n'est pas silencieux&nbsp;! <span class="translit">3ayn</span>
+    ≠ « ayn ». Sans lui, <span class="translit">sa3a</span> (heure) devient « saa » et le mot se perd.
+  </div>
+  <div class="callout piege">
+    <span class="callout-titre">3. Prononcer q (9) comme un k</span>
+    <span class="translit">qalb</span> (cœur) ≠ <span class="translit">kalb</span>… et
+    <span class="translit">kelb</span> = chien&nbsp;! Un lieu d'articulation trop en avant change le sens.
+  </div>
+  <div class="callout piege">
+    <span class="callout-titre">4. Négliger l'emphatique</span>
+    <span class="translit">ṣ</span>if (été) vs <span class="translit">s</span>if (épée)&nbsp;:
+    une paire minimale entièrement portée par l'emphatique. Assombris le « a ».
+  </div>
+
+  <!-- ============ 10. EXERCICES ============ -->
+  <h2>10 · Exercices de prononciation</h2>
+  <p>Entraîne l'oreille avec des <strong>paires minimales</strong> (deux mots qui ne diffèrent que
+  par un son). Prononce-les à voix haute, enregistre-toi, compare.</p>
+
+  <div class="exo">
+    <p><span class="exo-num">Exercice 1 — </span>Distingue les jumeaux de gorge. Lis à voix haute&nbsp;:</p>
+    <ul class="puces-orient">
+      <li><span class="translit">7al</span> (il a ouvert) &nbsp;↔&nbsp; <span class="translit">3al</span> (haut)</li>
+      <li><span class="translit">7ob</span> (amour) &nbsp;↔&nbsp; <span class="translit">khob</span>…</li>
+      <li><span class="translit">sa3a</span> (heure) &nbsp;↔&nbsp; <span class="translit">saka</span></li>
+    </ul>
+    <details class="corrige">
+      <summary>Voir la piste de correction</summary>
+      Concentre-toi sur la vibration&nbsp;: 7 = pas de vibration à la gorge&nbsp;; 3 = vibration.
+      Le corrigé audio détaillé se trouvera au <a href="#chapitre-5">Chapitre V</a>.
+    </details>
+  </div>
+
+  <div class="exo">
+    <p><span class="exo-num">Exercice 2 — </span>Emphatique ou clair&nbsp;? Écoute la couleur du « a »&nbsp;:</p>
+    <ul class="puces-orient">
+      <li><span class="translit">ṣif</span> (été) &nbsp;↔&nbsp; <span class="translit">sif</span> (épée)</li>
+      <li><span class="translit">ṭab</span> (cuit) &nbsp;↔&nbsp; <span class="translit">tab</span></li>
+      <li><span class="translit">ḍar</span> (il a nui) &nbsp;↔&nbsp; <span class="translit">dar</span> (maison)</li>
+    </ul>
+    <details class="corrige">
+      <summary>Voir la piste de correction</summary>
+      Dans la version emphatique, le « a » recule et s'assombrit (proche de « o »). Enregistre-toi
+      et compare la couleur de la voyelle. Corrigé complet au <a href="#chapitre-5">Chapitre V</a>.
+    </details>
+  </div>
+
+  <div class="exo">
+    <p><span class="exo-num">Exercice 3 — </span>Virelangue des grappes de consonnes (schwa)&nbsp;:</p>
+    <p style="text-align:center; font-size:20px;">
+      <span class="ar-xl">كتبت لك</span><br>
+      <span class="translit">ktebt lek</span> — « je t'ai écrit »
+    </p>
+    <details class="corrige">
+      <summary>Voir la piste de correction</summary>
+      Ne mets pas de « e » plein&nbsp;: « k'tebt l'k », les consonnes s'enchaînent avec un schwa à peine audible.
+    </details>
+  </div>
+
+  <hr class="filet-or">
+  <div class="callout callout-retenir">
+    <span class="callout-titre">Bilan du chapitre</span>
+    Tu sais maintenant <em>où</em> et <em>comment</em> naît chaque son du darija, reconnaître les
+    quatre paires de gorge (7/3, kh/gh), sentir l'emphatique dans la couleur du « a », et lire
+    l'arabizi (2·3·5·7·9). La suite&nbsp;: mettre ces sons en mots au
+    <a href="#chapitre-2">Chapitre II</a>.
+  </div>
+
+  <div class="retour-haut"><a href="#sommaire">↑ Retour au sommaire</a></div>
+
+  <!-- ============================================================ -->
+  <!-- ===================== CHAPITRE II =========================== -->
+  <!-- ============================================================ -->
+  <hr class="filet-or">
+  <div class="ouverture-chapitre" id="chapitre-2">
+    <div class="medaillon">II</div>
+    <span class="chapitre-num">Chapitre deux</span>
+    <h1 class="titre-chapitre">Les bases de la langue</h1>
+    <p style="color:var(--or); font-family:var(--arabe); font-size:40px; direction:rtl;">الأساسيات</p>
+    <div class="ornement"></div>
+  </div>
+
+  <p class="chapeau">Avec les sons du chapitre précédent en bouche, on assemble les premières
+  briques&nbsp;: saluer, désigner les gens, dire ce qu'on fait, ce qu'on fera, et ce qu'on ne
+  fait pas. Cinq outils, et déjà de vraies phrases.</p>
+
+  <div class="callout callout-retenir">
+    <span class="callout-titre">La logique du darija</span>
+    Trois idées qui reviendront sans cesse&nbsp;: (1) on colle des <strong>suffixes</strong> aux
+    mots (ma maison = <span class="translit">dar+i</span>)&nbsp;; (2) le verbe se conjugue par
+    <strong>préfixes</strong> (je fais = <span class="translit">n+</span>…)&nbsp;; (3) le présent
+    s'annonce par la petite particule <strong><span class="translit">ka-</span></strong>.
+  </div>
+
+  <!-- ============ 1. SALUTATIONS ============ -->
+  <h2>1 · Les salutations</h2>
+  <p class="lettrine">Au Maroc, on ne se croise pas sans se saluer&nbsp;: c'est un petit rituel,
+  souvent long, chaleureux, où l'on demande plusieurs fois « ça va&nbsp;? ». Voici l'essentiel.</p>
+
+  <h3>Se saluer</h3>
+  <div class="table-scroll">
+  <table class="vocab-table">
+    <thead>
+      <tr><th>Arabe</th><th>Arabizi</th><th>Prononciation FR</th><th>API</th><th>Sens</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="ar">السلام عليكم</td><td class="arabizi">salamou 3alaykom</td><td>sa-la-mou 3a-lay-koum</td><td class="api">/salaːmu ʕalajkum/</td><td>bonjour <em>(la paix sur vous)</em></td></tr>
+      <tr><td class="ar">وعليكم السلام</td><td class="arabizi">w 3alaykom salam</td><td>ou 3a-lay-koum sa-lam</td><td class="api">/wʕalajkum salaːm/</td><td><em>réponse&nbsp;:</em> et sur vous la paix</td></tr>
+      <tr><td class="ar">صباح الخير</td><td class="arabizi">sba7 lkhir</td><td>sba7 l-khir</td><td class="api">/sˤbaħ lχir/</td><td>bonjour <em>(matin)</em></td></tr>
+      <tr><td class="ar">مسا الخير</td><td class="arabizi">msa lkhir</td><td>msa l-khir</td><td class="api">/msa lχir/</td><td>bonsoir</td></tr>
+      <tr><td class="ar">أهلا</td><td class="arabizi">ahlan</td><td>ah-lann</td><td class="api">/ahlan/</td><td>salut / bienvenue</td></tr>
+      <tr><td class="ar">مرحبا</td><td class="arabizi">mer7ba</td><td>mer-7ba</td><td class="api">/mərħba/</td><td>bienvenue</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h3>Prendre des nouvelles</h3>
+  <div class="table-scroll">
+  <table class="vocab-table">
+    <thead>
+      <tr><th>Arabe</th><th>Arabizi</th><th>Prononciation FR</th><th>Sens</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="ar">لاباس؟</td><td class="arabizi">labas ?</td><td>la-bass</td><td>ça va&nbsp;? <em>(litt. pas de mal&nbsp;?)</em></td></tr>
+      <tr><td class="ar">كي داير؟ / كي دايرة؟</td><td class="arabizi">ki dayer ? / ki dayra ?</td><td>ki da-yer / ki day-ra</td><td>comment tu vas&nbsp;? <em>(m. / f.)</em></td></tr>
+      <tr><td class="ar">كل شي بخير؟</td><td class="arabizi">kolchi bikhir ?</td><td>koul-chi bi-khir</td><td>tout va bien&nbsp;?</td></tr>
+      <tr><td class="ar">شنو أخبارك؟</td><td class="arabizi">chno khbarek ?</td><td>chno kh-ba-rek</td><td>quoi de neuf&nbsp;?</td></tr>
+      <tr><td class="ar">لاباس، الحمد لله</td><td class="arabizi">labas, l7amdoullah</td><td>la-bass, l-7am-dou-llah</td><td><em>réponse&nbsp;:</em> ça va, Dieu merci</td></tr>
+      <tr><td class="ar">بخير</td><td class="arabizi">bikhir</td><td>bi-khir</td><td>bien / en forme</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h3>Politesse &amp; formules utiles</h3>
+  <div class="table-scroll">
+  <table class="vocab-table">
+    <thead>
+      <tr><th>Arabe</th><th>Arabizi</th><th>Prononciation FR</th><th>Sens</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="ar">عافاك</td><td class="arabizi">3afak</td><td>3a-fak</td><td>s'il te plaît</td></tr>
+      <tr><td class="ar">شكرا (بزاف)</td><td class="arabizi">choukran (bezzaf)</td><td>chou-krann (be-zzaf)</td><td>merci (beaucoup)</td></tr>
+      <tr><td class="ar">الله يخليك</td><td class="arabizi">llah ykhllik</td><td>llah y-khllik</td><td>merci / s'il te plaît <em>(litt. que Dieu te garde)</em></td></tr>
+      <tr><td class="ar">سمح ليا</td><td class="arabizi">sme7 liya</td><td>sme7 li-ya</td><td>excuse-moi / pardon</td></tr>
+      <tr><td class="ar">واخا</td><td class="arabizi">wakha</td><td>wa-kha</td><td>d'accord / ok</td></tr>
+      <tr><td class="ar">إيه / لا</td><td class="arabizi">iyeh / la</td><td>i-yeh / la</td><td>oui / non</td></tr>
+      <tr><td class="ar">بسلامة</td><td class="arabizi">bslama</td><td>b-sla-ma</td><td>au revoir</td></tr>
+      <tr><td class="ar">تهلا في راسك</td><td class="arabizi">thella f rasek</td><td>the-lla f ra-sek</td><td>prends soin de toi</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="callout astuce">
+    <span class="callout-titre">Astuce — le réflexe « l7amdoullah »</span>
+    À presque toutes les questions « ça va&nbsp;? », on répond
+    <span class="translit">labas, l7amdoullah</span>. C'est passe-partout, poli, et ça te laisse
+    le temps de réfléchir à la suite&nbsp;!
+  </div>
+
+  <div class="callout note-regionale">
+    <span class="callout-titre">Note régionale</span>
+    <span class="translit">labas</span> est compris partout. Autour d'<strong>Agadir</strong>
+    (zone berbérophone/tachelhit), tu entendras aussi des salutations en amazigh, p.&nbsp;ex.
+    <span class="translit">is tgit labas&nbsp;?</span> ou le simple <span class="translit">azul</span>
+    (bonjour). À <strong>Casablanca</strong>, le darija urbain domine sans mélange.
+  </div>
+
+  <!-- ============ 2. PRONOMS ============ -->
+  <h2>2 · Les pronoms</h2>
+  <p>Trois familles à connaître&nbsp;: les pronoms <strong>sujets</strong> (moi, toi…), les
+  suffixes <strong>possessifs</strong> (ma, ton…), et le verbe <strong>« avoir »</strong> qui,
+  en darija, n'est pas un vrai verbe mais un suffixe collé à <span class="translit">3nd</span>.</p>
+
+  <h3>Les pronoms sujets</h3>
+  <div class="table-scroll">
+  <table>
+    <thead>
+      <tr><th>Français</th><th>Arabe</th><th>Arabizi</th><th>API</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>je / moi</td><td class="ar">أنا</td><td class="arabizi">ana</td><td class="api">/ana/</td></tr>
+      <tr><td>toi <em>(masc.)</em></td><td class="ar">نتا</td><td class="arabizi">nta</td><td class="api">/nta/</td></tr>
+      <tr><td>toi <em>(fém.)</em></td><td class="ar">نتي</td><td class="arabizi">nti</td><td class="api">/nti/</td></tr>
+      <tr><td>il / lui</td><td class="ar">هو</td><td class="arabizi">howa</td><td class="api">/huwa/</td></tr>
+      <tr><td>elle</td><td class="ar">هي</td><td class="arabizi">hiya</td><td class="api">/hija/</td></tr>
+      <tr><td>nous</td><td class="ar">حنا</td><td class="arabizi">7na</td><td class="api">/ħna/</td></tr>
+      <tr><td>vous</td><td class="ar">نتوما</td><td class="arabizi">ntoma</td><td class="api">/ntuma/</td></tr>
+      <tr><td>ils / elles</td><td class="ar">هوما</td><td class="arabizi">houma</td><td class="api">/huma/</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <div class="callout piege">
+    <span class="callout-titre">Piège — le « tu » a un genre</span>
+    Contrairement au français, <strong>« tu » change selon le sexe</strong>&nbsp;:
+    <span class="translit">nta</span> à un homme, <span class="translit">nti</span> à une femme.
+    En revanche, il n'y a <em>qu'un seul</em> « vous » (<span class="translit">ntoma</span>), sans
+    vouvoiement de politesse&nbsp;: on tutoie tout le monde.
+  </div>
+
+  <h3>Les suffixes possessifs</h3>
+  <p>Pour dire « ma / ta / sa… », on <strong>colle un suffixe</strong> au nom. Exemple avec
+  <span class="translit">dar</span> (maison) et <span class="translit">smiya</span> (prénom)&nbsp;:</p>
+  <div class="table-scroll">
+  <table>
+    <thead>
+      <tr><th>Sens</th><th>Suffixe</th><th>Exemple <span class="ar">دار</span></th><th>Arabizi</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>ma / mon</td><td class="arabizi">-i</td><td class="ar">داري</td><td class="arabizi">dar-i</td></tr>
+      <tr><td>ta / ton</td><td class="arabizi">-ek</td><td class="ar">دارك</td><td class="arabizi">dar-ek</td></tr>
+      <tr><td>sa / son <em>(à lui)</em></td><td class="arabizi">-o / -ou</td><td class="ar">دارو</td><td class="arabizi">dar-o</td></tr>
+      <tr><td>sa / son <em>(à elle)</em></td><td class="arabizi">-ha</td><td class="ar">دارها</td><td class="arabizi">dar-ha</td></tr>
+      <tr><td>notre</td><td class="arabizi">-na</td><td class="ar">دارنا</td><td class="arabizi">dar-na</td></tr>
+      <tr><td>votre</td><td class="arabizi">-kom</td><td class="ar">داركم</td><td class="arabizi">dar-kom</td></tr>
+      <tr><td>leur</td><td class="arabizi">-hom</td><td class="ar">دارهم</td><td class="arabizi">dar-hom</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <div class="callout astuce">
+    <span class="callout-titre">Astuce — un jeu de LEGO</span>
+    Ces mêmes suffixes servent aussi de <strong>compléments d'objet</strong> sur le verbe&nbsp;:
+    <span class="translit">chaf</span> (il a vu) → <span class="translit">chaf-ni</span> (il m'a vu),
+    <span class="translit">chaf-ek</span> (il t'a vu). Un suffixe appris = deux usages.
+  </div>
+
+  <h3>« Avoir »&nbsp;: <span class="translit">3nd</span> + suffixe</h3>
+  <p>Le darija n'a pas de verbe « avoir ». On utilise <span class="ar">عند</span>
+  (<span class="translit">3nd</span>, « chez / auprès de ») + le suffixe de la personne&nbsp;:</p>
+  <div class="table-scroll">
+  <table>
+    <thead>
+      <tr><th>Français</th><th>Arabe</th><th>Arabizi</th><th>Exemple</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>j'ai</td><td class="ar">عندي</td><td class="arabizi">3ndi</td><td class="ar">عندي دار — <span class="arabizi">3ndi dar</span> (j'ai une maison)</td></tr>
+      <tr><td>tu as</td><td class="ar">عندك</td><td class="arabizi">3ndek</td><td>—</td></tr>
+      <tr><td>il a</td><td class="ar">عندو</td><td class="arabizi">3ndo</td><td>—</td></tr>
+      <tr><td>elle a</td><td class="ar">عندها</td><td class="arabizi">3ndha</td><td>—</td></tr>
+      <tr><td>nous avons</td><td class="ar">عندنا</td><td class="arabizi">3ndna</td><td>—</td></tr>
+      <tr><td>vous avez</td><td class="ar">عندكم</td><td class="arabizi">3ndkom</td><td>—</td></tr>
+      <tr><td>ils ont</td><td class="ar">عندهم</td><td class="arabizi">3ndhom</td><td>—</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <!-- ============ 3. PRÉSENT ============ -->
+  <h2>3 · Le présent</h2>
+  <p class="lettrine">Le présent se forme en deux temps&nbsp;: on prend le <strong>radical</strong>
+  du verbe, on lui ajoute le <strong>préfixe de personne</strong>, et on annonce le tout par la
+  particule <strong><span class="translit">ka-</span></strong>, qui marque l'action en cours ou
+  habituelle (comme le <em>-ing</em> anglais ou « je suis en train de »).</p>
+
+  <div class="callout callout-retenir">
+    <span class="callout-titre">La formule</span>
+    <span class="pilule">ka-</span> + <span class="pilule">préfixe</span> +
+    <span class="pilule">radical</span>. Les préfixes&nbsp;:
+    <span class="translit">n-</span> (je), <span class="translit">t-</span> (tu/elle),
+    <span class="translit">y-</span> (il), et l'on ajoute <span class="translit">-ou</span> au
+    pluriel, <span class="translit">-i</span> au féminin « tu ».
+  </div>
+
+  <p>Exemple avec le verbe <span class="ar">كتب</span> (<span class="translit">kteb</span>,
+  « écrire »)&nbsp;:</p>
+  <div class="table-scroll">
+  <table class="conj">
+    <thead>
+      <tr><th>Pronom</th><th>Arabe</th><th>Arabizi</th><th>Prononciation FR</th><th>Sens</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>ana</td><td class="ar">كنكتب</td><td class="arabizi">kanekteb</td><td>ka-nek-teb</td><td>j'écris</td></tr>
+      <tr><td>nta</td><td class="ar">كتكتب</td><td class="arabizi">katekteb</td><td>ka-tek-teb</td><td>tu écris <em>(m.)</em></td></tr>
+      <tr><td>nti</td><td class="ar">كتكتبي</td><td class="arabizi">katketbi</td><td>kat-ket-bi</td><td>tu écris <em>(f.)</em></td></tr>
+      <tr><td>howa</td><td class="ar">كيكتب</td><td class="arabizi">kaykteb</td><td>kayk-teb</td><td>il écrit</td></tr>
+      <tr><td>hiya</td><td class="ar">كتكتب</td><td class="arabizi">katekteb</td><td>ka-tek-teb</td><td>elle écrit</td></tr>
+      <tr><td>7na</td><td class="ar">كنكتبو</td><td class="arabizi">kanketbou</td><td>kan-ket-bou</td><td>nous écrivons</td></tr>
+      <tr><td>ntoma</td><td class="ar">كتكتبو</td><td class="arabizi">katketbou</td><td>kat-ket-bou</td><td>vous écrivez</td></tr>
+      <tr><td>houma</td><td class="ar">كيكتبو</td><td class="arabizi">kayketbou</td><td>kayk-et-bou</td><td>ils écrivent</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="callout piege">
+    <span class="callout-titre">Piège — « il » et « elle » se ressemblent presque</span>
+    <span class="translit">kaykteb</span> (il) commence par <strong>ka-<u>y</u></strong>, alors que
+    <span class="translit">katekteb</span> (elle) commence par <strong>ka-<u>t</u></strong> —
+    exactement comme « tu (m.) ». Le contexte lève l'ambiguïté.
+  </div>
+
+  <div class="callout note-regionale">
+    <span class="callout-titre">Note régionale — ka- ou ta-&nbsp;?</span>
+    À <strong>Casablanca</strong> et dans la majorité du pays, on dit <span class="translit">ka-</span>
+    (<span class="translit">kanakol</span>, je mange). Dans certains parlers du Nord et de zones
+    rurales, on entend <span class="translit">ta-</span> (<span class="translit">tanakol</span>).
+    Les deux sont justes&nbsp;: cale-toi sur ton entourage d'Agadir/Amizmiz.
+  </div>
+
+  <!-- ============ 4. FUTUR ============ -->
+  <h2>4 · Le futur</h2>
+  <p>Le futur est le plus facile&nbsp;: on remplace la particule <span class="translit">ka-</span>
+  par le mot <strong><span class="ar">غادي</span> (<span class="translit">ghadi</span>)</strong>,
+  « aller » au sens de « je vais… ». Le verbe reste au présent <em>sans</em>
+  <span class="translit">ka-</span>.</p>
+
+  <div class="callout callout-retenir">
+    <span class="callout-titre">La formule</span>
+    <span class="pilule">ghadi</span> + <span class="pilule">verbe (sans ka-)</span>.
+    <br>Ex.&nbsp;: <span class="translit">nekteb</span> (que j'écrive) →
+    <span class="translit">ghadi nekteb</span> (je vais écrire).
+  </div>
+
+  <div class="table-scroll">
+  <table class="conj">
+    <thead>
+      <tr><th>Pronom</th><th>Arabe</th><th>Arabizi</th><th>Sens</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>ana</td><td class="ar">غادي نكتب</td><td class="arabizi">ghadi nekteb</td><td>je vais écrire</td></tr>
+      <tr><td>nta</td><td class="ar">غادي تكتب</td><td class="arabizi">ghadi tekteb</td><td>tu vas écrire <em>(m.)</em></td></tr>
+      <tr><td>nti</td><td class="ar">غادي تكتبي</td><td class="arabizi">ghadi tketbi</td><td>tu vas écrire <em>(f.)</em></td></tr>
+      <tr><td>howa</td><td class="ar">غادي يكتب</td><td class="arabizi">ghadi yekteb</td><td>il va écrire</td></tr>
+      <tr><td>hiya</td><td class="ar">غادي تكتب</td><td class="arabizi">ghadi tekteb</td><td>elle va écrire</td></tr>
+      <tr><td>7na</td><td class="ar">غادي نكتبو</td><td class="arabizi">ghadi nketbou</td><td>nous allons écrire</td></tr>
+      <tr><td>ntoma</td><td class="ar">غادي تكتبو</td><td class="arabizi">ghadi tketbou</td><td>vous allez écrire</td></tr>
+      <tr><td>houma</td><td class="ar">غادي يكتبو</td><td class="arabizi">ghadi yketbou</td><td>ils vont écrire</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="callout astuce">
+    <span class="callout-titre">Astuce — la version courte « gha- »</span>
+    À l'oral, <span class="translit">ghadi</span> se raccourcit souvent en préfixe
+    <strong><span class="translit">gha-</span></strong> collé au verbe&nbsp;:
+    <span class="translit">gha-nekteb</span> (<span class="ar">غنكتب</span>) = « je vais écrire ».
+    <span class="translit">ghadi</span> peut aussi s'accorder&nbsp;: <span class="translit">ghadya</span>
+    (f.), <span class="translit">ghadyin</span> (pl.).
+  </div>
+
+  <!-- ============ 5. NÉGATION ============ -->
+  <h2>5 · La négation</h2>
+  <p class="lettrine">La négation du darija <strong>encadre</strong> le verbe, un peu comme le
+  « ne… pas » français, mais soudé au mot&nbsp;: <span class="ar">ما</span>
+  (<span class="translit">ma-</span>) devant, <span class="ar">ش</span>
+  (<span class="translit">-ch</span>) derrière.</p>
+
+  <div class="callout callout-retenir">
+    <span class="callout-titre">La formule</span>
+    <span class="pilule">ma</span> + <span class="pilule">verbe</span> + <span class="pilule">ch</span>.
+    <br>La particule <span class="translit">ka-</span> ou <span class="translit">ghadi</span> reste
+    à sa place, à l'intérieur de l'étau.
+  </div>
+
+  <div class="table-scroll">
+  <table>
+    <thead>
+      <tr><th>Affirmatif</th><th>Négatif</th><th>Sens</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="ar">كنكتب</td><td class="ar">ما كنكتبش</td><td><span class="translit">ma kanktebch</span> — je n'écris pas</td></tr>
+      <tr><td class="ar">كلا</td><td class="ar">ما كلاش</td><td><span class="translit">ma klach</span> — il n'a pas mangé</td></tr>
+      <tr><td class="ar">غادي نمشي</td><td class="ar">ما غاديش نمشي</td><td><span class="translit">ma ghadich nemchi</span> — je ne vais pas aller</td></tr>
+      <tr><td class="ar">عندي</td><td class="ar">ما عنديش</td><td><span class="translit">ma 3ndich</span> — je n'ai pas</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h3>Nier un nom ou un adjectif&nbsp;: <span class="translit">machi</span></h3>
+  <p>Devant un nom, un adjectif ou un pronom (pas un verbe), on utilise
+  <strong><span class="ar">ماشي</span> (<span class="translit">machi</span>)</strong>, « ne… pas / pas »&nbsp;:</p>
+  <ul class="puces-orient">
+    <li><span class="ar">ماشي كبير</span> — <span class="translit">machi kbir</span> — <em>pas grand</em></li>
+    <li><span class="ar">ماشي أنا</span> — <span class="translit">machi ana</span> — <em>ce n'est pas moi</em></li>
+    <li><span class="ar">ماشي بزاف</span> — <span class="translit">machi bezzaf</span> — <em>pas beaucoup</em></li>
+  </ul>
+
+  <div class="callout piege">
+    <span class="callout-titre">Piège — <span class="translit">ma…ch</span> ou <span class="translit">machi</span>&nbsp;?</span>
+    Verbe ⇒ on l'<strong>encadre</strong> par <span class="translit">ma…ch</span>
+    (<span class="translit">ma kanktebch</span>). Nom / adjectif ⇒ un seul mot devant,
+    <span class="translit">machi</span> (<span class="translit">machi kbir</span>). Ne mélange pas
+    les deux&nbsp;!
+  </div>
+
+  <h3>Interdire&nbsp;: « ne fais pas… »</h3>
+  <p>Pour l'ordre négatif, même étau <span class="translit">ma…ch</span> autour du verbe au présent
+  sans <span class="translit">ka-</span>&nbsp;:</p>
+  <ul class="puces-orient">
+    <li><span class="ar">ما تكتبش</span> — <span class="translit">ma tektebch</span> — <em>n'écris pas</em></li>
+    <li><span class="ar">ما تمشيش</span> — <span class="translit">ma temchich</span> — <em>ne pars pas</em></li>
+  </ul>
+
+  <!-- ============ BILAN ============ -->
+  <hr class="filet-or">
+  <div class="callout callout-retenir">
+    <span class="callout-titre">Bilan du chapitre</span>
+    Tu sais saluer et remercier, désigner les personnes (<span class="translit">ana, nta…</span>),
+    coller les possessifs (<span class="translit">dar-i, dar-ek…</span>), dire « j'ai »
+    (<span class="translit">3ndi</span>), conjuguer au présent (<span class="translit">ka-</span>),
+    au futur (<span class="translit">ghadi</span>) et nier (<span class="translit">ma…ch</span> /
+    <span class="translit">machi</span>). De quoi tenir tes premières vraies phrases — on les met
+    en scène au <a href="#chapitre-3">Chapitre III</a>.
+  </div>
+
+  <div class="callout astuce">
+    <span class="callout-titre">Ta première phrase complète</span>
+    <span class="ar-xl">أنا ما عنديش الوقت، غادي نمشي</span><br>
+    <span class="translit">ana ma 3ndich lweqt, ghadi nemchi</span> — « moi, je n'ai pas le temps,
+    je vais y aller ». Tu y reconnais&nbsp;: pronom + « avoir » nié + futur. 🎉
+  </div>
+
+  <div class="retour-haut"><a href="#sommaire">↑ Retour au sommaire</a></div>
+
+  <!-- ============================================================ -->
+  <!-- ===================== CHAPITRE III =========================== -->
+  <!-- ============================================================ -->
+  <hr class="filet-or">
+  <div class="ouverture-chapitre" id="chapitre-3">
+    <div class="medaillon">III</div>
+    <span class="chapitre-num">Chapitre trois</span>
+    <h1 class="titre-chapitre">Dialogues</h1>
+    <p style="color:var(--or); font-family:var(--arabe); font-size:40px; direction:rtl;">الحوارات</p>
+    <div class="ornement"></div>
+  </div>
+
+  <p class="chapeau">La grammaire prend vie quand on l'entend. Voici la langue en situation, du plus
+  détendu (entre amis) au plus poli (entre inconnus). Chaque réplique est donnée en arabe, en
+  arabizi et en français, suivie d'une petite boîte à mots.</p>
+
+  <div class="callout callout-retenir">
+    <span class="callout-titre">Une langue, plusieurs registres</span>
+    Le darija ne « vouvoie » pas grammaticalement&nbsp;: on tutoie tout le monde. Le respect passe
+    par le <strong>ton</strong>, les <strong>titres</strong> (<span class="translit">a si</span>
+    monsieur, <span class="translit">a lalla</span> madame, <span class="translit">ustad</span>)
+    et les <strong>formules</strong> (bénédictions, remerciements). C'est ce dosage qu'on apprend ici.
+  </div>
+
+  <!-- ============ 1. ENTRE AMIS ============ -->
+  <h2>1 · Entre amis <span class="registre">détendu</span></h2>
+
+  <div class="dialogue">
+    <p class="titre-scene">— On se croise dans la rue —</p>
+    <div class="ligne"><span class="qui">Amine</span><span>
+      <span class="ar">أهلا صاحبي، كي داير؟</span>
+      <span class="translit">ahlan sa7bi, ki dayer ?</span>
+      <span class="fr">Salut mon pote, comment tu vas&nbsp;?</span>
+    </span></div>
+    <div class="ligne"><span class="qui">Karim</span><span>
+      <span class="ar">لاباس الحمد لله، ونتا؟</span>
+      <span class="translit">labas l7amdoullah, w nta ?</span>
+      <span class="fr">Ça va Dieu merci, et toi&nbsp;?</span>
+    </span></div>
+    <div class="ligne"><span class="qui">Amine</span><span>
+      <span class="ar">كلشي مزيان. شنو داير دابا؟</span>
+      <span class="translit">kolchi mzyan. chno dayer daba ?</span>
+      <span class="fr">Tout va bien. Qu'est-ce que tu fais là&nbsp;?</span>
+    </span></div>
+    <div class="ligne"><span class="qui">Karim</span><span>
+      <span class="ar">والو، غير كنتسارى.</span>
+      <span class="translit">wallou, ghir kantsara.</span>
+      <span class="fr">Rien, je me balade juste.</span>
+    </span></div>
+    <div class="ligne"><span class="qui">Amine</span><span>
+      <span class="ar">واخا نمشيو نشربو قهوة؟</span>
+      <span class="translit">wakha nemchiw nchrbou qahwa ?</span>
+      <span class="fr">On va boire un café&nbsp;?</span>
+    </span></div>
+    <div class="ligne"><span class="qui">Karim</span><span>
+      <span class="ar">مزيان! يالله.</span>
+      <span class="translit">mzyan ! yallah.</span>
+      <span class="fr">Super&nbsp;! Allons-y.</span>
+    </span></div>
+  </div>
+
+  <div class="dialogue">
+    <p class="titre-scene">— Se donner rendez-vous (au téléphone) —</p>
+    <div class="ligne"><span class="qui">Amine</span><span>
+      <span class="ar">واش غادي تجي للماتش الليلة؟</span>
+      <span class="translit">wach ghadi tji l-match l-lila ?</span>
+      <span class="fr">Tu viens au match ce soir&nbsp;?</span>
+    </span></div>
+    <div class="ligne"><span class="qui">Karim</span><span>
+      <span class="ar">إيه إن شاء الله. فأشمن ساعة؟</span>
+      <span class="translit">iyeh inchallah. f achmen sa3a ?</span>
+      <span class="fr">Oui si Dieu veut. À quelle heure&nbsp;?</span>
+    </span></div>
+    <div class="ligne"><span class="qui">Amine</span><span>
+      <span class="ar">على السبعة. تسناني قدام القهوة.</span>
+      <span class="translit">3la sb3a. tsenani qeddam l-qahwa.</span>
+      <span class="fr">À sept heures. Attends-moi devant le café.</span>
+    </span></div>
+    <div class="ligne"><span class="qui">Karim</span><span>
+      <span class="ar">واخا، بسلامة.</span>
+      <span class="translit">wakha, bslama.</span>
+      <span class="fr">D'accord, à plus.</span>
+    </span></div>
+  </div>
+
+  <div class="callout astuce">
+    <span class="callout-titre">Boîte à mots</span>
+    <span class="translit">sa7bi</span> mon pote · <span class="translit">wallou</span> rien ·
+    <span class="translit">ghir</span> juste/seulement · <span class="translit">daba</span>
+    maintenant · <span class="translit">yallah</span> allons-y · <span class="translit">wach</span>
+    <em>(particule qui ouvre une question&nbsp;: « est-ce que&nbsp;? »)</em> ·
+    <span class="translit">inchallah</span> si Dieu veut · <span class="translit">mzyan</span> bien/super.
+  </div>
+
+  <!-- ============ 2. EN FAMILLE ============ -->
+  <h2>2 · En famille <span class="registre fam">tendre</span></h2>
+
+  <div class="dialogue">
+    <p class="titre-scene">— À table —</p>
+    <div class="ligne"><span class="qui">Yemma</span><span>
+      <span class="ar">أ ولدي، واش كليتي؟</span>
+      <span class="translit">a weldi, wach klliti ?</span>
+      <span class="fr">Mon fils, tu as mangé&nbsp;?</span>
+    </span></div>
+    <div class="ligne"><span class="qui">Le fils</span><span>
+      <span class="ar">إيه أ يما، شكرا.</span>
+      <span class="translit">iyeh a yemma, choukran.</span>
+      <span class="fr">Oui maman, merci.</span>
+    </span></div>
+    <div class="ligne"><span class="qui">Yemma</span><span>
+      <span class="ar">زيد شوية ديال الطاجين.</span>
+      <span class="translit">zid chwiya dyal t-tajin.</span>
+      <span class="fr">Reprends un peu de tajine.</span>
+    </span></div>
+    <div class="ligne"><span class="qui">Le fils</span><span>
+      <span class="ar">لا، شبعت. الله يخلف أ يما.</span>
+      <span class="translit">la, chb3t. llah ykhlef a yemma.</span>
+      <span class="fr">Non, je suis rassasié. Merci maman <em>(litt. que Dieu te le rende)</em>.</span>
+    </span></div>
+  </div>
+
+  <div class="dialogue">
+    <p class="titre-scene">— Un parent et sa fille —</p>
+    <div class="ligne"><span class="qui">Baba</span><span>
+      <span class="ar">فين غادية أ بنتي؟</span>
+      <span class="translit">fin ghadya a benti ?</span>
+      <span class="fr">Où vas-tu, ma fille&nbsp;?</span>
+    </span></div>
+    <div class="ligne"><span class="qui">La fille</span><span>
+      <span class="ar">غادية لعند صاحبتي.</span>
+      <span class="translit">ghadya l-3nd sa7bti.</span>
+      <span class="fr">Je vais chez mon amie.</span>
+    </span></div>
+    <div class="ligne"><span class="qui">Baba</span><span>
+      <span class="ar">بكري ترجعي.</span>
+      <span class="translit">bekri terj3i.</span>
+      <span class="fr">Rentre tôt.</span>
+    </span></div>
+    <div class="ligne"><span class="qui">La fille</span><span>
+      <span class="ar">واخا أ بابا.</span>
+      <span class="translit">wakha a baba.</span>
+      <span class="fr">D'accord papa.</span>
+    </span></div>
+  </div>
+
+  <div class="callout astuce">
+    <span class="callout-titre">Boîte à mots — la famille</span>
+    <span class="translit">yemma / mama</span> maman · <span class="translit">baba</span> papa ·
+    <span class="translit">weld</span> fils/garçon · <span class="translit">bent</span> fille ·
+    <span class="translit">khouya</span> mon frère · <span class="translit">khti</span> ma sœur ·
+    <span class="translit">zid</span> reprends/ajoute · <span class="translit">chwiya</span> un peu ·
+    <span class="translit">dyal</span> de <em>(possession)</em> · <span class="translit">bekri</span> tôt ·
+    <span class="translit">chb3t</span> je suis rassasié.
+  </div>
+
+  <div class="callout note-regionale">
+    <span class="callout-titre">Note culturelle — le « a » de tendresse</span>
+    Ce petit <span class="ar">أ</span> (<span class="translit">a</span>) placé devant un mot est le
+    <strong>vocatif</strong> (« ô »)&nbsp;: <span class="translit">a yemma</span> (maman&nbsp;!),
+    <span class="translit">a weldi</span> (mon fils&nbsp;!). Et refuser une fois n'arrête jamais un
+    hôte marocain&nbsp;: on te resservira. Un <span class="translit">llah ykhlef</span> chaleureux
+    est la meilleure réponse.
+  </div>
+
+  <!-- ============ 3. ENTRE COLLÈGUES ============ -->
+  <h2>3 · Entre collègues <span class="registre pro">semi-formel</span></h2>
+
+  <div class="dialogue">
+    <p class="titre-scene">— Au bureau, le matin —</p>
+    <div class="ligne"><span class="qui">Salma</span><span>
+      <span class="ar">صباح الخير أستاذ.</span>
+      <span class="translit">sba7 lkhir a ustad.</span>
+      <span class="fr">Bonjour Monsieur.</span>
+    </span></div>
+    <div class="ligne"><span class="qui">Rachid</span><span>
+      <span class="ar">صباح النور. كيف الحال؟</span>
+      <span class="translit">sba7 nnour. kif l-7al ?</span>
+      <span class="fr">Bonjour. Comment allez-vous&nbsp;?</span>
+    </span></div>
+    <div class="ligne"><span class="qui">Salma</span><span>
+      <span class="ar">بخير الحمد لله. واش وصلاتك الإيميل؟</span>
+      <span class="translit">bikhir l7amdoullah. wach weslatek l-email ?</span>
+      <span class="fr">Bien, Dieu merci. Tu as reçu l'e-mail&nbsp;?</span>
+    </span></div>
+    <div class="ligne"><span class="qui">Rachid</span><span>
+      <span class="ar">إيه، غادي نجاوبك من بعد.</span>
+      <span class="translit">iyeh, ghadi njawbek men b3d.</span>
+      <span class="fr">Oui, je te réponds plus tard.</span>
+    </span></div>
+    <div class="ligne"><span class="qui">Salma</span><span>
+      <span class="ar">بلا تكليف، شكرا.</span>
+      <span class="translit">bla taklif, choukran.</span>
+      <span class="fr">Je t'en prie, merci.</span>
+    </span></div>
+  </div>
+
+  <div class="dialogue">
+    <p class="titre-scene">— Demander un service —</p>
+    <div class="ligne"><span class="qui">Salma</span><span>
+      <span class="ar">عافاك، ممكن تعاوني؟</span>
+      <span class="translit">3afak, momkin t3awenni ?</span>
+      <span class="fr">S'il te plaît, tu peux m'aider&nbsp;?</span>
+    </span></div>
+    <div class="ligne"><span class="qui">Rachid</span><span>
+      <span class="ar">بكل سرور. أشنو بغيتي؟</span>
+      <span class="translit">b koll sourour. achnou bghiti ?</span>
+      <span class="fr">Avec plaisir. Qu'est-ce que tu veux&nbsp;?</span>
+    </span></div>
+    <div class="ligne"><span class="qui">Salma</span><span>
+      <span class="ar">بغيت نعرف فين كاين الملف.</span>
+      <span class="translit">bghit n3ref fin kayn l-malaf.</span>
+      <span class="fr">Je voudrais savoir où est le dossier.</span>
+    </span></div>
+    <div class="ligne"><span class="qui">Rachid</span><span>
+      <span class="ar">غادي نوريهولك دابا.</span>
+      <span class="translit">ghadi nwarrih-oulek daba.</span>
+      <span class="fr">Je vais te le montrer tout de suite.</span>
+    </span></div>
+  </div>
+
+  <div class="callout astuce">
+    <span class="callout-titre">Boîte à mots — le travail</span>
+    <span class="translit">a ustad / a si</span> Monsieur <em>(respect)</em> ·
+    <span class="translit">kif l-7al ?</span> comment allez-vous <em>(plus soutenu que</em>
+    <span class="translit">ki dayer</span><em>)</em> · <span class="translit">momkin</span> est-ce possible ·
+    <span class="translit">t3awenni</span> m'aider · <span class="translit">bghit</span> je veux ·
+    <span class="translit">kayn</span> il y a · <span class="translit">bla taklif</span> je t'en prie ·
+    <span class="translit">men b3d</span> plus tard · <span class="translit">l-malaf</span> le dossier.
+  </div>
+
+  <!-- ============ 4. ENTRE INCONNUS ============ -->
+  <h2>4 · Entre inconnus <span class="registre inc">poli</span></h2>
+
+  <div class="dialogue">
+    <p class="titre-scene">— Demander son chemin —</p>
+    <div class="ligne"><span class="qui">Vous</span><span>
+      <span class="ar">سمح ليا أسي، فين كاينة المحطة؟</span>
+      <span class="translit">sme7 liya a si, fin kayna l-ma7atta ?</span>
+      <span class="fr">Excusez-moi Monsieur, où est la gare&nbsp;?</span>
+    </span></div>
+    <div class="ligne"><span class="qui">Passant</span><span>
+      <span class="ar">سير نيشان، من بعد دور على اليسار.</span>
+      <span class="translit">sir nichan, men b3d dour 3la l-isar.</span>
+      <span class="fr">Va tout droit, puis tourne à gauche.</span>
+    </span></div>
+    <div class="ligne"><span class="qui">Vous</span><span>
+      <span class="ar">بعيدة؟</span>
+      <span class="translit">b3ida ?</span>
+      <span class="fr">C'est loin&nbsp;?</span>
+    </span></div>
+    <div class="ligne"><span class="qui">Passant</span><span>
+      <span class="ar">لا، قريبة. مشي ديال خمس دقايق.</span>
+      <span class="translit">la, qriba. mchi dyal khms dqayeq.</span>
+      <span class="fr">Non, c'est proche. Environ cinq minutes de marche.</span>
+    </span></div>
+    <div class="ligne"><span class="qui">Vous</span><span>
+      <span class="ar">الله يخليك، شكرا بزاف.</span>
+      <span class="translit">llah ykhllik, choukran bezzaf.</span>
+      <span class="fr">Merci beaucoup.</span>
+    </span></div>
+    <div class="ligne"><span class="qui">Passant</span><span>
+      <span class="ar">بلا جميل.</span>
+      <span class="translit">bla jmil.</span>
+      <span class="fr">De rien.</span>
+    </span></div>
+  </div>
+
+  <div class="dialogue">
+    <p class="titre-scene">— Au souk, marchander —</p>
+    <div class="ligne"><span class="qui">Vous</span><span>
+      <span class="ar">أسي، بشحال هاد الشي؟</span>
+      <span class="translit">a si, b ch7al had chi ?</span>
+      <span class="fr">Monsieur, combien coûte ceci&nbsp;?</span>
+    </span></div>
+    <div class="ligne"><span class="qui">Marchand</span><span>
+      <span class="ar">عشرين درهم.</span>
+      <span class="translit">3echrin derhem.</span>
+      <span class="fr">Vingt dirhams.</span>
+    </span></div>
+    <div class="ligne"><span class="qui">Vous</span><span>
+      <span class="ar">بزاف! نقص شوية عافاك.</span>
+      <span class="translit">bezzaf ! neqqes chwiya 3afak.</span>
+      <span class="fr">C'est trop&nbsp;! Baisse un peu s'il te plaît.</span>
+    </span></div>
+    <div class="ligne"><span class="qui">Marchand</span><span>
+      <span class="ar">يالله، خمستاش. آخر كلمة.</span>
+      <span class="translit">yallah, khemstach. akher kelma.</span>
+      <span class="fr">Allez, quinze. Dernier prix.</span>
+    </span></div>
+    <div class="ligne"><span class="qui">Vous</span><span>
+      <span class="ar">واخا، هاك.</span>
+      <span class="translit">wakha, hak.</span>
+      <span class="fr">D'accord, tenez.</span>
+    </span></div>
+  </div>
+
+  <div class="callout astuce">
+    <span class="callout-titre">Boîte à mots — dans la rue</span>
+    <span class="translit">sme7 liya</span> pardon · <span class="translit">a si / a lalla</span>
+    Monsieur / Madame · <span class="translit">fin</span> où · <span class="translit">nichan</span>
+    tout droit · <span class="translit">dour</span> tourne · <span class="translit">l-isar / l-imen</span>
+    gauche / droite · <span class="translit">qrib / b3id</span> proche / loin ·
+    <span class="translit">b ch7al</span> combien · <span class="translit">neqqes</span> baisse (le prix) ·
+    <span class="translit">hak</span> tiens · <span class="translit">bla jmil</span> de rien.
+  </div>
+
+  <div class="callout callout-retenir">
+    <span class="callout-titre">Les nombres utiles (pour marchander)</span>
+    <div class="table-scroll" style="margin-top:8px">
+    <table style="margin:0">
+      <tbody>
+        <tr>
+          <td>1 <span class="translit">wa7ed</span></td><td>2 <span class="translit">jouj</span></td>
+          <td>3 <span class="translit">tlata</span></td><td>4 <span class="translit">reb3a</span></td>
+          <td>5 <span class="translit">khemsa</span></td>
+        </tr>
+        <tr>
+          <td>6 <span class="translit">setta</span></td><td>7 <span class="translit">seb3a</span></td>
+          <td>8 <span class="translit">tmnya</span></td><td>9 <span class="translit">ts3a</span></td>
+          <td>10 <span class="translit">3echra</span></td>
+        </tr>
+        <tr>
+          <td>15 <span class="translit">khemstach</span></td><td>20 <span class="translit">3echrin</span></td>
+          <td>50 <span class="translit">khemsin</span></td><td>100 <span class="translit">mya</span></td>
+          <td>1000 <span class="translit">alf</span></td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+
+  <!-- ============ BILAN ============ -->
+  <hr class="filet-or">
+  <div class="callout callout-retenir">
+    <span class="callout-titre">Bilan du chapitre</span>
+    Tu as vu la même langue se colorer selon le contexte&nbsp;: <span class="translit">ki dayer</span>
+    entre amis, <span class="translit">kif l-7al</span> au bureau, <span class="translit">sme7 liya
+    a si</span> avec un inconnu. Repère les formules qui reviennent (<span class="translit">wakha,
+    yallah, bla jmil, 3afak</span>)&nbsp;: ce sont les charnières de toute conversation.
+  </div>
+
+  <div class="callout astuce">
+    <span class="callout-titre">À toi de jouer</span>
+    Relis chaque dialogue à voix haute en soignant les sons du <a href="#chapitre-1">Chapitre&nbsp;I</a>
+    (le <span class="arabizi">7</span> de <span class="translit">l7amdoullah</span>, le
+    <span class="arabizi">3</span> de <span class="translit">3afak</span>, le
+    <span class="arabizi">q</span> de <span class="translit">qahwa</span>). Puis change les prénoms
+    et improvise&nbsp;: c'est ta première vraie conversation.
+  </div>
+
+  <div class="retour-haut"><a href="#sommaire">↑ Retour au sommaire</a></div>
+
+  <!-- ============================================================ -->
+  <!-- ===================== CHAPITRE IV =========================== -->
+  <!-- ============================================================ -->
+  <hr class="filet-or">
+  <div class="ouverture-chapitre" id="chapitre-4">
+    <div class="medaillon">IV</div>
+    <span class="chapitre-num">Chapitre quatre</span>
+    <h1 class="titre-chapitre">Culture marocaine</h1>
+    <p style="color:var(--or); font-family:var(--arabe); font-size:40px; direction:rtl;">الثقافة المغربية</p>
+    <div class="ornement"></div>
+  </div>
+
+  <p class="chapeau">Une langue est le miroir d'un pays. Pour parler le darija « de l'intérieur »,
+  il faut connaître l'histoire qui l'a façonné, la géographie qui le décline en accents, et la
+  culture qui l'habite. Ce chapitre te donne ce décor — avec un regard particulier sur tes trois
+  attaches&nbsp;: <strong>Agadir</strong>, <strong>Casablanca</strong> et <strong>Amizmiz</strong>.</p>
+
+  <!-- ============ 1. HISTOIRE ============ -->
+  <h2>1 · Histoire</h2>
+  <p class="lettrine">Le Maroc — <span class="ar">المغرب</span> (<span class="translit">l-Maghrib</span>,
+  « le couchant ») — est d'abord une terre <strong>amazighe</strong> (berbère), peuplée depuis des
+  millénaires. Sur ce socle se sont posés, tour à tour, Phéniciens et Romains sur les côtes, puis
+  l'islam et la langue arabe à partir du VII<sup>e</sup> siècle, donnant naissance à une longue
+  suite de dynasties.</p>
+
+  <div class="table-scroll">
+  <table class="timeline">
+    <caption>Les grandes dynasties</caption>
+    <thead>
+      <tr><th>Dynastie</th><th>Période</th><th>Repère</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Idrissides</td><td>789–974</td><td>premier État musulman&nbsp;; fondation de Fès</td></tr>
+      <tr><td>Almoravides <span class="ar">المرابطون</span></td><td>XI<sup>e</sup>–XII<sup>e</sup> s.</td><td>venus du Sahara&nbsp;; fondent <strong>Marrakech</strong>&nbsp;; empire jusqu'en Espagne</td></tr>
+      <tr><td>Almohades <span class="ar">الموحدون</span></td><td>XII<sup>e</sup>–XIII<sup>e</sup> s.</td><td>issus du <strong>Haut Atlas</strong>&nbsp;; apogée&nbsp;; Koutoubia, tour Hassan</td></tr>
+      <tr><td>Mérinides <span class="ar">المرينيون</span></td><td>XIII<sup>e</sup>–XV<sup>e</sup> s.</td><td>Fès capitale intellectuelle&nbsp;; médersas</td></tr>
+      <tr><td>Saadiens <span class="ar">السعديون</span></td><td>XVI<sup>e</sup>–XVII<sup>e</sup> s.</td><td>chérifiens&nbsp;; bataille des Trois Rois (1578)&nbsp;; Ahmed al-Mansour</td></tr>
+      <tr><td>Alaouites <span class="ar">العلويون</span></td><td>depuis 1666</td><td><strong>dynastie actuelle</strong> (roi Mohammed&nbsp;VI depuis 1999)</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="callout callout-retenir">
+    <span class="callout-titre">Trois dates à retenir</span>
+    <ul class="puces-orient" style="margin:6px 0 0">
+      <li><strong>~680</strong> — arrivée de l'islam et de l'arabe au Maghreb.</li>
+      <li><strong>1912</strong> — protectorats français et espagnol (traité de Fès).</li>
+      <li><strong>1956</strong> — indépendance du Maroc, retour du sultan Mohammed&nbsp;V.</li>
+    </ul>
+  </div>
+
+  <div class="callout note-regionale">
+    <span class="callout-titre">Note régionale — Agadir</span>
+    <strong>Agadir</strong> porte une date dans sa mémoire&nbsp;: le séisme du <strong>29&nbsp;février
+    1960</strong>, qui détruisit la ville. Reconstruite entièrement, c'est aujourd'hui une cité
+    <em>moderne</em>, balnéaire et tournée vers la pêche et le tourisme — d'où son visage si
+    différent des vieilles médinas de Fès ou Marrakech.
+  </div>
+
+  <!-- ============ 2. GÉOGRAPHIE ============ -->
+  <h2>2 · Géographie</h2>
+  <p>Le Maroc occupe l'angle nord-ouest de l'Afrique, seul pays baigné à la fois par
+  l'<strong>Atlantique</strong> et la <strong>Méditerranée</strong>, face à l'Europe par le
+  <strong>détroit de Gibraltar</strong>. Son relief s'organise autour de grandes chaînes&nbsp;:</p>
+
+  <ul class="puces-orient">
+    <li>le <strong>Rif</strong>, au nord, au-dessus de la Méditerranée&nbsp;;</li>
+    <li>le <strong>Moyen Atlas</strong>, le <strong>Haut Atlas</strong> (point culminant&nbsp;: le
+      <strong>Toubkal</strong>, 4&nbsp;167&nbsp;m) et l'<strong>Anti-Atlas</strong>, qui barrent le pays en diagonale&nbsp;;</li>
+    <li>les <strong>plaines atlantiques</strong> fertiles (dont la plaine du <strong>Souss</strong>, autour d'Agadir)&nbsp;;</li>
+    <li>le <strong>Sahara</strong>, au sud et au sud-est.</li>
+  </ul>
+
+  <div class="villes">
+    <div class="ville">
+      <h4>Agadir <span class="ar">أگادير</span></h4>
+      <p>Côte atlantique, pays du Souss. Pêche, tourisme, argan. Zone <em>tachelhit</em> (amazigh du Sud).</p>
+    </div>
+    <div class="ville">
+      <h4>Casablanca <span class="ar">الدار البيضاء</span></h4>
+      <p>Plus grande ville, capitale économique. Port, affaires, mosquée Hassan&nbsp;II. Darija urbain de référence.</p>
+    </div>
+    <div class="ville">
+      <h4>Amizmiz <span class="ar">أمزميز</span></h4>
+      <p>Contreforts du Haut Atlas, au sud-ouest de Marrakech. Bourg berbère, souk hebdomadaire, porte du Toubkal.</p>
+    </div>
+  </div>
+
+  <div class="callout astuce">
+    <span class="callout-titre">Bon à savoir</span>
+    <strong>Rabat</strong> (<span class="ar">الرباط</span>) est la capitale <em>politique</em>&nbsp;;
+    <strong>Casablanca</strong> la capitale <em>économique</em>. Ne les confonds pas&nbsp;: beaucoup
+    croient à tort que Casablanca est la capitale.
+  </div>
+
+  <div class="callout note-regionale">
+    <span class="callout-titre">Note régionale — Amizmiz</span>
+    Petite ville de montagne, <strong>Amizmiz</strong> vit au rythme de son <strong>souk du mardi</strong>
+    et de la culture amazighe de l'Atlas. La région fut durement touchée par le
+    <strong>séisme d'Al Haouz du 8&nbsp;septembre 2023</strong> — un événement encore très présent
+    dans les mémoires locales, à évoquer avec délicatesse.
+  </div>
+
+  <!-- ============ 3. GÉOPOLITIQUE ============ -->
+  <h2>3 · Géopolitique</h2>
+  <p>Le Maroc est une <strong>monarchie constitutionnelle</strong>&nbsp;: le roi est chef de l'État
+  et « commandeur des croyants », aux côtés d'un parlement élu et d'un chef de gouvernement. Le
+  pays joue un rôle de <strong>pont</strong> entre l'Afrique, le monde arabe et l'Europe.</p>
+
+  <ul class="puces-orient">
+    <li>Membre de la <strong>Ligue arabe</strong>, de l'<strong>Union africaine</strong> (réintégrée en 2017) et de l'Union du Maghreb arabe.</li>
+    <li>Liens étroits avec la <strong>France</strong> et l'<strong>Union européenne</strong> (commerce, migrations, diaspora), le <strong>Golfe</strong> et les <strong>États-Unis</strong>.</li>
+    <li>Carrefour migratoire majeur entre l'Afrique subsaharienne et l'Europe.</li>
+  </ul>
+
+  <div class="callout callout-retenir">
+    <span class="callout-titre">Le Sahara occidental — en bref et sans parti pris</span>
+    C'est le principal dossier diplomatique de la région. Le Maroc administre la majeure partie du
+    territoire et propose un plan d'<em>autonomie</em>&nbsp;; le Front Polisario revendique
+    l'indépendance&nbsp;; l'ONU y maintient une mission. Un sujet <strong>sensible</strong>&nbsp;: mieux
+    vaut l'écouter que le trancher dans une conversation.
+  </div>
+
+  <!-- ============ 4. LINGUISTIQUE ============ -->
+  <h2>4 · Linguistique</h2>
+  <p class="lettrine">Le Maroc est profondément <strong>plurilingue</strong>. Comprendre ce paysage,
+  c'est comprendre pourquoi le darija sonne comme il sonne&nbsp;: un socle arabe, un substrat
+  amazigh, et des emprunts au français et à l'espagnol.</p>
+
+  <div class="table-scroll">
+  <table>
+    <caption>Les langues du Maroc</caption>
+    <thead>
+      <tr><th>Langue</th><th>Statut / usage</th><th>Où&nbsp;?</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Darija</strong> <span class="ar">الدارجة</span></td><td>arabe marocain, langue maternelle majoritaire, orale</td><td>tout le pays</td></tr>
+      <tr><td><strong>Amazigh</strong> <span class="ar">ⵜⴰⵎⴰⵣⵉⵖⵜ</span></td><td>langue <strong>officielle</strong> (depuis 2011), écrite en tifinagh</td><td>trois grandes variétés (ci-dessous)</td></tr>
+      <tr><td>Arabe standard</td><td>officiel&nbsp;; écrit, médias, religion, école</td><td>national (non parlé au quotidien)</td></tr>
+      <tr><td>Français</td><td>administration, affaires, enseignement supérieur</td><td>villes, milieux éduqués</td></tr>
+      <tr><td>Espagnol</td><td>héritage du protectorat, commerce</td><td>Nord (Rif, Tanger)</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="callout note-regionale">
+    <span class="callout-titre">Les trois amazighs — et tes régions</span>
+    <ul class="puces-orient" style="margin:6px 0 0">
+      <li><strong>Tachelhit</strong> (chleuh) — le Souss et le sud&nbsp;: c'est l'amazigh d'<strong>Agadir</strong>.</li>
+      <li><strong>Tamazight</strong> (central) — le Moyen et le Haut Atlas&nbsp;: c'est l'amazigh d'<strong>Amizmiz</strong>.</li>
+      <li><strong>Tarifit</strong> — le Rif, au nord.</li>
+    </ul>
+    À <strong>Casablanca</strong>, ville de brassage, c'est le darija qui domine — mais on y entend
+    toutes les régions du pays.
+  </div>
+
+  <div class="callout astuce">
+    <span class="callout-titre">Le darija, langue-mosaïque</span>
+    Écoute et tu reconnaîtras&nbsp;: <span class="translit">tomobil</span> (voiture, du fr.
+    <em>automobile</em>), <span class="translit">forcheta</span> (fourchette),
+    <span class="translit">semana</span> (semaine, de l'esp. <em>semana</em>),
+    <span class="translit">triko</span> (tricot). Ta connaissance du français est déjà un atout&nbsp;!
+  </div>
+
+  <!-- ============ 5. GASTRONOMIE ============ -->
+  <h2>5 · Gastronomie</h2>
+  <p>La cuisine marocaine est l'une des plus réputées au monde&nbsp;: généreuse, épicée avec finesse,
+  et surtout <strong>partagée</strong> — on mange souvent d'un même plat, à la main droite ou avec du pain.</p>
+
+  <div class="table-scroll">
+  <table class="vocab-table">
+    <thead>
+      <tr><th>Arabe</th><th>Arabizi</th><th>Plat</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="ar">طاجين</td><td class="arabizi">tajin</td><td>ragoût mijoté dans le plat conique du même nom</td></tr>
+      <tr><td class="ar">كسكس</td><td class="arabizi">seksou</td><td>couscous — le plat du <strong>vendredi</strong></td></tr>
+      <tr><td class="ar">حريرة</td><td class="arabizi">7rira</td><td>soupe de tomate, pois chiches et lentilles (Ramadan)</td></tr>
+      <tr><td class="ar">بسطيلة</td><td class="arabizi">bastila</td><td>tourte feuilletée sucrée-salée (volaille, amandes)</td></tr>
+      <tr><td class="ar">طنجية</td><td class="arabizi">tanjiya</td><td>viande confite en jarre — spécialité de Marrakech</td></tr>
+      <tr><td class="ar">أتاي</td><td class="arabizi">atay</td><td>thé vert à la menthe, servi de haut</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="callout note-regionale">
+    <span class="callout-titre">Note régionale — le Souss dans l'assiette</span>
+    La région d'<strong>Agadir</strong> est le pays de l'<strong>arganier</strong>&nbsp;: on en tire
+    l'<strong>huile d'argan</strong> (<span class="translit">zit argan</span>) et l'<strong>amlou</strong>
+    (<span class="translit">amlou</span>), une pâte à tartiner d'amandes, d'argan et de miel — un
+    trésor local. Sur la côte, place aussi au <strong>poisson grillé</strong> tout frais.
+  </div>
+
+  <div class="callout astuce">
+    <span class="callout-titre">Le rituel du thé</span>
+    L'<span class="translit">atay</span> se verse <strong>de haut</strong> pour le faire mousser, et
+    se boit en trois verres — un proverbe dit&nbsp;: <em>« le premier amer comme la vie, le deuxième
+    fort comme l'amour, le troisième doux comme la mort »</em>. Refuser un thé, c'est presque refuser
+    l'hospitalité.
+  </div>
+
+  <!-- ============ 6. CULTURE & VIE QUOTIDIENNE ============ -->
+  <h2>6 · Culture &amp; vie quotidienne</h2>
+
+  <h3>Musique</h3>
+  <ul class="puces-orient">
+    <li><strong>Gnawa</strong> — musique spirituelle afro-marocaine (festival d'Essaouira).</li>
+    <li><strong>Chaâbi</strong> — la musique populaire des fêtes.</li>
+    <li><strong>Aïta</strong> — chant rural des plaines atlantiques.</li>
+    <li><strong>Ahwach / Ahidous</strong> — danses collectives amazighes de l'Atlas (autour d'Amizmiz) et du Souss.</li>
+    <li><strong>Malhoun</strong> — poésie chantée citadine&nbsp;; et toute la scène rap/pop actuelle.</li>
+  </ul>
+
+  <h3>Artisanat</h3>
+  <ul class="puces-orient">
+    <li><strong>Zellige</strong> — mosaïque de faïence géométrique (l'inspiration du design de ce manuel&nbsp;!).</li>
+    <li><strong>Tapis amazighs</strong> — tissés dans l'Atlas, chaque motif raconte une histoire.</li>
+    <li><strong>Cuir</strong> de Fès, <strong>poterie</strong> de Safi, <strong>bois de thuya</strong> d'Essaouira, <strong>bijoux</strong> d'argent berbères.</li>
+  </ul>
+
+  <h3>Codes &amp; savoir-vivre</h3>
+  <div class="callout callout-retenir">
+    <span class="callout-titre">Quelques usages qui comptent</span>
+    <ul class="puces-orient" style="margin:6px 0 0">
+      <li>On mange et on donne de la <strong>main droite</strong>.</li>
+      <li>On dit <span class="translit">bismillah</span> avant de manger, <span class="translit">l7amdoullah</span> après.</li>
+      <li>On se déchausse souvent en entrant chez quelqu'un.</li>
+      <li>Le vendredi (couscous, prière) rythme la semaine&nbsp;; le <strong>hammam</strong> et le <strong>souk</strong> sont des institutions sociales.</li>
+      <li>L'<strong>hospitalité</strong> (<span class="translit">d-diyafa</span>) est sacrée&nbsp;: un invité est une bénédiction.</li>
+    </ul>
+  </div>
+
+  <div class="callout astuce">
+    <span class="callout-titre">Dieu dans la langue</span>
+    Beaucoup d'expressions du quotidien invoquent Dieu, sans forcément de portée religieuse forte&nbsp;:
+    <span class="translit">inchallah</span> (si Dieu veut = « on verra / j'espère »),
+    <span class="translit">l7amdoullah</span> (Dieu merci = « ça va »),
+    <span class="translit">bismillah</span> (au nom de Dieu = « c'est parti / bon appétit »),
+    <span class="translit">llah y3awn</span> (courage). Les employer, c'est déjà parler comme un local.
+  </div>
+
+  <!-- ============ BILAN ============ -->
+  <hr class="filet-or">
+  <div class="callout callout-retenir">
+    <span class="callout-titre">Bilan du chapitre</span>
+    Tu situes désormais le darija dans son pays&nbsp;: une histoire amazighe puis arabo-musulmane,
+    une géographie de mer et de montagnes, un pays-pont plurilingue, une table généreuse et une
+    culture de l'hospitalité. Et tu sais ce qui distingue tes trois attaches — la modernité
+    balnéaire d'Agadir, la métropole de Casa, la montagne berbère d'Amizmiz.
+  </div>
+
+  <div class="retour-haut"><a href="#sommaire">↑ Retour au sommaire</a></div>
+
+  <!-- ============================================================ -->
+  <!-- ===================== CHAPITRE V ============================ -->
+  <!-- ============================================================ -->
+  <hr class="filet-or">
+  <div class="ouverture-chapitre" id="chapitre-5">
+    <div class="medaillon">V</div>
+    <span class="chapitre-num">Chapitre cinq</span>
+    <h1 class="titre-chapitre">Exercices &amp; corrigés</h1>
+    <p style="color:var(--or); font-family:var(--arabe); font-size:40px; direction:rtl;">التمارين</p>
+    <div class="ornement"></div>
+  </div>
+
+  <p class="chapeau">On révise, on s'auto-évalue, on corrige. Fais chaque exercice <em>avant</em>
+  d'ouvrir le corrigé (clique sur « Voir le corrigé »). À l'impression, les corrigés sortent dépliés.</p>
+
+  <div class="callout astuce">
+    <span class="callout-titre">Mode d'emploi</span>
+    Note tes réponses sur papier, puis compare. Un son ou une règle qui résiste&nbsp;? Reviens au
+    chapitre indiqué en tête de série. La répétition espacée (revoir à J+1, J+7) ancre bien mieux
+    que tout réviser d'un coup.
+  </div>
+
+  <!-- ============ SÉRIE A — PHONÉTIQUE ============ -->
+  <h2><span class="badge-serie">Série A</span> &nbsp;Phonétique <span style="font-size:15px;color:var(--encre-douce)">(Chapitre&nbsp;I)</span></h2>
+
+  <div class="exo">
+    <p><span class="exo-num">A1 — </span><span class="consigne">Dans chaque mot, repère le son « de gorge » et donne la lettre arabe correspondante.</span></p>
+    <ol>
+      <li><span class="translit">7out</span> (poisson)</li>
+      <li><span class="translit">3ayn</span> (œil)</li>
+      <li><span class="translit">khobz</span> (pain)</li>
+      <li><span class="translit">ghali</span> (cher)</li>
+      <li><span class="translit">9alb</span> (cœur)</li>
+    </ol>
+    <details class="corrige">
+      <summary>Voir le corrigé</summary>
+      <ol>
+        <li><span class="translit">7</span> = <span class="ar">ح</span> — fricative pharyngale <em>sourde</em></li>
+        <li><span class="translit">3</span> = <span class="ar">ع</span> — fricative pharyngale <em>voisée</em></li>
+        <li><span class="translit">kh</span> = <span class="ar">خ</span> — fricative vélaire sourde</li>
+        <li><span class="translit">gh</span> = <span class="ar">غ</span> — fricative vélaire voisée (r grasseyé)</li>
+        <li><span class="translit">9 (q)</span> = <span class="ar">ق</span> — occlusive uvulaire</li>
+      </ol>
+    </details>
+  </div>
+
+  <div class="exo">
+    <p><span class="exo-num">A2 — </span><span class="consigne">Emphatique ou clair&nbsp;? Pour chaque paire, dis lequel est emphatique (le « a » sombre).</span></p>
+    <ol>
+      <li><span class="translit">ṣif</span> / <span class="translit">sif</span></li>
+      <li><span class="translit">ṭab</span> / <span class="translit">tab</span></li>
+      <li><span class="translit">ḍar</span> / <span class="translit">dar</span></li>
+    </ol>
+    <details class="corrige">
+      <summary>Voir le corrigé</summary>
+      <ol>
+        <li><span class="translit">ṣif</span> (été) = <strong>emphatique</strong>&nbsp;; <span class="translit">sif</span> (épée) = clair.</li>
+        <li><span class="translit">ṭab</span> (cuit) = <strong>emphatique</strong>&nbsp;; <span class="translit">tab</span> = clair.</li>
+        <li><span class="translit">ḍar</span> (il a nui) = <strong>emphatique</strong>&nbsp;; <span class="translit">dar</span> (maison) = clair.</li>
+      </ol>
+      Règle&nbsp;: dans la version emphatique, le « a » recule et s'assombrit (vers « o »).
+    </details>
+  </div>
+
+  <div class="exo">
+    <p><span class="exo-num">A3 — </span><span class="consigne">Donne le symbole API de chaque chiffre arabizi.</span></p>
+    <ol>
+      <li>2 — 3 — 5 — 7 — 9 — gh</li>
+    </ol>
+    <details class="corrige">
+      <summary>Voir le corrigé</summary>
+      <span class="translit">2</span> = <span class="api">/ʔ/</span> ·
+      <span class="translit">3</span> = <span class="api">/ʕ/</span> ·
+      <span class="translit">5 (kh)</span> = <span class="api">/χ/</span> ·
+      <span class="translit">7</span> = <span class="api">/ħ/</span> ·
+      <span class="translit">9</span> = <span class="api">/q/</span> ·
+      <span class="translit">gh</span> = <span class="api">/ʁ/</span>
+    </details>
+  </div>
+
+  <div class="exo">
+    <p><span class="exo-num">A4 — </span><span class="consigne">Lis à voix haute (attention au schwa et aux grappes de consonnes)&nbsp;:</span></p>
+    <p style="text-align:center;font-size:20px;"><span class="ar-xl">كتبت لك</span> &nbsp; <span class="translit">ktebt lek</span> &nbsp;·&nbsp; <span class="translit">mchit l-souq</span> &nbsp;·&nbsp; <span class="translit">chreb atay</span></p>
+    <details class="corrige">
+      <summary>Voir le corrigé</summary>
+      Enchaîne les consonnes avec un « e » à peine audible&nbsp;: « k'tebt l'k », « m'chit », « ch'reb ».
+      Ne mets jamais un « e » plein à la française. Enregistre-toi et compare avec un locuteur natif.
+    </details>
+  </div>
+
+  <!-- ============ SÉRIE B — BASES ============ -->
+  <h2><span class="badge-serie">Série B</span> &nbsp;Les bases <span style="font-size:15px;color:var(--encre-douce)">(Chapitre&nbsp;II)</span></h2>
+
+  <div class="exo">
+    <p><span class="exo-num">B1 — </span><span class="consigne">Complète avec le bon pronom sujet.</span></p>
+    <ol>
+      <li>___ = je / moi</li>
+      <li>___ = nous</li>
+      <li>___ = toi <em>(à une femme)</em></li>
+      <li>___ = ils / elles</li>
+    </ol>
+    <details class="corrige">
+      <summary>Voir le corrigé</summary>
+      <ol>
+        <li><span class="translit">ana</span> <span class="ar">أنا</span></li>
+        <li><span class="translit">7na</span> <span class="ar">حنا</span></li>
+        <li><span class="translit">nti</span> <span class="ar">نتي</span></li>
+        <li><span class="translit">houma</span> <span class="ar">هوما</span></li>
+      </ol>
+    </details>
+  </div>
+
+  <div class="exo">
+    <p><span class="exo-num">B2 — </span><span class="consigne">Traduis en darija (avec le bon suffixe possessif), à partir de <span class="translit">dar</span> = maison.</span></p>
+    <ol>
+      <li>ma maison</li>
+      <li>ta maison</li>
+      <li>sa maison <em>(à elle)</em></li>
+      <li>notre maison</li>
+      <li>leur maison</li>
+    </ol>
+    <details class="corrige">
+      <summary>Voir le corrigé</summary>
+      <ol>
+        <li><span class="translit">dar-i</span> <span class="ar">داري</span></li>
+        <li><span class="translit">dar-ek</span> <span class="ar">دارك</span></li>
+        <li><span class="translit">dar-ha</span> <span class="ar">دارها</span></li>
+        <li><span class="translit">dar-na</span> <span class="ar">دارنا</span></li>
+        <li><span class="translit">dar-hom</span> <span class="ar">دارهم</span></li>
+      </ol>
+    </details>
+  </div>
+
+  <div class="exo">
+    <p><span class="exo-num">B3 — </span><span class="consigne">Conjugue <span class="translit">kteb</span> (écrire) au présent.</span></p>
+    <ol>
+      <li>ana ___</li>
+      <li>nti ___</li>
+      <li>howa ___</li>
+      <li>ntoma ___</li>
+    </ol>
+    <details class="corrige">
+      <summary>Voir le corrigé</summary>
+      <ol>
+        <li><span class="translit">kanekteb</span> <span class="ar">كنكتب</span> (j'écris)</li>
+        <li><span class="translit">katketbi</span> <span class="ar">كتكتبي</span> (tu écris, f.)</li>
+        <li><span class="translit">kaykteb</span> <span class="ar">كيكتب</span> (il écrit)</li>
+        <li><span class="translit">katketbou</span> <span class="ar">كتكتبو</span> (vous écrivez)</li>
+      </ol>
+      Rappel&nbsp;: <span class="translit">ka-</span> + préfixe (n / t / y) + radical, <span class="translit">-ou</span> au pluriel, <span class="translit">-i</span> au « tu » féminin.
+    </details>
+  </div>
+
+  <div class="exo">
+    <p><span class="exo-num">B4 — </span><span class="consigne">Mets ces phrases au futur (avec <span class="translit">ghadi</span>).</span></p>
+    <ol>
+      <li><span class="translit">kanemchi</span> (je vais / je pars)</li>
+      <li><span class="translit">kayakol</span> (il mange)</li>
+      <li><span class="translit">kanchrbou</span> (nous buvons)</li>
+    </ol>
+    <details class="corrige">
+      <summary>Voir le corrigé</summary>
+      <ol>
+        <li><span class="translit">ghadi nemchi</span> <span class="ar">غادي نمشي</span> (je vais partir)</li>
+        <li><span class="translit">ghadi yakol</span> <span class="ar">غادي ياكل</span> (il va manger)</li>
+        <li><span class="translit">ghadi nchrbou</span> <span class="ar">غادي نشربو</span> (nous allons boire)</li>
+      </ol>
+      On retire <span class="translit">ka-</span> et on place <span class="translit">ghadi</span> devant le verbe.
+    </details>
+  </div>
+
+  <div class="exo">
+    <p><span class="exo-num">B5 — </span><span class="consigne">Mets au négatif (<span class="translit">ma…ch</span> pour les verbes, <span class="translit">machi</span> pour le reste).</span></p>
+    <ol>
+      <li><span class="translit">kanekteb</span> (j'écris)</li>
+      <li><span class="translit">3ndi</span> (j'ai)</li>
+      <li><span class="translit">howa kbir</span> (il est grand)</li>
+      <li><span class="translit">ghadi nemchi</span> (je vais partir)</li>
+    </ol>
+    <details class="corrige">
+      <summary>Voir le corrigé</summary>
+      <ol>
+        <li><span class="translit">ma kanktebch</span> <span class="ar">ما كنكتبش</span> (je n'écris pas)</li>
+        <li><span class="translit">ma 3ndich</span> <span class="ar">ما عنديش</span> (je n'ai pas)</li>
+        <li><span class="translit">howa machi kbir</span> <span class="ar">هو ماشي كبير</span> (il n'est pas grand)</li>
+        <li><span class="translit">ma ghadich nemchi</span> <span class="ar">ما غاديش نمشي</span> (je ne vais pas partir)</li>
+      </ol>
+      Note&nbsp;: verbe ⇒ étau <span class="translit">ma…ch</span>&nbsp;; adjectif ⇒ <span class="translit">machi</span> devant.
+    </details>
+  </div>
+
+  <!-- ============ SÉRIE C — DIALOGUES ============ -->
+  <h2><span class="badge-serie">Série C</span> &nbsp;Dialogues <span style="font-size:15px;color:var(--encre-douce)">(Chapitre&nbsp;III)</span></h2>
+
+  <div class="exo">
+    <p><span class="exo-num">C1 — </span><span class="consigne">Complète le dialogue du matin.</span></p>
+    <ol>
+      <li>— ___ (bonjour, le matin)</li>
+      <li>— <span class="translit">sba7 nnour.</span> ___ (comment vas-tu&nbsp;?)</li>
+      <li>— <span class="translit">labas,</span> ___ (Dieu merci). <span class="translit">w nta&nbsp;?</span></li>
+    </ol>
+    <details class="corrige">
+      <summary>Voir le corrigé</summary>
+      <ol>
+        <li><span class="translit">sba7 lkhir</span> <span class="ar">صباح الخير</span></li>
+        <li><span class="translit">ki dayer&nbsp;?</span> (ou <span class="translit">labas&nbsp;?</span>)</li>
+        <li><span class="translit">l7amdoullah</span> <span class="ar">الحمد لله</span></li>
+      </ol>
+    </details>
+  </div>
+
+  <div class="exo">
+    <p><span class="exo-num">C2 — </span><span class="consigne">Associe chaque formule à la bonne situation (amis · famille · collègues · inconnu).</span></p>
+    <ol>
+      <li><span class="translit">kif l-7al&nbsp;?</span></li>
+      <li><span class="translit">ki dayer&nbsp;?</span></li>
+      <li><span class="translit">sme7 liya a si</span></li>
+      <li><span class="translit">a yemma</span></li>
+    </ol>
+    <details class="corrige">
+      <summary>Voir le corrigé</summary>
+      <ol>
+        <li><span class="translit">kif l-7al&nbsp;?</span> → <strong>collègues</strong> (semi-formel)</li>
+        <li><span class="translit">ki dayer&nbsp;?</span> → <strong>amis</strong> (détendu)</li>
+        <li><span class="translit">sme7 liya a si</span> → <strong>inconnu</strong> (poli)</li>
+        <li><span class="translit">a yemma</span> → <strong>famille</strong> (tendre, « ô maman »)</li>
+      </ol>
+    </details>
+  </div>
+
+  <div class="exo">
+    <p><span class="exo-num">C3 — </span><span class="consigne">Traduis en darija.</span></p>
+    <ol>
+      <li>Je voudrais un café, s'il te plaît.</li>
+      <li>Combien ça coûte&nbsp;?</li>
+      <li>Où est la gare&nbsp;?</li>
+      <li>Merci beaucoup.</li>
+    </ol>
+    <details class="corrige">
+      <summary>Voir le corrigé</summary>
+      <ol>
+        <li><span class="translit">bghit qahwa 3afak</span> <span class="ar">بغيت قهوة عافاك</span></li>
+        <li><span class="translit">b ch7al&nbsp;?</span> <span class="ar">بشحال؟</span></li>
+        <li><span class="translit">fin kayna l-ma7atta&nbsp;?</span> <span class="ar">فين كاينة المحطة؟</span></li>
+        <li><span class="translit">choukran bezzaf</span> <span class="ar">شكرا بزاف</span></li>
+      </ol>
+    </details>
+  </div>
+
+  <div class="exo">
+    <p><span class="exo-num">C4 — </span><span class="consigne">Écris ces nombres en arabizi.</span></p>
+    <ol>
+      <li>2 — 5 — 10 — 20 — 100</li>
+    </ol>
+    <details class="corrige">
+      <summary>Voir le corrigé</summary>
+      2 <span class="translit">jouj</span> · 5 <span class="translit">khemsa</span> ·
+      10 <span class="translit">3echra</span> · 20 <span class="translit">3echrin</span> ·
+      100 <span class="translit">mya</span>
+    </details>
+  </div>
+
+  <!-- ============ SÉRIE D — CULTURE ============ -->
+  <h2><span class="badge-serie">Série D</span> &nbsp;Culture <span style="font-size:15px;color:var(--encre-douce)">(Chapitre&nbsp;IV)</span></h2>
+
+  <div class="exo">
+    <p><span class="exo-num">D1 — </span><span class="consigne">Vrai ou faux&nbsp;?</span></p>
+    <ol>
+      <li>La capitale du Maroc est Casablanca.</li>
+      <li>Le couscous est traditionnellement le plat du vendredi.</li>
+      <li>Le Toubkal est le plus haut sommet du pays.</li>
+      <li>L'amazigh n'a aucun statut officiel.</li>
+      <li>La vieille médina d'Agadir est restée intacte à travers les siècles.</li>
+    </ol>
+    <details class="corrige">
+      <summary>Voir le corrigé</summary>
+      <ol>
+        <li><strong>Faux</strong> — la capitale est <strong>Rabat</strong> (Casa = capitale économique).</li>
+        <li><strong>Vrai</strong> — le <span class="translit">seksou</span> du vendredi.</li>
+        <li><strong>Vrai</strong> — 4&nbsp;167&nbsp;m, dans le Haut Atlas.</li>
+        <li><strong>Faux</strong> — l'amazigh est <strong>langue officielle depuis 2011</strong>.</li>
+        <li><strong>Faux</strong> — Agadir fut détruite par le séisme de <strong>1960</strong> puis reconstruite en ville moderne.</li>
+      </ol>
+    </details>
+  </div>
+
+  <div class="exo">
+    <p><span class="exo-num">D2 — </span><span class="consigne">Choisis la bonne réponse.</span></p>
+    <ol>
+      <li>La dynastie qui règne aujourd'hui&nbsp;: (a) Almohades — (b) Alaouites — (c) Saadiens</li>
+      <li>L'amazigh parlé autour d'Agadir&nbsp;: (a) tarifit — (b) tachelhit — (c) tamazight</li>
+      <li>Le produit emblématique du Souss&nbsp;: (a) l'huile d'olive — (b) l'huile d'argan — (c) le safran</li>
+    </ol>
+    <details class="corrige">
+      <summary>Voir le corrigé</summary>
+      <ol>
+        <li>(b) <strong>Alaouites</strong> (depuis 1666).</li>
+        <li>(b) <strong>tachelhit</strong> (chleuh).</li>
+        <li>(b) <strong>l'huile d'argan</strong> (et l'amlou).</li>
+      </ol>
+    </details>
+  </div>
+
+  <div class="exo">
+    <p><span class="exo-num">D3 — </span><span class="consigne">Relie chaque élément à ta région.</span></p>
+    <ol>
+      <li>Danses <span class="translit">ahwach / ahidous</span> de l'Atlas &nbsp;→&nbsp; ?</li>
+      <li>Grande métropole économique, mosquée Hassan&nbsp;II &nbsp;→&nbsp; ?</li>
+      <li>Argan, plage, tachelhit &nbsp;→&nbsp; ?</li>
+    </ol>
+    <details class="corrige">
+      <summary>Voir le corrigé</summary>
+      <ol>
+        <li>→ <strong>Amizmiz</strong> (Haut Atlas, tamazight).</li>
+        <li>→ <strong>Casablanca</strong>.</li>
+        <li>→ <strong>Agadir</strong> (Souss).</li>
+      </ol>
+    </details>
+  </div>
+
+  <!-- ============ DÉFI FINAL ============ -->
+  <hr class="filet-or">
+  <h2>Défi de synthèse</h2>
+  <div class="exo" style="border-style:solid;border-color:var(--vert);">
+    <p><span class="exo-num">★ — </span><span class="consigne">Traduis cette petite scène complète (elle mobilise les 4 chapitres).</span></p>
+    <p>« Bonjour&nbsp;! Comment vas-tu&nbsp;? — Ça va, Dieu merci. Je n'ai pas le temps, je vais aller au souk. — D'accord, à plus&nbsp;! »</p>
+    <details class="corrige">
+      <summary>Voir le corrigé</summary>
+      <p style="font-size:19px;text-align:center;">
+        <span class="ar">السلام عليكم! كي داير؟</span><br>
+        <span class="translit">salamou 3alaykom&nbsp;! ki dayer&nbsp;?</span>
+      </p>
+      <p style="font-size:19px;text-align:center;">
+        <span class="ar">لاباس الحمد لله. ما عنديش الوقت، غادي نمشي للسوق.</span><br>
+        <span class="translit">labas l7amdoullah. ma 3ndich lweqt, ghadi nemchi l-souq.</span>
+      </p>
+      <p style="font-size:19px;text-align:center;">
+        <span class="ar">واخا، بسلامة!</span><br>
+        <span class="translit">wakha, bslama&nbsp;!</span>
+      </p>
+      Si tu as reconnu salutation + « avoir » nié + futur + formule d'adieu&nbsp;: bravo, tu tiens
+      déjà une vraie conversation&nbsp;! 🎉
+    </details>
+  </div>
+
+  <div class="callout callout-retenir">
+    <span class="callout-titre">Et après&nbsp;?</span>
+    Reprends les exercices ratés à J+1 et J+7. Puis passe à l'<a href="#ecriture">Annexe
+    Écriture</a> pour déchiffrer les enseignes, et remplis ta page <a href="#ressources">Ressources</a>
+    pour t'entraîner tous les jours.
+  </div>
+
+  <div class="retour-haut"><a href="#sommaire">↑ Retour au sommaire</a></div>
+
+  <!-- ============================================================ -->
+  <!-- ===================== ANNEXE ÉCRITURE ======================= -->
+  <!-- ============================================================ -->
+  <hr class="filet-or">
+  <div class="ouverture-chapitre" id="ecriture">
+    <div class="medaillon">✒</div>
+    <span class="chapitre-num">Annexe</span>
+    <h1 class="titre-chapitre">Écriture &amp; calligraphie</h1>
+    <p style="color:var(--or); font-family:var(--arabe); font-size:40px; direction:rtl;">الخط العربي</p>
+    <div class="ornement"></div>
+  </div>
+
+  <p class="chapeau">Le darija se parle au quotidien et s'écrit surtout en arabizi&nbsp;; mais
+  connaître l'alphabet arabe ouvre la porte des enseignes, des menus, des messages — et de la
+  beauté de la calligraphie.</p>
+
+  <h2>1 · Trois principes pour commencer</h2>
+  <div class="callout callout-retenir">
+    <span class="callout-titre">À retenir</span>
+    <ul class="puces-orient" style="margin:6px 0 0">
+      <li>On écrit et on lit <strong>de droite à gauche</strong>.</li>
+      <li>L'alphabet compte <strong>28 lettres</strong>, toutes des consonnes (les voyelles brèves sont des signes optionnels, les <em>harakat</em> — voir §4).</li>
+      <li>Chaque lettre <strong>change de forme</strong> selon sa position&nbsp;: isolée, au début, au milieu ou à la fin du mot — sauf 6 lettres qui ne se lient jamais vers la gauche (§3).</li>
+    </ul>
+  </div>
+
+  <h2>2 · L'alphabet complet (28 lettres)</h2>
+  <p>Voici les 28 lettres dans l'ordre traditionnel, avec leur nom et leur transcription arabizi.</p>
+
+  <div class="alpha-grid">
+    <div class="alpha-cell"><div class="g">ا</div><div class="n">alif · <span class="z">a</span></div></div>
+    <div class="alpha-cell"><div class="g">ب</div><div class="n">ba · <span class="z">b</span></div></div>
+    <div class="alpha-cell"><div class="g">ت</div><div class="n">ta · <span class="z">t</span></div></div>
+    <div class="alpha-cell"><div class="g">ث</div><div class="n">tha · <span class="z">th</span></div></div>
+    <div class="alpha-cell"><div class="g">ج</div><div class="n">jim · <span class="z">j</span></div></div>
+    <div class="alpha-cell"><div class="g">ح</div><div class="n">ḥa · <span class="z">7</span></div></div>
+    <div class="alpha-cell"><div class="g">خ</div><div class="n">kha · <span class="z">kh/5</span></div></div>
+    <div class="alpha-cell"><div class="g">د</div><div class="n">dal · <span class="z">d</span></div></div>
+    <div class="alpha-cell"><div class="g">ذ</div><div class="n">dhal · <span class="z">dh/d</span></div></div>
+    <div class="alpha-cell"><div class="g">ر</div><div class="n">ra · <span class="z">r</span></div></div>
+    <div class="alpha-cell"><div class="g">ز</div><div class="n">zay · <span class="z">z</span></div></div>
+    <div class="alpha-cell"><div class="g">س</div><div class="n">sin · <span class="z">s</span></div></div>
+    <div class="alpha-cell"><div class="g">ش</div><div class="n">chin · <span class="z">ch</span></div></div>
+    <div class="alpha-cell"><div class="g">ص</div><div class="n">ṣad · <span class="z">S</span></div></div>
+    <div class="alpha-cell"><div class="g">ض</div><div class="n">ḍad · <span class="z">D</span></div></div>
+    <div class="alpha-cell"><div class="g">ط</div><div class="n">ṭa · <span class="z">T</span></div></div>
+    <div class="alpha-cell"><div class="g">ظ</div><div class="n">ẓa · <span class="z">Z</span></div></div>
+    <div class="alpha-cell"><div class="g">ع</div><div class="n">3ayn · <span class="z">3</span></div></div>
+    <div class="alpha-cell"><div class="g">غ</div><div class="n">ghayn · <span class="z">gh</span></div></div>
+    <div class="alpha-cell"><div class="g">ف</div><div class="n">fa · <span class="z">f</span></div></div>
+    <div class="alpha-cell"><div class="g">ق</div><div class="n">qaf · <span class="z">9/q</span></div></div>
+    <div class="alpha-cell"><div class="g">ك</div><div class="n">kaf · <span class="z">k</span></div></div>
+    <div class="alpha-cell"><div class="g">ل</div><div class="n">lam · <span class="z">l</span></div></div>
+    <div class="alpha-cell"><div class="g">م</div><div class="n">mim · <span class="z">m</span></div></div>
+    <div class="alpha-cell"><div class="g">ن</div><div class="n">noun · <span class="z">n</span></div></div>
+    <div class="alpha-cell"><div class="g">ه</div><div class="n">ha · <span class="z">h</span></div></div>
+    <div class="alpha-cell"><div class="g">و</div><div class="n">waw · <span class="z">w/ou</span></div></div>
+    <div class="alpha-cell"><div class="g">ي</div><div class="n">ya · <span class="z">y/i</span></div></div>
+  </div>
+  <p style="font-size:14px; color:var(--encre-douce); font-style:italic;">Les 28 lettres classiques. En darija, <span class="ar">ث</span> (th) et <span class="ar">ذ</span> (dh) sont rares à l'oral&nbsp;: on les entend surtout dans des mots savants ou empruntés à l'arabe classique — au quotidien elles se confondent souvent avec <span class="ar">ت</span>/<span class="ar">د</span> ou <span class="ar">س</span>/<span class="ar">ز</span> selon les régions. La lettre <span class="ar">گ</span> (g dur, absente de l'arabe classique) leur est ajoutée par les locuteurs marocains pour noter des mots comme <span class="translit">gaâ</span> (tout) — elle n'appartient pas aux 28 lettres officielles.</p>
+
+  <!-- ============ 3. FORMES LIÉES ============ -->
+  <h2>3 · Les formes de la lettre</h2>
+  <p class="lettrine">L'écriture arabe est <strong>cursive</strong>&nbsp;: comme en écriture
+  manuscrite française attachée, les lettres se lient à leurs voisines à l'intérieur d'un mot.
+  Chaque lettre a donc jusqu'à <strong>quatre formes</strong>&nbsp;: isolée (seule), initiale
+  (début de mot, liée seulement à droite… en lecture occidentale on dirait « à la lettre suivante
+  vers la gauche »), médiane (liée des deux côtés) et finale (liée seulement à la lettre qui la
+  précède, à droite).</p>
+
+  <div class="callout piege">
+    <span class="callout-titre">Piège — six lettres ne se lient jamais vers la gauche</span>
+    <span class="ar-xl" style="font-size:1.6em">ا د ذ ر ز و</span>
+    (alif, dal, dhal, ra, zay, waw) n'ont <strong>que deux formes</strong>&nbsp;: isolée/initiale
+    (identique) et médiane/finale (identique, avec juste la liaison à droite). La lettre qui les
+    suit doit donc reprendre une forme <em>initiale</em>, même au milieu du mot — c'est pour cela
+    qu'un mot arabe peut sembler « coupé » en plusieurs blocs visuels.
+  </div>
+
+  <div class="table-scroll">
+  <table class="formes-table">
+    <caption>Les quatre formes des 28 lettres</caption>
+    <thead>
+      <tr><th>Nom</th><th>Arabizi</th><th>Isolée</th><th>Initiale</th><th>Médiane</th><th>Finale</th></tr>
+    </thead>
+    <tbody>
+      <tr class="non-liante"><td>alif</td><td class="arabizi">a</td><td class="ar">ا</td><td class="ar">ا</td><td class="ar">ـا</td><td class="ar">ـا</td></tr>
+      <tr><td>ba</td><td class="arabizi">b</td><td class="ar">ب</td><td class="ar">بـ</td><td class="ar">ـبـ</td><td class="ar">ـب</td></tr>
+      <tr><td>ta</td><td class="arabizi">t</td><td class="ar">ت</td><td class="ar">تـ</td><td class="ar">ـتـ</td><td class="ar">ـت</td></tr>
+      <tr><td>tha</td><td class="arabizi">th</td><td class="ar">ث</td><td class="ar">ثـ</td><td class="ar">ـثـ</td><td class="ar">ـث</td></tr>
+      <tr><td>jim</td><td class="arabizi">j</td><td class="ar">ج</td><td class="ar">جـ</td><td class="ar">ـجـ</td><td class="ar">ـج</td></tr>
+      <tr><td>ḥa</td><td class="arabizi">7</td><td class="ar">ح</td><td class="ar">حـ</td><td class="ar">ـحـ</td><td class="ar">ـح</td></tr>
+      <tr><td>kha</td><td class="arabizi">kh/5</td><td class="ar">خ</td><td class="ar">خـ</td><td class="ar">ـخـ</td><td class="ar">ـخ</td></tr>
+      <tr class="non-liante"><td>dal</td><td class="arabizi">d</td><td class="ar">د</td><td class="ar">د</td><td class="ar">ـد</td><td class="ar">ـد</td></tr>
+      <tr class="non-liante"><td>dhal</td><td class="arabizi">dh/d</td><td class="ar">ذ</td><td class="ar">ذ</td><td class="ar">ـذ</td><td class="ar">ـذ</td></tr>
+      <tr class="non-liante"><td>ra</td><td class="arabizi">r</td><td class="ar">ر</td><td class="ar">ر</td><td class="ar">ـر</td><td class="ar">ـر</td></tr>
+      <tr class="non-liante"><td>zay</td><td class="arabizi">z</td><td class="ar">ز</td><td class="ar">ز</td><td class="ar">ـز</td><td class="ar">ـز</td></tr>
+      <tr><td>sin</td><td class="arabizi">s</td><td class="ar">س</td><td class="ar">سـ</td><td class="ar">ـسـ</td><td class="ar">ـس</td></tr>
+      <tr><td>chin</td><td class="arabizi">ch</td><td class="ar">ش</td><td class="ar">شـ</td><td class="ar">ـشـ</td><td class="ar">ـش</td></tr>
+      <tr><td>ṣad</td><td class="arabizi">S</td><td class="ar">ص</td><td class="ar">صـ</td><td class="ar">ـصـ</td><td class="ar">ـص</td></tr>
+      <tr><td>ḍad</td><td class="arabizi">D</td><td class="ar">ض</td><td class="ar">ضـ</td><td class="ar">ـضـ</td><td class="ar">ـض</td></tr>
+      <tr><td>ṭa</td><td class="arabizi">T</td><td class="ar">ط</td><td class="ar">طـ</td><td class="ar">ـطـ</td><td class="ar">ـط</td></tr>
+      <tr><td>ẓa</td><td class="arabizi">Z</td><td class="ar">ظ</td><td class="ar">ظـ</td><td class="ar">ـظـ</td><td class="ar">ـظ</td></tr>
+      <tr><td>3ayn</td><td class="arabizi">3</td><td class="ar">ع</td><td class="ar">عـ</td><td class="ar">ـعـ</td><td class="ar">ـع</td></tr>
+      <tr><td>ghayn</td><td class="arabizi">gh</td><td class="ar">غ</td><td class="ar">غـ</td><td class="ar">ـغـ</td><td class="ar">ـغ</td></tr>
+      <tr><td>fa</td><td class="arabizi">f</td><td class="ar">ف</td><td class="ar">فـ</td><td class="ar">ـفـ</td><td class="ar">ـف</td></tr>
+      <tr><td>qaf</td><td class="arabizi">9/q</td><td class="ar">ق</td><td class="ar">قـ</td><td class="ar">ـقـ</td><td class="ar">ـق</td></tr>
+      <tr><td>kaf</td><td class="arabizi">k</td><td class="ar">ك</td><td class="ar">كـ</td><td class="ar">ـكـ</td><td class="ar">ـك</td></tr>
+      <tr><td>lam</td><td class="arabizi">l</td><td class="ar">ل</td><td class="ar">لـ</td><td class="ar">ـلـ</td><td class="ar">ـل</td></tr>
+      <tr><td>mim</td><td class="arabizi">m</td><td class="ar">م</td><td class="ar">مـ</td><td class="ar">ـمـ</td><td class="ar">ـم</td></tr>
+      <tr><td>noun</td><td class="arabizi">n</td><td class="ar">ن</td><td class="ar">نـ</td><td class="ar">ـنـ</td><td class="ar">ـن</td></tr>
+      <tr><td>ha</td><td class="arabizi">h</td><td class="ar">ه</td><td class="ar">هـ</td><td class="ar">ـهـ</td><td class="ar">ـه</td></tr>
+      <tr class="non-liante"><td>waw</td><td class="arabizi">w/ou</td><td class="ar">و</td><td class="ar">و</td><td class="ar">ـو</td><td class="ar">ـو</td></tr>
+      <tr><td>ya</td><td class="arabizi">y/i</td><td class="ar">ي</td><td class="ar">يـ</td><td class="ar">ـيـ</td><td class="ar">ـي</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p style="font-size:14px; color:var(--encre-douce);">Les lignes teintées (fond terracotta) sont les six lettres non-liantes vers la gauche.</p>
+
+  <div class="callout astuce">
+    <span class="callout-titre">Exemple travaillé — assembler <span class="translit">kteb</span> (il a écrit)</span>
+    <p style="text-align:center; font-size:26px; margin:10px 0;">
+      <span class="ar">ك</span><sub style="font-size:12px">initiale</sub> +
+      <span class="ar">ـتـ</span><sub style="font-size:12px">médiane</sub> +
+      <span class="ar">ـب</span><sub style="font-size:12px">finale</sub>
+      &nbsp;=&nbsp; <span class="ar-xl">كتب</span>
+    </p>
+    Le <span class="ar">ك</span> (kaf) prend sa forme <strong>initiale</strong> (liée seulement à
+    droite vers la lettre suivante), le <span class="ar">ت</span> (ta) sa forme <strong>médiane</strong>
+    (liée des deux côtés), et le <span class="ar">ب</span> (ba) sa forme <strong>finale</strong>
+    (liée seulement à gauche vers la lettre précédente). Résultat&nbsp;: <span class="ar-xl">كتب</span>.
+  </div>
+
+  <div class="callout note-regionale">
+    <span class="callout-titre">La ligature obligatoire lam-alif</span>
+    Quand <span class="ar">ل</span> (lam) est immédiatement suivi de <span class="ar">ا</span>
+    (alif), les deux lettres <strong>fusionnent toujours</strong> en un seul signe&nbsp;:
+    <span class="ar-xl">لا</span> (jamais <span class="ar-xl" style="opacity:.4">لا</span> écrit
+    séparément). C'est la seule ligature strictement obligatoire de l'arabe&nbsp;; on la voit dans
+    <span class="translit">la</span> (non) ou dans <span class="ar">الله</span>
+    <span class="translit">llah</span> (Dieu).
+  </div>
+
+  <!-- ============ 4. HARAKAT ============ -->
+  <h2>4 · Les voyelles brèves (harakat)</h2>
+  <p>L'alphabet arabe ne note que les consonnes et les voyelles <em>longues</em> (ا, و, ي). Les
+  voyelles <strong>brèves</strong> — l'essentiel des voyelles du darija — s'écrivent avec de petits
+  signes au-dessus ou au-dessous de la lettre, les <strong><span class="ar">حركات</span> harakat</strong>.
+  Dans l'usage courant (presse, messages, enseignes), on les <strong>omet presque toujours</strong>&nbsp;:
+  elles servent surtout à l'apprentissage, au Coran et aux dictionnaires.</p>
+
+  <div class="table-scroll">
+  <table>
+    <thead>
+      <tr><th>Signe</th><th>Nom</th><th>Valeur</th><th>Exemple sur <span class="ar">ب</span></th><th>Lecture</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="ar" style="font-size:1.8em">بَ</td><td>fatḥa <span class="ar">فتحة</span></td><td>a bref</td><td class="ar" style="font-size:1.8em">بَ</td><td><span class="translit">ba</span></td></tr>
+      <tr><td class="ar" style="font-size:1.8em">بِ</td><td>kasra <span class="ar">كسرة</span></td><td>i bref</td><td class="ar" style="font-size:1.8em">بِ</td><td><span class="translit">bi</span></td></tr>
+      <tr><td class="ar" style="font-size:1.8em">بُ</td><td>ḍamma <span class="ar">ضمة</span></td><td>ou bref</td><td class="ar" style="font-size:1.8em">بُ</td><td><span class="translit">bou</span></td></tr>
+      <tr><td class="ar" style="font-size:1.8em">بْ</td><td>soukoun <span class="ar">سكون</span></td><td>absence de voyelle</td><td class="ar" style="font-size:1.8em">بْ</td><td><span class="translit">b</span> (consonne seule)</td></tr>
+      <tr><td class="ar" style="font-size:1.8em">بّ</td><td>chadda <span class="ar">شدة</span></td><td>redoublement de la consonne</td><td class="ar" style="font-size:1.8em">بَّ</td><td><span class="translit">bba</span> (b tenu, doublé)</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="callout callout-retenir">
+    <span class="callout-titre">À retenir</span>
+    Le <strong>soukoun</strong> (absence de voyelle) est la clé pour lire le darija&nbsp;: nos
+    fameuses grappes de consonnes (<span class="translit">kteb, mchit</span>…) s'écrivent en
+    arabe classique avec plusieurs soukoun d'affilée. La <strong>chadda</strong>, elle, se combine
+    toujours avec une autre harakat (elle ne dit que « lettre doublée », pas la voyelle).
+  </div>
+
+  <div class="callout astuce">
+    <span class="callout-titre">Le tanwin — pour reconnaître les emprunts savants</span>
+    Tu croiseras parfois deux traits ou un petit signe doublé en fin de mot (ً ٍ ٌ) — le
+    <strong>tanwin</strong> (nunation), qui ajoute un « n » final en arabe classique. Rare en
+    darija parlé, il survit dans des expressions figées empruntées telles quelles&nbsp;:
+    <span class="ar">أهلاً وسهلاً</span> <span class="translit">ahlan wa sahlan</span> (bienvenue) ou
+    <span class="ar">شكراً جزيلاً</span> <span class="translit">choukran jazilan</span> (merci infiniment).
+  </div>
+
+  <!-- ============ 5. CALLIGRAPHIE ============ -->
+  <h2>5 · Initiation à la calligraphie</h2>
+  <p class="lettrine">La calligraphie (<span class="ar">الخط</span>, <span class="translit">l-khaṭṭ</span>)
+  est l'un des grands arts visuels du monde arabo-musulman&nbsp;: elle orne mosquées, manuscrits et
+  zelliges. Ce manuel utilise le style <strong>naskh</strong> pour rester lisible, mais le Maroc a
+  sa propre tradition, bien distincte de l'Orient arabe.</p>
+
+  <div class="callout astuce">
+    <span class="callout-titre">Les grands styles</span>
+    <strong>Naskh</strong> (le plus lisible, celui de ce manuel, utilisé pour l'impression et le
+    Coran) · <strong>Maghribi</strong> (style propre à l'Afrique du Nord et à al-Andalus, lettres
+    rondes, hampes courbées, jambages profonds sous la ligne) · <strong>Thuluth</strong>
+    (monumental, ornemental, calligraphie des frontons de mosquées) · <strong>Diwani</strong>
+    (courbé et serré, né dans les chancelleries ottomanes).
+  </div>
+
+  <div class="callout note-regionale">
+    <span class="callout-titre">Une signature marocaine&nbsp;: le pointage inversé</span>
+    Dans la tradition <strong>maghribi</strong>, deux lettres se pointent <em>à l'inverse</em> de
+    l'usage oriental (mashreqi)&nbsp;: <span class="ar">ف</span> (fa) porte <strong>un point
+    en dessous</strong> (au lieu d'un point au-dessus à l'orient), et <span class="ar">ق</span>
+    (qaf) porte <strong>un point au-dessus</strong> (au lieu de deux points à l'orient). Tu peux
+    encore voir cette convention sur d'anciennes enseignes ou manuscrits marocains — un vrai
+    marqueur d'identité graphique.
+  </div>
+
+  <p>La calligraphie repose sur un instrument et une règle de proportion&nbsp;:</p>
+  <ul class="puces-orient">
+    <li><strong>Le calame</strong> (<span class="ar">قلم</span>, <span class="translit">qalam</span>) — un roseau taillé en biseau à la pointe&nbsp;: l'angle de la taille détermine l'épaisseur des pleins et déliés selon la direction du tracé.</li>
+    <li><strong>La proportion par points</strong> (<span class="translit">nuqta</span>) — méthode codifiée au X<sup>e</sup> siècle par le calligraphe Ibn Muqla&nbsp;: on pose la plume à plat pour obtenir un « point » losange, et chaque lettre se mesure en nombre de points (l'alif de référence fait en général 5 à 7 points de haut selon le style).</li>
+    <li><strong>Le ductus</strong> (ordre et sens des tracés) — en général de droite à gauche et de haut en bas, en un minimum de levers de calame pour garder la fluidité du geste.</li>
+  </ul>
+
+  <div class="callout callout-retenir">
+    <span class="callout-titre">S'entraîner sans calame</span>
+    Un stylo-plume ou un feutre à pointe biseautée suffit pour commencer. Trace d'abord des alif
+    verticaux à angle constant pour sentir la variation plein/délié, puis les courbes de
+    <span class="ar">ن</span> (noun) et <span class="ar">ر</span> (ra)&nbsp;: ce sont les deux
+    gestes de base (droite tenue, courbe ouverte) sur lesquels s'appuie tout le reste de l'alphabet.
+  </div>
+
+  <div class="retour-haut"><a href="#sommaire">↑ Retour au sommaire</a></div>
+
+  <!-- ============================================================ -->
+  <!-- ===================== RESSOURCES ============================= -->
+  <!-- ============================================================ -->
+  <hr class="filet-or">
+  <div class="ouverture-chapitre" id="ressources">
+    <div class="medaillon">☆</div>
+    <span class="chapitre-num">Ressources</span>
+    <h1 class="titre-chapitre">Pour apprendre le darija</h1>
+    <p style="color:var(--or); font-family:var(--arabe); font-size:40px; direction:rtl;">مصادر</p>
+    <div class="ornement"></div>
+  </div>
+
+  <p class="chapeau">Un carnet d'adresses vivant&nbsp;: chaînes vidéo, sites, comptes à suivre et
+  applications, identifiés et vérifiés en ligne. Mets une ⭐ à tes préférés au fil de ta pratique,
+  et enrichis la liste avec tes propres découvertes.</p>
+
+  <div class="callout astuce">
+    <span class="callout-titre">Comment s'en servir</span>
+    Écoute d'abord (podcasts, vidéos) pour l'oreille des sons du <a href="#chapitre-1">Chapitre&nbsp;I</a>,
+    puis suis des comptes qui postent des phrases du quotidien. La régularité (10&nbsp;min/jour)
+    bat les longues séances rares.
+  </div>
+
+  <h2>🎥 Chaînes vidéo (YouTube)</h2>
+  <div class="table-scroll">
+  <table>
+    <thead><tr><th>Nom</th><th>Ce qu'on y trouve</th><th>Lien</th><th>⭐</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><strong>The Darija Channel</strong></td>
+        <td>Vidéos claires pour parler et phrases courantes du quotidien, orientées immersion.</td>
+        <td class="res-lien"><span class="translit">youtube.com/@DarijaChannel</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><strong>Apprendre le darija avec Baraka</strong></td>
+        <td>Cours de darija pour débutants et niveaux intermédiaires, progression pédagogique.</td>
+        <td class="res-lien"><span class="translit">youtube.com/@darijabaraka</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><strong>Apprendre l'arabe marocain – Darija</strong></td>
+        <td>Chaîne dédiée à l'apprentissage pas à pas du darija pour francophones.</td>
+        <td class="res-lien"><span class="translit">youtube.com/@ApprendreLarabeMarocain-Darija</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="a-completer" colspan="4">Ajoute ici tes propres découvertes (nom · thème · lien · ⭐).</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h2>🌐 Sites &amp; dictionnaires</h2>
+  <div class="table-scroll">
+  <table>
+    <thead><tr><th>Nom</th><th>Type</th><th>Lien</th><th>⭐</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><strong>Darija Dictionary</strong></td>
+        <td>Dictionnaire darija-français en ligne, plus de 2000 mots avec prononciation audio pour chacun.</td>
+        <td class="res-lien"><span class="translit">darijadictionary.com</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><strong>Dialect (mydialect.io)</strong></td>
+        <td>Cours structurés en darija et arabe marocain, associés à l'application du même nom.</td>
+        <td class="res-lien"><span class="translit">mydialect.io/apprendre-le-darija-marocain</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><strong>Guide Hijra Maroc</strong></td>
+        <td>Article-ressource recensant méthodes, chaînes et outils pour apprendre l'arabe marocain.</td>
+        <td class="res-lien"><span class="translit">hijramaroc.com/apprendre-arabe-marocain</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="a-completer" colspan="4">Ajoute ici tes propres découvertes.</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h2>📱 Instagram &amp; Facebook</h2>
+  <div class="table-scroll">
+  <table>
+    <thead><tr><th>Compte</th><th>Réseau</th><th>Contenu</th><th>Lien</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><strong>@learnwithmouad</strong></td>
+        <td>Instagram</td>
+        <td>Coach de darija et d'arabe, contenu pédagogique régulier (vocabulaire, expressions).</td>
+        <td class="res-lien"><span class="translit">instagram.com/learnwithmouad</span></td>
+      </tr>
+      <tr>
+        <td><strong>@arabemarroqui_</strong></td>
+        <td>Instagram</td>
+        <td>Ressources et contenu culturel pour apprendre l'arabe marocain (posts bilingues).</td>
+        <td class="res-lien"><span class="translit">instagram.com/arabemarroqui_</span></td>
+      </tr>
+      <tr>
+        <td class="a-completer" colspan="4">Ajoute ici les comptes que tu suis et qui t'aident vraiment.</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h2>🎧 Podcasts &amp; audio</h2>
+  <div class="res-card">
+    <h4>Apprendre ensemble l'arabe marocain</h4>
+    <p class="res-desc">Extraits audio issus d'un groupe d'échange, publiés avec transcription écrite — bon
+    point d'entrée pour l'oreille en darija authentique, niveau débutant/intermédiaire.</p>
+    <p class="res-lien"><span class="translit">darija.e-formation.mobi/podcast-apprendre-ensemble-larabe-marocain</span> · aussi sur Spotify</p>
+  </div>
+  <div class="res-card">
+    <h4>Triq Darija</h4>
+    <p class="res-desc">Podcast narratif qui suit le parcours d'un apprenant du darija&nbsp;: anecdotes
+    personnelles et immersion dans le vécu quotidien marocain.</p>
+    <p class="res-lien"><span class="translit">lesbonnesondes.ma</span> — rechercher « Triq Darija »</p>
+  </div>
+  <div class="res-card">
+    <h4>Easy Darija</h4>
+    <p class="res-desc">Podcast dédié à simplifier le darija pour les apprenants, formats courts et accessibles.</p>
+    <p class="res-lien">Disponible sur Spotify — rechercher « Easy Darija »</p>
+  </div>
+  <div class="a-completer">Ajoute ici tes propres playlists (chaâbi, raï…) avec paroles pour t'entraîner à l'oreille.</div>
+
+  <h2>🧩 Applications</h2>
+  <div class="res-card">
+    <h4>Morolingo — Darija &amp; Amazigh <span style="font-size:13px;font-weight:400;color:var(--encre-douce)">(ex-Vivre Darija)</span></h4>
+    <p class="res-desc">Application gratuite (iOS/Android) avec dictionnaire français-darija intégré,
+    leçons de vocabulaire et d'expressions du quotidien, prononciation par des locuteurs natifs.</p>
+  </div>
+  <div class="res-card">
+    <h4>Dialect</h4>
+    <p class="res-desc">Flashcards quotidiennes en darija et en arabe (une session gratuite par jour),
+    associée au site mydialect.io.</p>
+  </div>
+  <div class="res-card">
+    <h4>Darija — Arabe marocain</h4>
+    <p class="res-desc">Application avec flashcards interactives, exercices variés et illustrations,
+    disponible sur l'App Store.</p>
+  </div>
+  <div class="a-completer">Ajoute ici tes claviers arabes et outils de répétition espacée (Anki…) préférés.</div>
+
+  <h2>👥 Personnes &amp; contacts</h2>
+  <div class="callout note-regionale">
+    <span class="callout-titre">Tes locuteurs natifs</span>
+    La meilleure ressource reste l'échange direct. Note ici les proches d'<strong>Agadir</strong>,
+    <strong>Casablanca</strong> et <strong>Amizmiz</strong> avec qui pratiquer, et les mots
+    régionaux qu'ils t'apprennent (à recouper avec les <em>Notes régionales</em> du manuel).
+  </div>
+
+  <div class="callout callout-retenir">
+    <span class="callout-titre">Note de méthode</span>
+    Cette liste a été constituée et vérifiée par recherche en ligne (juillet 2026). Les chaînes,
+    sites et applications évoluent vite&nbsp;: si un lien ne fonctionne plus, cherche le nom
+    exact tel qu'indiqué ici sur la plateforme concernée. Continue à noter tes propres trouvailles
+    dans les lignes « à compléter » — c'est ta liste, elle doit te ressembler.
+  </div>
+
+  <div class="retour-haut"><a href="#sommaire">↑ Retour au sommaire</a></div>
+
+<!-- Pied de page général du manuel -->
+<footer style="max-width:var(--page-larg); margin:0 auto 40px; text-align:center; font-size:13px; color:var(--encre-douce); font-family:var(--serif-titre);">
+  Manuel de Darija — الدارجة — édition intégrale en une page
+</footer>
+
+</main>
 </body>
 </html>
