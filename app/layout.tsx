@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, EB_Garamond, Amiri, Tangerine } from "next/font/google";
+import { RepositoryProvider } from "@/lib/data-access/RepositoryProvider";
+import { GuestAuthProvider } from "@/lib/auth/GuestAuthProvider";
 import "./globals.css";
 
 const headingSerif = Cormorant_Garamond({
@@ -45,7 +47,9 @@ export default function RootLayout({
       className={`${headingSerif.variable} ${bodySerif.variable} ${arabicNaskh.variable} ${cursiveDisplay.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-ivoire text-nuit">
-        {children}
+        <RepositoryProvider>
+          <GuestAuthProvider>{children}</GuestAuthProvider>
+        </RepositoryProvider>
       </body>
     </html>
   );

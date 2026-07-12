@@ -1,6 +1,7 @@
 import { cn } from "@/lib/utils/cn";
+import type { Register } from "@/types/register";
 
-export type Register = "detendu" | "tendre" | "semi-formel" | "poli";
+export type { Register };
 
 const REGISTER_LABELS: Record<Register, string> = {
   detendu: "détendu",
