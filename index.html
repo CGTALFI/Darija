@@ -11,6 +11,11 @@
 <link rel="manifest" href="manifest.json">
 <link rel="stylesheet" href="assets/css/book.css">
 <link rel="stylesheet" href="assets/css/print.css">
+<script>(function(){try{
+  var vu = sessionStorage.getItem('darija-entree') === '1';
+  var reduit = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!vu && !reduit) document.documentElement.classList.add('portail-actif');
+}catch(e){}})();</script>
 <style>
   /* --- Couverture --- */
   .couverture {
@@ -44,9 +49,10 @@
   .zellige {
     position:absolute; left:0; right:0; bottom:0; height: 60px;
     background:
-      repeating-linear-gradient(45deg, transparent 0 14px, rgba(200,162,74,.10) 14px 15px),
-      repeating-linear-gradient(-45deg, transparent 0 14px, rgba(200,162,74,.10) 14px 15px);
-    opacity:.7;
+      repeating-linear-gradient(45deg, transparent 0 14px, rgba(232,201,122,.16) 14px 15px),
+      repeating-linear-gradient(-45deg, transparent 0 14px, rgba(232,201,122,.16) 14px 15px),
+      linear-gradient(0deg, rgba(46,27,18,.55), transparent);
+    opacity:.85;
   }
 
   /* --- Navigation unique (page unique, ancres) --- */
@@ -123,6 +129,30 @@
 </head>
 <body>
 
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <clipPath id="arc-fer-cheval" clipPathUnits="objectBoundingBox">
+      <path d="M0,1 L0,0.42 C0,0.12 0.18,-0.08 0.5,-0.08 C0.82,-0.08 1,0.12 1,0.42 L1,1 Z"/>
+    </clipPath>
+  </defs>
+</svg>
+
+<!-- ======================= PORTAIL D'ENTRÉE ======================= -->
+<div class="portail no-print" id="portail" role="dialog" aria-modal="true" aria-label="Portail d'entrée">
+  <div class="portail-scene">
+    <div class="portail-cadre">
+      <button type="button" class="porte-battant porte-g" aria-describedby="portail-invite">
+        <span class="porte-planches"></span>
+      </button>
+      <button type="button" class="porte-battant porte-d" tabindex="-1" aria-hidden="true">
+        <span class="porte-planches"></span>
+      </button>
+      <span class="heurtoir" aria-hidden="true">✦</span>
+    </div>
+    <p class="portail-invite" id="portail-invite">Touche le heurtoir pour franchir le seuil</p>
+  </div>
+</div>
+
 <!-- ======================= COUVERTURE ======================= -->
 <section class="couverture" id="couverture">
   <div class="couv-sur">Méthode personnelle · Édition vivante · Édition intégrale en une page</div>
@@ -166,57 +196,74 @@
     sur tout le contenu à la fois.
   </div>
 
-  <ol class="toc">
-    <li>
-      <span class="toc-num">I</span>
-      <span>
-        <a class="toc-titre" href="#chapitre-1">Phonétique du darija</a>
-        <span class="toc-desc">Appareil phonatoire, lieux &amp; modes d'articulation, consonnes, emphatiques, voyelles, lettres-chiffres, pièges &amp; exercices.</span>
+  <nav class="portes-sommaire" aria-label="Sommaire, un chapitre par porte">
+    <a class="porte-chapitre" href="#chapitre-1">
+      <span class="porte-cadre">
+        <span class="porte-vantail porte-vg"><span class="porte-planches"></span></span>
+        <span class="porte-vantail porte-vd"><span class="porte-planches"></span></span>
+        <span class="porte-medaillon">I</span>
       </span>
-    </li>
-    <li>
-      <span class="toc-num">II</span>
-      <span>
-        <a class="toc-titre" href="#chapitre-2">Les bases de la langue</a>
-        <span class="toc-desc">Salutations, pronoms, présent, futur, négation.</span>
+      <span class="porte-titre">Phonétique du darija</span>
+      <span class="porte-desc">Appareil phonatoire, lieux &amp; modes d'articulation, consonnes, emphatiques, voyelles, lettres-chiffres, pièges &amp; exercices.</span>
+    </a>
+    <a class="porte-chapitre" href="#chapitre-2">
+      <span class="porte-cadre">
+        <span class="porte-vantail porte-vg"><span class="porte-planches"></span></span>
+        <span class="porte-vantail porte-vd"><span class="porte-planches"></span></span>
+        <span class="porte-medaillon">II</span>
       </span>
-    </li>
-    <li>
-      <span class="toc-num">III</span>
-      <span>
-        <a class="toc-titre" href="#chapitre-3">Dialogues</a>
-        <span class="toc-desc">Entre amis, en famille, entre collègues, entre inconnus.</span>
+      <span class="porte-titre">Les bases de la langue</span>
+      <span class="porte-desc">Salutations, pronoms, présent, futur, négation.</span>
+    </a>
+    <a class="porte-chapitre" href="#chapitre-3">
+      <span class="porte-cadre">
+        <span class="porte-vantail porte-vg"><span class="porte-planches"></span></span>
+        <span class="porte-vantail porte-vd"><span class="porte-planches"></span></span>
+        <span class="porte-medaillon">III</span>
       </span>
-    </li>
-    <li>
-      <span class="toc-num">IV</span>
-      <span>
-        <a class="toc-titre" href="#chapitre-4">Culture marocaine</a>
-        <span class="toc-desc">Histoire, géographie, géopolitique, linguistique, gastronomie, culture.</span>
+      <span class="porte-titre">Dialogues</span>
+      <span class="porte-desc">Entre amis, en famille, entre collègues, entre inconnus.</span>
+    </a>
+    <a class="porte-chapitre" href="#chapitre-4">
+      <span class="porte-cadre">
+        <span class="porte-vantail porte-vg"><span class="porte-planches"></span></span>
+        <span class="porte-vantail porte-vd"><span class="porte-planches"></span></span>
+        <span class="porte-medaillon">IV</span>
       </span>
-    </li>
-    <li>
-      <span class="toc-num">V</span>
-      <span>
-        <a class="toc-titre" href="#chapitre-5">Exercices &amp; corrigés</a>
-        <span class="toc-desc">Auto-évaluation, révisions, corrigés détaillés.</span>
+      <span class="porte-titre">Culture marocaine</span>
+      <span class="porte-desc">Histoire, géographie, géopolitique, linguistique, gastronomie, culture.</span>
+    </a>
+    <a class="porte-chapitre" href="#chapitre-5">
+      <span class="porte-cadre">
+        <span class="porte-vantail porte-vg"><span class="porte-planches"></span></span>
+        <span class="porte-vantail porte-vd"><span class="porte-planches"></span></span>
+        <span class="porte-medaillon">V</span>
       </span>
-    </li>
-    <li>
-      <span class="toc-num">✒</span>
-      <span>
-        <a class="toc-titre" href="#ecriture">Annexe — Écriture &amp; calligraphie</a>
-        <span class="toc-desc">Alphabet complet (28 lettres), formes liées isolée/initiale/médiane/finale, harakat, initiation à la calligraphie.</span>
+      <span class="porte-titre">Exercices &amp; corrigés</span>
+      <span class="porte-desc">Auto-évaluation, révisions, corrigés détaillés.</span>
+    </a>
+  </nav>
+
+  <nav class="portes-sommaire portes-secondaires" aria-label="Annexes">
+    <a class="porte-chapitre porte-petite" href="#ecriture">
+      <span class="porte-cadre">
+        <span class="porte-vantail porte-vg"><span class="porte-planches"></span></span>
+        <span class="porte-vantail porte-vd"><span class="porte-planches"></span></span>
+        <span class="porte-medaillon">✒</span>
       </span>
-    </li>
-    <li>
-      <span class="toc-num">☆</span>
-      <span>
-        <a class="toc-titre" href="#ressources">Ressources pour apprendre</a>
-        <span class="toc-desc">Chaînes vidéo, sites, comptes Instagram, podcasts, applications.</span>
+      <span class="porte-titre">Annexe — Écriture &amp; calligraphie</span>
+      <span class="porte-desc">Alphabet complet (28 lettres), formes liées isolée/initiale/médiane/finale, harakat, initiation à la calligraphie.</span>
+    </a>
+    <a class="porte-chapitre porte-petite" href="#ressources">
+      <span class="porte-cadre">
+        <span class="porte-vantail porte-vg"><span class="porte-planches"></span></span>
+        <span class="porte-vantail porte-vd"><span class="porte-planches"></span></span>
+        <span class="porte-medaillon">☆</span>
       </span>
-    </li>
-  </ol>
+      <span class="porte-titre">Ressources pour apprendre</span>
+      <span class="porte-desc">Chaînes vidéo, sites, comptes Instagram, podcasts, applications.</span>
+    </a>
+  </nav>
 
   <hr class="filet-or">
 
@@ -2586,8 +2633,10 @@
 <!-- Pied de page général du manuel -->
 <footer style="max-width:var(--page-larg); margin:0 auto 40px; text-align:center; font-size:13px; color:var(--encre-douce); font-family:var(--serif-titre);">
   Manuel de Darija — الدارجة — édition intégrale en une page
+  &nbsp;·&nbsp; <a id="revoir-portail" href="#couverture" style="color:inherit;">🚪 Revoir le portail</a>
 </footer>
 
 </main>
+<script defer src="assets/js/portail.js"></script>
 </body>
 </html>
