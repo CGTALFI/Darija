@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Cormorant_Garamond, EB_Garamond, Amiri, Tangerine } from "next/font/google";
 import { RepositoryProvider } from "@/lib/data-access/RepositoryProvider";
 import { GuestAuthProvider } from "@/lib/auth/GuestAuthProvider";
+import { ProgressProvider } from "@/lib/progression/ProgressContext";
 import "./globals.css";
 
 const headingSerif = Cormorant_Garamond({
@@ -48,7 +49,9 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col bg-ivoire text-nuit">
         <RepositoryProvider>
-          <GuestAuthProvider>{children}</GuestAuthProvider>
+          <GuestAuthProvider>
+            <ProgressProvider>{children}</ProgressProvider>
+          </GuestAuthProvider>
         </RepositoryProvider>
       </body>
     </html>

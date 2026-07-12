@@ -1,0 +1,41 @@
+import type { VocabList } from "@/types/lesson";
+
+export const consonnesProchesFr: VocabList = {
+  id: "phonetique.consonnes-proches-fr",
+  moduleId: "academie",
+  tabSlug: "phonetique",
+  title: "Les consonnes proches du français",
+  kind: "vocabulaire",
+  cefrTags: [],
+  order: 1,
+  items: [
+    { ar: "ب", arabizi: "b", ipa: "/b/", pronFr: "b de bateau", meaning: "باب bab — porte" },
+    { ar: "ت", arabizi: "t", ipa: "/t/", pronFr: "t de table", meaning: "تفاح teffah — pommes" },
+    { ar: "ج", arabizi: "j", ipa: "/ʒ/", pronFr: "j de jour", meaning: "جوج jouj — deux" },
+    { ar: "د", arabizi: "d", ipa: "/d/", pronFr: "d de dos", meaning: "دار dar — maison" },
+    { ar: "ز", arabizi: "z", ipa: "/z/", pronFr: "z de zéro", meaning: "زين zin — beau" },
+    { ar: "س", arabizi: "s", ipa: "/s/", pronFr: "s de sac", meaning: "سمك smek — poisson" },
+    { ar: "ش", arabizi: "ch / sh", ipa: "/ʃ/", pronFr: "ch de chat", meaning: "شمس chems — soleil" },
+    { ar: "ف", arabizi: "f", ipa: "/f/", pronFr: "f de feu", meaning: "فوق fouq — sur/en haut" },
+    { ar: "ك", arabizi: "k", ipa: "/k/", pronFr: "k de képi", meaning: "كلب kelb — chien" },
+    { ar: "ل", arabizi: "l", ipa: "/l/", pronFr: "l de lit", meaning: "ليل lil — nuit" },
+    { ar: "م", arabizi: "m", ipa: "/m/", pronFr: "m de main", meaning: "ما ma — eau" },
+    { ar: "ن", arabizi: "n", ipa: "/n/", pronFr: "n de nid", meaning: "نهار nhar — jour" },
+    {
+      ar: "ه",
+      arabizi: "h",
+      ipa: "/h/",
+      pronFr: "h expiré (comme en anglais hello)",
+      meaning: "هنا hna — ici",
+    },
+    { ar: "و", arabizi: "w", ipa: "/w/", pronFr: "ou de oui", meaning: "واحد wahed — un" },
+    { ar: "ي", arabizi: "y", ipa: "/j/", pronFr: "y de yeux", meaning: "يد yedd — main" },
+    {
+      ar: "گ / ڭ",
+      arabizi: "g",
+      ipa: "/ɡ/",
+      pronFr: "g dur de gare",
+      meaning: "گاع ga3 — tout / sol",
+    },
+  ],
+};
