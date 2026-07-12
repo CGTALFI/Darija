@@ -17,10 +17,41 @@
   .exo .consigne { font-style:italic; color:var(--encre-douce); }
   .corrige ol { margin:8px 0 0; padding-left:22px; }
   .corrige li { margin:5px 0; }
-  .badge-serie { display:inline-block; background:var(--vert); color:#fff; font-family:var(--serif-titre); font-size:14px; letter-spacing:.06em; border-radius:999px; padding:3px 14px; }
+  .badge-serie {
+    display:inline-flex; align-items:center; justify-content:center;
+    width:48px; height:48px; padding:0; border-radius:50%;
+    background: radial-gradient(circle at 35% 30%, var(--m-accent-2), var(--m-accent) 72%);
+    color:#fff; font-family:var(--serif-titre); font-size:14px; letter-spacing:.04em;
+    box-shadow: 0 2px 5px rgba(0,0,0,.3), inset 0 0 0 2px rgba(255,255,255,.25);
+  }
+
+  /* ---------- Module « Le Cahier de l'Artisan » ---------- */
+  .exo { position: relative; padding-left: 30px; }
+  .exo::before {
+    content:"";
+    position:absolute; left:14px; top:14px; bottom:14px; width:2px;
+    background: repeating-linear-gradient(180deg, var(--m-accent) 0 6px, transparent 6px 13px);
+    opacity:.6;
+  }
+  .ouverture-chapitre::after {
+    content:"";
+    position:absolute; top:-4px; left:50%; translate:-50% 0;
+    width:100%; max-width:360px; height:52px; z-index:-1;
+    background-image: repeating-linear-gradient(180deg, rgba(60,110,71,.20) 0 1px, transparent 1px 12px);
+    -webkit-mask-image: linear-gradient(to bottom, black, transparent);
+            mask-image: linear-gradient(to bottom, black, transparent);
+    opacity:.9;
+  }
+  .medaillon::after {
+    content:"";
+    position:absolute; top:100%; left:50%; translate:-50% 8px;
+    width:92px; height:9px;
+    background: repeating-linear-gradient(90deg, var(--m-accent) 0 3px, transparent 3px 9px);
+    opacity:.8;
+  }
 </style>
 </head>
-<body>
+<body data-module="exo">
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <defs>

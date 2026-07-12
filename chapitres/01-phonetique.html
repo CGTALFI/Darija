@@ -23,9 +23,44 @@
   .mini-svg { width: 120px; height: 120px; }
   /* bande des zones d'articulation */
   .zone-strip text { font: 600 11px 'EB Garamond', serif; }
+
+  /* ---------- Module « Le Hammam des Souffles » ---------- */
+  .ouverture-chapitre::after {
+    content: "";
+    position: absolute;
+    top: -18px; left: 50%; translate: -50% 0;
+    width: 380px; height: 230px;
+    z-index: -1;
+    background:
+      radial-gradient(ellipse 60px 90px at 22% 85%, rgba(47,143,158,.38), transparent 72%),
+      radial-gradient(ellipse 50px 80px at 42% 55%, rgba(47,143,158,.30), transparent 72%),
+      radial-gradient(ellipse 46px 78px at 62% 78%, rgba(47,143,158,.34), transparent 72%),
+      radial-gradient(ellipse 40px 70px at 80% 50%, rgba(47,143,158,.26), transparent 72%);
+    filter: blur(3px);
+    animation: vapeur-monte 8s ease-in-out infinite;
+    pointer-events: none;
+  }
+  @keyframes vapeur-monte {
+    0%, 100% { transform: translateY(0) scale(1); opacity: .85; }
+    50%      { transform: translateY(-16px) scale(1.06); opacity: 1; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .ouverture-chapitre::after { animation: none; }
+  }
+  /* fine bande de zellige sous le médaillon, ton vapeur */
+  .medaillon::after {
+    content: "";
+    position: absolute;
+    top: 100%; left: 50%; translate: -50% 8px;
+    width: 92px; height: 9px;
+    background:
+      repeating-linear-gradient(45deg, transparent 0 6px, rgba(47,143,158,.4) 6px 7px),
+      repeating-linear-gradient(-45deg, transparent 0 6px, rgba(47,143,158,.4) 6px 7px);
+    opacity: .85;
+  }
 </style>
 </head>
-<body>
+<body data-module="phon">
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <defs>

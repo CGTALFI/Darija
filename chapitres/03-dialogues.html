@@ -24,9 +24,28 @@
   .registre.fam { background:var(--terre); }
   .registre.pro { background:var(--bleu-nuit); }
   .registre.inc { background:#7A5C99; }
+
+  /* ---------- Module « La Halqa du Souk » ---------- */
+  .ouverture-chapitre::after {
+    content:"";
+    position:absolute; top:-14px; left:50%; translate:-50% 0;
+    width:100%; max-width:380px; height:64px; z-index:-1;
+    background: repeating-linear-gradient(90deg, rgba(122,59,140,.26) 0 20px, rgba(184,80,58,.22) 20px 40px);
+    clip-path: polygon(0% 0%, 100% 0%, 100% 55%, 95% 100%, 90% 55%, 85% 100%, 80% 55%,
+      75% 100%, 70% 55%, 65% 100%, 60% 55%, 55% 100%, 50% 55%, 45% 100%, 40% 55%,
+      35% 100%, 30% 55%, 25% 100%, 20% 55%, 15% 100%, 10% 55%, 5% 100%, 0% 55%);
+    opacity:.85;
+  }
+  .medaillon::after {
+    content:"";
+    position:absolute; top:100%; left:50%; translate:-50% 8px;
+    width:92px; height:9px;
+    background: repeating-linear-gradient(90deg, var(--m-accent) 0 10px, var(--m-accent-2) 10px 20px);
+    opacity:.85;
+  }
 </style>
 </head>
-<body>
+<body data-module="dial">
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <defs>

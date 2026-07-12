@@ -19,9 +19,37 @@
   .ville h4 { margin:0 0 6px; }
   .ville .ar { font-size:1.2em; color:var(--or); }
   .ville p { font-size:14px; color:var(--encre-douce); margin:0; }
+
+  /* ---------- Module « La Carte du Voyageur » ---------- */
+  .ouverture-chapitre::after {
+    content:"";
+    position:absolute; top:-46px; left:50%; translate:-50% 0;
+    width:230px; height:230px; z-index:-1;
+    border-radius:50%;
+    box-shadow: 0 0 0 1px rgba(28,46,58,.18);
+    background: conic-gradient(from 0deg,
+      rgba(28,46,58,.42) 0deg 4deg, transparent 4deg 40deg,
+      rgba(184,80,58,.34) 40deg 44deg, transparent 44deg 85deg,
+      rgba(28,46,58,.42) 85deg 89deg, transparent 89deg 130deg,
+      rgba(184,80,58,.34) 130deg 134deg, transparent 134deg 175deg,
+      rgba(28,46,58,.42) 175deg 179deg, transparent 179deg 220deg,
+      rgba(184,80,58,.34) 220deg 224deg, transparent 224deg 265deg,
+      rgba(28,46,58,.42) 265deg 269deg, transparent 269deg 310deg,
+      rgba(184,80,58,.34) 310deg 314deg, transparent 314deg 355deg,
+      rgba(28,46,58,.42) 355deg 359deg, transparent 359deg 360deg),
+      radial-gradient(circle, transparent 62%, rgba(28,46,58,.12) 63%, transparent 65%);
+    opacity:.95;
+  }
+  .medaillon::after {
+    content:"";
+    position:absolute; top:100%; left:50%; translate:-50% 8px;
+    width:92px; height:9px;
+    background: repeating-linear-gradient(90deg, transparent 0 8px, var(--m-accent-2) 8px 9px);
+    opacity:.8;
+  }
 </style>
 </head>
-<body>
+<body data-module="culture">
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <defs>
