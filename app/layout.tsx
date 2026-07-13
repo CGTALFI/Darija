@@ -35,6 +35,16 @@ export const metadata: Metadata = {
   title: "Le Palais du Darija",
   description:
     "Une aventure narrative immersive pour apprendre le darija marocain — explore un palais oublié et révèle son secret.",
+  openGraph: {
+    title: "Le Palais du Darija",
+    description:
+      "Explore un palais marocain oublié et apprends le darija, du premier mot au niveau C2.",
+    type: "website",
+    locale: "fr_FR",
+  },
+  twitter: { card: "summary" },
+  icons: { icon: "/favicon.svg" },
+  robots: { index: true, follow: true },
 };
 
 export default function RootLayout({
